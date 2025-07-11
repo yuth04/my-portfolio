@@ -37,7 +37,7 @@ const NavBar = ({ theme, toggleTheme }) => {
         }
       });
     };
-
+ 
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -112,23 +112,24 @@ const NavBar = ({ theme, toggleTheme }) => {
           </ul>
         )}
         {/* btn */}
-        <div className="flex items-center space-x-4">
-          <button onClick={toggleTheme} className="text-yellow-400">
-            {theme === "dark" ? <FiMoon size={28} /> : <FiSun size={28} />}
-          </button>
-          {isMobile && !isOpen && (
-            <button onClick={handleToggle} className="text-orange-500">
-              <FiMenu size={28} />
-            </button>
-          )}
-        </div>
+         <div className="flex items-center space-x-4">
+                  <button onClick={toggleTheme} className="text-yellow-400 focus:outline-none" aria-label="Toggle Theme">
+                    {theme === "dark" ? <FiMoon size={24} /> : <FiSun size={24} />}
+                  </button>
+                  {isMobile && !isOpen && (
+                    <button onClick={handleToggle} className="text-orange-500 focus:outline-none" aria-label="Toggle Menu"
+                    >
+                      <FiMenu size={28} />
+                    </button>
+                  )}
+                </div>
       </nav>
 
       {/* mobile view */}
-      {isOpen && (
+      {isMobile && (
         <div
-          className={`fixed top-0 right-0 w-full h-full bg-gray-800 dark:bg-gray-900 bg-opacity-95  transform transition-transform duration-700 z-50 ${
-            isOpen ? "translate-x-0" : "translate-x-full"
+          className={`fixed top-0 left-0 w-full h-full bg-gray-800 dark:bg-gray-900 bg-opacity-95  transform transition-transform duration-500 z-50 ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
           
         >
@@ -136,7 +137,7 @@ const NavBar = ({ theme, toggleTheme }) => {
             <a href="" className="text-orange-400 text-3xl font-semibold">
               YuTh.
             </a>
-            <button onClick={handleClose} className="text-orange-500">
+            <button onClick={handleClose} className="text-orange-500" aria-label="Close Menu">
               <FiX size={28} />
             </button>
           </div>
