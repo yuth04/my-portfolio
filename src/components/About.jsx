@@ -34,11 +34,10 @@ const About = () => {
       </h2>
       <div className="flex flex-col items-center md:flex-row gap-10 ">
         <img
+          className="w-72 rounded-lg border shadow-lg"
           data-aos="zoom-in-up"
           src={profile}
           alt="Nheung Phearakyuth"
-        className="w-72 rounded-lg border shadow-md "
-
         />
 
         <div data-aos="zoom-in-up">
@@ -85,10 +84,13 @@ const About = () => {
           </div>
 
           {/* CV */}
-          <a href="https://drive.google.com/file/d/1KJb2i96tKJYOwW0mCIIBLOX4ccZyeXcK/view?usp=sharing" download target="_blank"
+          <a
+            href="https://drive.google.com/file/d/1KJb2i96tKJYOwW0mCIIBLOX4ccZyeXcK/view?usp=sharing"
+            download
+            target="_blank"
             className="inline-block px-5 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
           >
-            DOWNLOAD CV 
+            DOWNLOAD CV
           </a>
         </div>
       </div>

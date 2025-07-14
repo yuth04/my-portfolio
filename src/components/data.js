@@ -1,6 +1,7 @@
 import portfolio from '../assets/projects/portfolio.png';
 import phone from '../assets/projects/phone_store.png';
 import ten_11 from '../assets/projects/ten11.png'
+import crud from '../assets/projects/crud.png'
 export const projects = [
   {
     name: "Portfolio Website",
@@ -11,7 +12,7 @@ export const projects = [
   },
   {
     name: "E-commerce Store",
-    description: "An online store built with HTML and CSS (Bootstrap).",
+    description: "A front-end online store builted with HTML and CSS (Bootstrap).",
     image: ten_11,
     github: "https://github.com/yuth04",
     demo: "https://ten-11.vercel.app/",
@@ -22,5 +23,12 @@ export const projects = [
     image: phone,
     github: "https://github.com/yuth04",
     demo: "https://test-du1s.vercel.app/",
+  },
+  {
+    name: "Crud",
+    description: "It's a student crud that builted by react js and tailwind without data store",
+    image: crud,
+    github: "https://github.com/yuth04",
+    demo: "http://react-crud-eta-eight.vercel.app/",
   },
 ];
