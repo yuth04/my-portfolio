@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FiMoon, FiSun, FiMenu, FiX } from "react-icons/fi";
-
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
 const NavBar = ({ theme, toggleTheme }) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const handleClose = () => setIsOpen(false);
@@ -37,7 +39,7 @@ const NavBar = ({ theme, toggleTheme }) => {
         }
       });
     };
- 
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -67,7 +69,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("home")}
             >
-              Home
+              {t('nav.home')}
             </li>
             <li
               className={`cursor-pointer font-semibold ${
@@ -77,7 +79,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("about")}
             >
-              About
+              {t('nav.about')}
             </li>
             <li
               className={`font-semibold cursor-pointer ${
@@ -87,7 +89,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("service")}
             >
-              Service
+              {t('nav.service')}
             </li>
             <li
               className={`cursor-pointer font-semibold ${
@@ -97,7 +99,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("project")}
             >
-              Project
+              {t('nav.project') }
             </li>
             <li
               className={`font-semibold cursor-pointer ${
@@ -107,22 +109,41 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("contact")}
             >
-              Contact
+              {t('nav.contact')}
             </li>
           </ul>
         )}
         {/* btn */}
-         <div className="flex items-center space-x-4">
-                  <button onClick={toggleTheme} className="text-yellow-400 focus:outline-none" aria-label="Toggle Theme">
-                    {theme === "dark" ? <FiMoon size={24} /> : <FiSun size={24} />}
-                  </button>
-                  {isMobile && !isOpen && (
-                    <button onClick={handleToggle} className="text-orange-500 focus:outline-none" aria-label="Toggle Menu"
-                    >
-                      <FiMenu size={28} />
-                    </button>
-                  )}
-                </div>
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-2">
+            <span className="text-white">🌐</span>
+            <select
+              className="px-3 py-1.5 rounded-md bg-gray-700 text-white border border-gray-500 hover:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+              onChange={(e) => i18n.changeLanguage(e.target.value)}
+              value={i18n.language}
+            >
+              <option value="en">English</option>
+              <option value="kh">ខ្មែរ</option>
+            </select>
+          </div>
+
+          <button
+            onClick={toggleTheme}
+            className="text-yellow-400 focus:outline-none"
+            aria-label="Toggle Theme"
+          >
+            {theme === "dark" ? <FiMoon size={24} /> : <FiSun size={24} />}
+          </button>
+          {isMobile && !isOpen && (
+            <button
+              onClick={handleToggle}
+              className="text-orange-500 focus:outline-none"
+              aria-label="Toggle Menu"
+            >
+              <FiMenu size={28} />
+            </button>
+          )}
+        </div>
       </nav>
 
       {/* mobile view */}
@@ -131,13 +152,16 @@ const NavBar = ({ theme, toggleTheme }) => {
           className={`fixed top-0 left-0 w-full h-full bg-gray-800 dark:bg-gray-900 bg-opacity-95  transform transition-transform duration-500 z-50 ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
-          
         >
           <div className=" absolute top-4 left-7 flex justify-between w-[90%] items-center ">
             <a href="" className="text-orange-400 text-3xl font-semibold">
               YuTh.
             </a>
-            <button onClick={handleClose} className="text-orange-500" aria-label="Close Menu">
+            <button
+              onClick={handleClose}
+              className="text-orange-500"
+              aria-label="Close Menu"
+            >
               <FiX size={28} />
             </button>
           </div>
@@ -150,7 +174,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("home")}
             >
-              Home
+              {t("nav.home")}
             </li>
             <li
               className={`cursor-pointer font-semibold ${
@@ -160,7 +184,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("about")}
             >
-              About
+              {t("nav.about")}
             </li>
             <li
               className={`font-semibold cursor-pointer ${
@@ -170,7 +194,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("service")}
             >
-              Service
+              {t("nav.service")}
             </li>
             <li
               className={`cursor-pointer font-semibold ${
@@ -180,7 +204,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("project")}
             >
-              Project
+              {t("nav.project")}
             </li>
             <li
               className={`font-semibold cursor-pointer ${
@@ -190,7 +214,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("contact")}
             >
-              Contact
+              {t("nav.contact")}
             </li>
           </ul>
         </div>

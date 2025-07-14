@@ -1,34 +1,31 @@
 import portfolio from '../assets/projects/portfolio.png';
 import phone from '../assets/projects/phone_store.png';
-import ten_11 from '../assets/projects/ten11.png'
-import crud from '../assets/projects/crud.png'
+import ten_11 from '../assets/projects/ten11.png';
+import crud from '../assets/projects/crud.png';
+
 export const projects = [
   {
-    name: "Portfolio Website",
-    description: "A personal portfolio to showcase my projects and skills.",
+    key: "portfolio",
     image: portfolio,
     github: "https://github.com/yuth04",
-    demo: "https://portfolio-phi-ten-qfj8ctdnfn.vercel.app",
+    demo: "https://portfolio-phi-ten-qfj8ctdnfn.vercel.app"
   },
   {
-    name: "E-commerce Store",
-    description: "A front-end online store builted with HTML and CSS (Bootstrap).",
+    key: "ecommerce",
     image: ten_11,
     github: "https://github.com/yuth04",
-    demo: "https://ten-11.vercel.app/",
+    demo: "https://ten-11.vercel.app/"
   },
   {
-    name: "Phone Store",
-    description: "A phone product showcase site with filtering functionality.",
+    key: "phone",
     image: phone,
     github: "https://github.com/yuth04",
-    demo: "https://test-du1s.vercel.app/",
+    demo: "https://test-du1s.vercel.app/"
   },
   {
-    name: "Crud",
-    description: "It's a student crud that builted by react js and tailwind without data store",
+    key: "crud",
     image: crud,
     github: "https://github.com/yuth04",
-    demo: "http://react-crud-eta-eight.vercel.app/",
-  },
+    demo: "http://react-crud-eta-eight.vercel.app/"
+  }
 ];

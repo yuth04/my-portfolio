@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "service": "Service",
+    "project": "Project",
+    "contact": "Contact"
+  },
+  "hero": {
+    "des_name": "Hello, My name is",
+    "name": "Phearak YuTh...",
+    "carrer": "A Web developer & Freelancer",
+    "btn_know": "Know More"
+  },
+  "about": {
+    "about_me": "ABOUT ME",
+    "Who_am_i": "Who Am I",
+    "greeting": "Hi, I'm",
+    "name": "Nheung Phearak YuTh",
+    "des_1": ", a passionate Web Developer and a 3rd-year Computer Science student at Norton University. I specialize in building clean, modern, and responsive websites using the latest web technologies.",
+    "des_2": "I'm always eager to learn new skills and take on new challenges. With a strong foundation in both front-end and back-end development, I strive to create user-friendly digital experiences that not only look good but also perform efficiently.",
+    "cv": "Download CV"
+  },
+  "service": {
+    "my_service": "My service",
+    "what_can_i_do": "What Can I Do",
+    "show_more": "Show More",
+    "see_less": "See Less",
+    "items": {
+      "basic_web_dev": {
+        "title": "Basic Web Development",
+        "description": "Assist in creating and maintaining simple websites using HTML, CSS, and JavaScript."
+      },
+      "task_management": {
+        "title": "Task Management",
+        "description": "Follow assigned tasks, document progress, and collaborate with senior developers."
+      },
+      "version_control": {
+        "title": "Version Control (Git)",
+        "description": "Learn and use Git & GitHub for tracking code changes and team collaboration."
+      },
+      "learn_tools": {
+        "title": "Learning New Tools",
+        "description": "Explore frameworks like React or Bootstrap under mentorship guidance."
+      },
+      "professional_communication": {
+        "title": "Professional Communication",
+        "description": "Develop soft skills by communicating with mentors and team members clearly."
+      },
+      "bug_reporting": {
+        "title": "Bug Reporting & Feedback",
+        "description": "Help identify UI issues, test features, and provide feedback to the development team."
+      },
+      "technical_support": {
+        "title": "Technical Support",
+        "description": "Quick and reliable technical assistance to keep your project running smoothly."
+      },
+      "web_development": {
+        "title": "Web Development",
+        "description": "Build dynamic, responsive, and high-performing websites using modern tech."
+      },
+      "basic_backend": {
+        "title": "Basic Back-End",
+        "description": "Connect front-end with robust server-side logic and databases efficiently."
+      },
+      "basic_api": {
+        "title": "Basic Rest-API",
+        "description": "Design and build scalable APIs to power your applications and integrations."
+      },
+      "team_collaboration": {
+        "title": "Team Collaboration",
+        "description": "Work effectively within teams, ensuring smooth communication and shared goals."
+      },
+      "communication": {
+        "title": "Communication",
+        "description": "Convey ideas clearly to both technical and non-technical audiences, enhancing teamwork."
+      },
+      "problem_solving": {
+        "title": "Problem Solving",
+        "description": "Apply creative and logical thinking to resolve challenges and improve solutions."
+      }
+    }
+  },
+"project": {
+  "my_project": "MY PROJECT",
+  "frontend_title": "My Front-End Projects",
+  "github": "GitHub",
+  "live_demo": "Live Demo",
+  "show_more": "Show More",
+  "see_less": "See Less",
+  "items": {
+    "portfolio": {
+      "name": "Portfolio Website",
+      "description": "A personal portfolio to showcase my projects and skills."
+    },
+    "ecommerce": {
+      "name": "E-commerce Store",
+      "description": "A front-end online store built with HTML and CSS (Bootstrap)."
+    },
+    "phone": {
+      "name": "Phone Store",
+      "description": "A phone product showcase site with filtering functionality."
+    },
+    "crud": {
+      "name": "Student CRUD",
+      "description": "A simple React + Tailwind CRUD app without data persistence."
+    }
+  }
+},
+"contact": {
+  "title": "Contact Me",
+  "subtitle": "Send me a message and I’ll reply via email!",
+  "success_message": "Message sent!",
+  "error_message": "Failed to send message. Try again.",
+  "send_btn": "Send Message",
+  "loading": "Sending...",
+  "placeholder_name": "Your name",
+  "placeholder_email": "you@example.com",
+  "placeholder_message": "Your message"
+},
+"footer": {
+  "name": "Phearak YuTh",
+  "tagline": "Web Developer & Freelancer",
+  "social": "Social Media",
+  "back_to_top": "Back to top",
+  "copyright": "All rights reserved.",
+  "links": {
+    "home": "Home",
+    "about": "About",
+    "service": "Service",
+    "project": "Project",
+    "contact": "Contact"
+  }
+}
+
+
+
+
+}

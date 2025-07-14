@@ -1,6 +1,8 @@
 import React from "react";
 import profile from "../assets/hero/hero.jpg";
+import { useTranslation } from 'react-i18next' 
 const About = () => {
+    const { t } = useTranslation();
   const skills = [
     { name: "HTML, CSS", rating: 4 },
     { name: "Java", rating: 2 },
@@ -12,7 +14,6 @@ const About = () => {
     { name: "Laravel", rating: 3.5 },
     { name: "React", rating: 3.5 },
   ];
-
   return (
     <section className="px-6 md:px-12 py-20 bg-gray-200 min-h-screen dark:bg-gray-800 text-black dark:text-white transition-colors duration-300 overflow-x-hidden">
       <div
@@ -21,7 +22,7 @@ const About = () => {
       >
         <div className="w-16 h-px bg-orange-400 mr-3"></div>
         <h3 className="text-orange-400 text-sm font-medium text-center">
-          ABOUT ME
+          {t("about.about_me")}
         </h3>
         <div className="w-16 h-px bg-orange-400 ml-3"></div>
       </div>
@@ -30,7 +31,7 @@ const About = () => {
         data-aos="zoom-in-up"
         className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white"
       >
-        Who Am I
+        {t("about.Who_am_i")}
       </h2>
       <div className="flex flex-col items-center md:flex-row gap-10 ">
         <img
@@ -41,21 +42,17 @@ const About = () => {
         />
 
         <div data-aos="zoom-in-up">
-          <p className="text-gray-700 dark:text-gray-300 mb-4">
-            Hi, I'm{" "}
+          <p className="text-gray- 700 dark:text-gray-300 mb-4">
+             {t("about.greeting")} {" "}
             <span className="text-orange-400 font-semibold">
-              Nheung Phearak YuTH
+               {t("about.name")}
             </span>
-            , a passionate Web Developer and a 3rd-year Computer Science student
-            at Norton University. I specialize in building clean, modern, and
-            responsive websites using the latest web technologies.
+            {t("about.des_1")}
           </p>
 
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            I'm always eager to learn new skills and take on new challenges.
-            With a strong foundation in both front-end and back-end development,
-            I strive to create user-friendly digital experiences that not only
-            look good but also perform efficiently.
+           
+            {t("about.des_1")}
           </p>
 
           {/* SKills */}
@@ -90,7 +87,7 @@ const About = () => {
             target="_blank"
             className="inline-block px-5 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
           >
-            DOWNLOAD CV
+            {t("about.cv")}
           </a>
         </div>
       </div>
