@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FiMoon, FiSun, FiMenu, FiX } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
+import SittingButton from './SittingButton'
 const NavBar = ({ theme, toggleTheme }) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -114,7 +115,7 @@ const NavBar = ({ theme, toggleTheme }) => {
           </ul>
         )}
         {/* btn */}
-        <div className="flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4">
           <div className="flex items-center gap-2">
             <span className="text-white">🌐</span>
             <select
@@ -144,6 +145,15 @@ const NavBar = ({ theme, toggleTheme }) => {
             </button>
           )}
         </div>
+
+        <div className="flex md:hidden items-center space-x-4">
+          <SittingButton theme={theme} toggleTheme={toggleTheme}/>
+          {isMobile && (
+            <button aria-label="Open Menu" onClick={handleToggle}  className="hover:text-orange-500 focus:outline-none">
+              <FiMenu size={28}/>
+            </button>
+          )}
+        </div>
       </nav>
 
       {/* mobile view */}
@@ -159,7 +169,7 @@ const NavBar = ({ theme, toggleTheme }) => {
             </a>
             <button
               onClick={handleClose}
-              className="text-orange-500"
+              className="hover:text-orange-500 text-white"
               aria-label="Close Menu"
             >
               <FiX size={28} />

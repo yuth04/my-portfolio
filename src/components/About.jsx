@@ -52,7 +52,7 @@ const About = () => {
 
           <p className="text-gray-600 dark:text-gray-400 mb-6">
            
-            {t("about.des_1")}
+            {t("about.des_2")}
           </p>
 
           {/* SKills */}

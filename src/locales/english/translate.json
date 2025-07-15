@@ -81,59 +81,55 @@
       }
     }
   },
-"project": {
-  "my_project": "MY PROJECT",
-  "frontend_title": "My Front-End Projects",
-  "github": "GitHub",
-  "live_demo": "Live Demo",
-  "show_more": "Show More",
-  "see_less": "See Less",
-  "items": {
-    "portfolio": {
-      "name": "Portfolio Website",
-      "description": "A personal portfolio to showcase my projects and skills."
-    },
-    "ecommerce": {
-      "name": "E-commerce Store",
-      "description": "A front-end online store built with HTML and CSS (Bootstrap)."
-    },
-    "phone": {
-      "name": "Phone Store",
-      "description": "A phone product showcase site with filtering functionality."
-    },
-    "crud": {
-      "name": "Student CRUD",
-      "description": "A simple React + Tailwind CRUD app without data persistence."
+  "project": {
+    "my_project": "MY PROJECT",
+    "frontend_title": "My Front-End Projects",
+    "github": "GitHub",
+    "live_demo": "Live Demo",
+    "show_more": "Show More",
+    "see_less": "See Less",
+    "items": {
+      "portfolio": {
+        "name": "Portfolio Website",
+        "description": "A personal portfolio to showcase my projects and skills."
+      },
+      "ecommerce": {
+        "name": "E-commerce Store",
+        "description": "A front-end online store built with HTML and CSS (Bootstrap)."
+      },
+      "phone": {
+        "name": "Phone Store",
+        "description": "A phone product showcase site with filtering functionality."
+      },
+      "crud": {
+        "name": "Student CRUD",
+        "description": "A simple React + Tailwind CRUD app without data persistence."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Send me a message and I’ll reply via email!",
+    "success_message": "Message sent!",
+    "error_message": "Failed to send message. Try again.",
+    "send_btn": "Send Message",
+    "loading": "Sending...",
+    "placeholder_name": "Your name",
+    "placeholder_email": "you@example.com",
+    "placeholder_message": "Your message"
+  },
+  "footer": {
+    "name": "Phearak YuTh",
+    "tagline": "Web Developer & Freelancer",
+    "social": "Social Media",
+    "back_to_top": "Back to top",
+    "copyright": "All rights reserved.",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "service": "Service",
+      "project": "Project",
+      "contact": "Contact"
     }
   }
-},
-"contact": {
-  "title": "Contact Me",
-  "subtitle": "Send me a message and I’ll reply via email!",
-  "success_message": "Message sent!",
-  "error_message": "Failed to send message. Try again.",
-  "send_btn": "Send Message",
-  "loading": "Sending...",
-  "placeholder_name": "Your name",
-  "placeholder_email": "you@example.com",
-  "placeholder_message": "Your message"
-},
-"footer": {
-  "name": "Phearak YuTh",
-  "tagline": "Web Developer & Freelancer",
-  "social": "Social Media",
-  "back_to_top": "Back to top",
-  "copyright": "All rights reserved.",
-  "links": {
-    "home": "Home",
-    "about": "About",
-    "service": "Service",
-    "project": "Project",
-    "contact": "Contact"
-  }
-}
-
-
-
-
 }
