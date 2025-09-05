@@ -1,11 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-:root{
-    font-family: "Roboto Condensed", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  font-family: "Roboto Condensed", sans-serif;
 }
-
 html {
   scroll-behavior: smooth;
 }
@@ -58,7 +57,6 @@ h4 {
     transform: rotate(360deg);
   }
 }
-
 @keyframes breathe {
   0%,
   100% {
@@ -68,7 +66,6 @@ h4 {
     transform: scale(1.05);
   }
 }
-
 .typing {
   overflow: hidden;
   white-space: nowrap;
@@ -77,7 +74,6 @@ h4 {
   animation: typing-deleting 6s steps(30, end) infinite,
     blink 0.75s step-end infinite;
 }
-
 @keyframes typing-deleting {
   0% {
     width: 0;
@@ -92,7 +88,6 @@ h4 {
     width: 0;
   }
 }
-
 @keyframes blink {
   50% {
     border-color: transparent;

@@ -27,57 +27,49 @@
     "show_more": "Show More",
     "see_less": "See Less",
     "items": {
-      "basic_web_dev": {
-        "title": "Basic Web Development",
-        "description": "Assist in creating and maintaining simple websites using HTML, CSS, and JavaScript."
+      "frontend_development": {
+        "title": "Front-end Development",
+        "description": "Building clean and responsive user interfaces while learning best practices with modern frameworks."
       },
-      "task_management": {
-        "title": "Task Management",
-        "description": "Follow assigned tasks, document progress, and collaborate with senior developers."
+      "responsive_design": {
+        "title": "Responsive Design",
+        "description": "Creating layouts that adapt across devices, focusing on usability and mobile-first design."
+      },
+      "mysql_knowledge": {
+        "title": "MySQL Knowledge",
+        "description": "Working with relational databases to store and retrieve data efficiently, while improving query skills."
       },
       "version_control": {
-        "title": "Version Control (Git)",
-        "description": "Learn and use Git & GitHub for tracking code changes and team collaboration."
+        "title": "GitHub Version Control",
+        "description": "Using Git and GitHub to manage code changes, collaborate with teams, and track progress."
       },
-      "learn_tools": {
-        "title": "Learning New Tools",
-        "description": "Explore frameworks like React or Bootstrap under mentorship guidance."
+      "php_laravel_api": {
+        "title": "PHP, Laravel & REST API",
+        "description": "Developing backend features and APIs using Laravel and PHP, with a focus on clean architecture."
       },
-      "professional_communication": {
-        "title": "Professional Communication",
-        "description": "Develop soft skills by communicating with mentors and team members clearly."
+      "react_knowledge": {
+        "title": "React JS",
+        "description": "Building interactive components and learning state management techniques in React."
       },
-      "bug_reporting": {
-        "title": "Bug Reporting & Feedback",
-        "description": "Help identify UI issues, test features, and provide feedback to the development team."
+      "teamwork": {
+        "title": "Teamwork",
+        "description": "Contributing to group projects, sharing ideas, and supporting team goals with a positive attitude."
       },
-      "technical_support": {
-        "title": "Technical Support",
-        "description": "Quick and reliable technical assistance to keep your project running smoothly."
-      },
-      "web_development": {
-        "title": "Web Development",
-        "description": "Build dynamic, responsive, and high-performing websites using modern tech."
-      },
-      "basic_backend": {
-        "title": "Basic Back-End",
-        "description": "Connect front-end with robust server-side logic and databases efficiently."
-      },
-      "basic_api": {
-        "title": "Basic Rest-API",
-        "description": "Design and build scalable APIs to power your applications and integrations."
-      },
-      "team_collaboration": {
-        "title": "Team Collaboration",
-        "description": "Work effectively within teams, ensuring smooth communication and shared goals."
+      "time_management": {
+        "title": "Time Management",
+        "description": "Organizing tasks and meeting deadlines while balancing learning and development."
       },
       "communication": {
         "title": "Communication",
-        "description": "Convey ideas clearly to both technical and non-technical audiences, enhancing teamwork."
+        "description": "Practicing clear and respectful communication with peers, mentors, and stakeholders."
       },
       "problem_solving": {
         "title": "Problem Solving",
-        "description": "Apply creative and logical thinking to resolve challenges and improve solutions."
+        "description": "Approaching challenges with curiosity, asking questions, and applying logical thinking to find solutions."
+      },
+      "postgres": {
+        "title": "PostgreSQL",
+        "description": "Working with PostgreSQL to manage relational data, write efficient queries, and build scalable backends."
       }
     }
   },
@@ -105,9 +97,9 @@
         "name": "Student CRUD",
         "description": "A simple React + Tailwind CRUD app without data persistence."
       },
-      "weather app":{
-        "name":"weather app",
-        "description":"A weather app created with React + Tailwind + Weather api"
+      "weather app": {
+        "name": "weather app",
+        "description": "A weather app created with React + Tailwind + Weather api"
       }
     }
   },

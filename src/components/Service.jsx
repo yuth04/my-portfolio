@@ -1,36 +1,32 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
-  FaCode,
-  FaTasks,
-  FaLaptop,
-  FaQuestionCircle,
-  FaUserAlt,
-  FaWrench,
-  FaTools,
   FaLaptopCode,
+  FaCode,
   FaServer,
+  FaLaptop,
   FaPlug,
+  FaQuestionCircle,
   FaHandshake,
+  FaTasks,
   FaComments,
   FaLightbulb,
   FaArrowRight,
+  FaDatabase,
 } from "react-icons/fa";
 
 const items = {
-  basic_web_dev: <FaCode className="text-2xl text-orange-400" />,
-  task_management: <FaTasks className="text-2xl text-orange-400" />,
+  frontend_development: <FaLaptopCode className="text-2xl text-orange-400" />,
+  responsive_design: <FaCode className="text-2xl text-orange-400" />,
+  mysql_knowledge: <FaServer className="text-2xl text-orange-400" />,
   version_control: <FaLaptop className="text-2xl text-orange-400" />,
-  learn_tools: <FaQuestionCircle className="text-2xl text-orange-400" />,
-  professional_communication: <FaUserAlt className="text-2xl text-orange-400" />,
-  bug_reporting: <FaWrench className="text-2xl text-orange-400" />,
-  technical_support: <FaTools className="text-2xl text-orange-400" />,
-  web_development: <FaLaptopCode className="text-2xl text-orange-400" />,
-  basic_backend: <FaServer className="text-2xl text-orange-400" />,
-  basic_api: <FaPlug className="text-2xl text-orange-400" />,
-  team_collaboration: <FaHandshake className="text-2xl text-blue-500" />,
+  php_laravel_api: <FaPlug className="text-2xl text-orange-400" />,
+  react_knowledge: <FaQuestionCircle className="text-2xl text-orange-400" />,
+  teamwork: <FaHandshake className="text-2xl text-blue-500" />,
+  time_management: <FaTasks className="text-2xl text-orange-400" />,
   communication: <FaComments className="text-2xl text-blue-500" />,
   problem_solving: <FaLightbulb className="text-2xl text-blue-500" />,
+  postgres: <FaDatabase className="text-2xl text-orange-400" />,
 };
 
 const Service = () => {
@@ -39,7 +35,6 @@ const Service = () => {
 
   const serviceItems = t("service.items", { returnObjects: true });
 
- 
   const serviceArray = Object.entries(serviceItems);
 
   const visibleServices = isExpanded ? serviceArray : serviceArray.slice(0, 6);

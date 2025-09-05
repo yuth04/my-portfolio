@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 const Hero  = () => {
   const { t } = useTranslation();
   return (
-    <section id='home'  className="pt-[88px] md:pt-[96px] w-full flex flex-col md:flex-row items-center justify-around min-h-screen bg-white dark:bg-gray-900 text-gray-500 dark:text-white transition-colors duration-300o overflow-x-hidden">
+    <section id='home'  className="px-12 py-20 w-full flex flex-col md:flex-row items-center justify-around min-h-screen bg-white dark:bg-gray-900 text-gray-500 dark:text-white transition-colors duration-300o overflow-x-hidden">
       <div  className='max-w-full'>
         <p data-aos="fade-right" className='text-3xl font-semibold'>{t("hero.des_name")}</p>
         <h2 data-aos="fade-right" className='typing py-3 mt-4 text-4xl md:text-5xl font-bold text-orange-500'>&nbsp;&nbsp;{t("hero.name")}</h2>
