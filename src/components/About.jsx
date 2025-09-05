@@ -13,6 +13,7 @@ const About = () => {
     { name: "PostgreSQL", rating: 3 },
     { name: "Laravel", rating: 3.5 },
     { name: "React", rating: 3.5 },
+    { name: "Express", rating: 3.5 },
   ];
   return (
     <section className="px-6 md:px-12 py-20 bg-gray-200 min-h-screen dark:bg-gray-800 text-black dark:text-white transition-colors duration-300 overflow-x-hidden">
@@ -56,7 +57,7 @@ const About = () => {
           </p>
 
           {/* SKills */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             {skills.map((skill, index) => (
               <div key={index}>
                 <p className="font-semibold text-gray-800 dark:text-white">
@@ -82,7 +83,7 @@ const About = () => {
 
           {/* CV */}
           <a
-            href="https://drive.google.com/file/d/1KJb2i96tKJYOwW0mCIIBLOX4ccZyeXcK/view?usp=sharing"
+            href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view?usp=drive_link"
             download
             target="_blank"
             className="inline-block px-5 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"

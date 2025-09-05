@@ -105,7 +105,12 @@
     "crud": {
       "name": "កម្មវិធី CRUD សិស្ស",
       "description": "កម្មវិធី React + Tailwind CRUD មួយដែលមិនមានការរក្សាទិន្នន័យ។"
-    }
+    },
+    "weather app": {
+  "name": "កម្មវិធីអាកាសធាតុ",
+  "description": "កម្មវិធីអាកាសធាតុ ដែលបង្កើតដោយ React + Tailwind + Weather API"
+}
+
   }
 },
 "contact": {

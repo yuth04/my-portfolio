@@ -2,7 +2,7 @@ import portfolio from '../assets/projects/portfolio.png';
 import phone from '../assets/projects/phone_store.png';
 import ten_11 from '../assets/projects/ten11.png';
 import crud from '../assets/projects/crud.png';
-
+import weather from '../assets/projects/weather.png'
 export const projects = [
   {
     key: "portfolio",
@@ -27,5 +27,12 @@ export const projects = [
     image: crud,
     github: "https://github.com/yuth04",
     demo: "http://react-crud-eta-eight.vercel.app/"
+  },
+  {
+    key:"weather app",
+    image:weather,
+    github: "https://github.com/yuth04",
+    demo:"https://weather-app-gamma-one-15.vercel.app/"
+
   }
 ];

@@ -52,7 +52,14 @@ const NavBar = ({ theme, toggleTheme }) => {
       handleClose();
     }
   };
-
+  useEffect(()=>{
+    if(activeSection){
+      const sectionTitle = activeSection.charAt(0).toUpperCase() + activeSection.slice(1);
+      document.title = `${sectionTitle} | My Portfolio`;
+    }else{
+       document.title = "My Portfolio";
+    }
+  }, [activeSection])
   return (
     <>
       <nav className=" flex justify-between items-center px-8 py-4 fixed top-0 right-0 left-0 w-full z-50 bg-gray-800 text-white shadow-md backdrop-blur-sm">
@@ -114,7 +121,7 @@ const NavBar = ({ theme, toggleTheme }) => {
             </li>
           </ul>
         )}
-        {/* btn */}
+        {/* toggle-btn desktop view */}
         <div className="hidden md:flex items-center space-x-4">
           <div className="flex items-center gap-2">
             <span className="text-white">🌐</span>
@@ -145,7 +152,7 @@ const NavBar = ({ theme, toggleTheme }) => {
             </button>
           )}
         </div>
-
+          {/* toggle-btn mobile view */}
         <div className="flex md:hidden items-center space-x-4">
           <SittingButton theme={theme} toggleTheme={toggleTheme}/>
           {isMobile && (

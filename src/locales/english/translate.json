@@ -104,6 +104,10 @@
       "crud": {
         "name": "Student CRUD",
         "description": "A simple React + Tailwind CRUD app without data persistence."
+      },
+      "weather app":{
+        "name":"weather app",
+        "description":"A weather app created with React + Tailwind + Weather api"
       }
     }
   },
