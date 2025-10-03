@@ -1,8 +1,8 @@
 import React from "react";
 import profile from "../assets/hero/hero.jpg";
-import { useTranslation } from 'react-i18next' 
+import { useTranslation } from "react-i18next";
 const About = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   const skills = [
     { name: "HTML, CSS", rating: 4 },
     { name: "Java", rating: 2 },
@@ -44,15 +44,14 @@ const About = () => {
 
         <div data-aos="zoom-in-up">
           <p className="text-gray- 700 dark:text-gray-300 mb-4">
-             {t("about.greeting")} {" "}
+            {t("about.greeting")}{" "}
             <span className="text-orange-400 font-semibold">
-               {t("about.name")}
+              {t("about.name")}
             </span>
             {t("about.des_1")}
           </p>
 
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-           
             {t("about.des_2")}
           </p>
 

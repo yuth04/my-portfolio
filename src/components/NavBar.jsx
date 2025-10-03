@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FiMoon, FiSun, FiMenu, FiX } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
-import SittingButton from './SittingButton'
+import SittingButton from "./SittingButton";
 const NavBar = ({ theme, toggleTheme }) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -52,14 +52,15 @@ const NavBar = ({ theme, toggleTheme }) => {
       handleClose();
     }
   };
-  useEffect(()=>{
-    if(activeSection){
-      const sectionTitle = activeSection.charAt(0).toUpperCase() + activeSection.slice(1);
+  useEffect(() => {
+    if (activeSection) {
+      const sectionTitle =
+        activeSection.charAt(0).toUpperCase() + activeSection.slice(1);
       document.title = `${sectionTitle} | My Portfolio`;
-    }else{
-       document.title = "My Portfolio";
+    } else {
+      document.title = "My Portfolio";
     }
-  }, [activeSection])
+  }, [activeSection]);
   return (
     <>
       <nav className=" flex justify-between items-center px-8 py-4 fixed top-0 right-0 left-0 w-full z-50 bg-gray-800 text-white shadow-md backdrop-blur-sm">
@@ -77,7 +78,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("home")}
             >
-              {t('nav.home')}
+              {t("nav.home")}
             </li>
             <li
               className={`cursor-pointer font-semibold ${
@@ -87,7 +88,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("about")}
             >
-              {t('nav.about')}
+              {t("nav.about")}
             </li>
             <li
               className={`font-semibold cursor-pointer ${
@@ -97,7 +98,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("service")}
             >
-              {t('nav.service')}
+              {t("nav.service")}
             </li>
             <li
               className={`cursor-pointer font-semibold ${
@@ -107,7 +108,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("project")}
             >
-              {t('nav.project') }
+              {t("nav.project")}
             </li>
             <li
               className={`font-semibold cursor-pointer ${
@@ -117,7 +118,7 @@ const NavBar = ({ theme, toggleTheme }) => {
               }`}
               onClick={() => handleScrollTo("contact")}
             >
-              {t('nav.contact')}
+              {t("nav.contact")}
             </li>
           </ul>
         )}
@@ -152,12 +153,16 @@ const NavBar = ({ theme, toggleTheme }) => {
             </button>
           )}
         </div>
-          {/* toggle-btn mobile view */}
+        {/* toggle-btn mobile view */}
         <div className="flex md:hidden items-center space-x-4">
-          <SittingButton theme={theme} toggleTheme={toggleTheme}/>
+          <SittingButton theme={theme} toggleTheme={toggleTheme} />
           {isMobile && (
-            <button aria-label="Open Menu" onClick={handleToggle}  className="hover:text-orange-500 focus:outline-none">
-              <FiMenu size={28}/>
+            <button
+              aria-label="Open Menu"
+              onClick={handleToggle}
+              className="hover:text-orange-500 focus:outline-none"
+            >
+              <FiMenu size={28} />
             </button>
           )}
         </div>

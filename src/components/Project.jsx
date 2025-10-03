@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
-import { projects } from "./data";
+import { projects}  from "./data";
 import { useTranslation } from "react-i18next";
 
 const Project = () => {

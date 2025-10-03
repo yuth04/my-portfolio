@@ -11,7 +11,7 @@ const Hero  = () => {
         <p data-aos="fade-right" className='text-3xl font-semibold'>{t("hero.des_name")}</p>
         <h2 data-aos="fade-right" className='typing py-3 mt-4 text-4xl md:text-5xl font-bold text-orange-500'>&nbsp;&nbsp;{t("hero.name")}</h2>
         <p data-aos="fade-left" className='text-lg mt-4 text-gray-400  font-semibold'>{t("hero.carrer")}</p>
-        <a data-aos="fade-left" href='/about' className='inline-block mt-6 px-6 py-3 rounded-full text-white font-semibold bg-orange-500'>{t("hero.btn_know")}</a>
+        <a data-aos="fade-left" href='#about' className='inline-block mt-6 px-6 py-3 rounded-full text-white font-semibold bg-orange-500'>{t("hero.btn_know")}</a>
         
         <div data-aos="zoom-in-up" className="mt-6 flex space-x-6 text-2xl">
           <a  href="https://www.facebook.com/share/16nUbygATd/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-700 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors">

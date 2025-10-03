@@ -100,6 +100,10 @@
       "weather app": {
         "name": "weather app",
         "description": "A weather app created with React + Tailwind + Weather api"
+      },
+      "Dashboard": {
+        "name": "Dashboard system",
+        "description": "A central user interface that presents key performance indicators (KPIs) and critical information at a glance, allowing users to monitor the status and performance of the system."
       }
     }
   },

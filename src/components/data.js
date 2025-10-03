@@ -3,12 +3,14 @@ import phone from '../assets/projects/phone_store.png';
 import ten_11 from '../assets/projects/ten11.png';
 import crud from '../assets/projects/crud.png';
 import weather from '../assets/projects/weather.png'
+import dashboard from '../assets/projects/dashboard.png'
 export const projects = [
+  
   {
-    key: "portfolio",
-    image: portfolio,
+    key: "Dashboard",
+    image: dashboard,
     github: "https://github.com/yuth04",
-    demo: "https://portfolio-phi-ten-qfj8ctdnfn.vercel.app"
+    demo: "https://dashboard-app-three-olive.vercel.app/"
   },
   {
     key: "ecommerce",
@@ -29,10 +31,16 @@ export const projects = [
     demo: "http://react-crud-eta-eight.vercel.app/"
   },
   {
-    key:"weather app",
-    image:weather,
+    key: "weather app",
+    image: weather,
     github: "https://github.com/yuth04",
-    demo:"https://weather-app-gamma-one-15.vercel.app/"
+    demo: "https://weather-app-gamma-one-15.vercel.app/"
 
-  }
+  },{
+    key: "portfolio",
+    image: portfolio,
+    github: "https://github.com/yuth04",
+    demo: "https://portfolio-phi-ten-qfj8ctdnfn.vercel.app"
+  },
 ];
+
