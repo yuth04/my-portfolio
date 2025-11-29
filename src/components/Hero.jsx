@@ -10,7 +10,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="px-12 py-20 w-full flex flex-col md:flex-row items-center justify-around min-h-screen   text-gray-500  transition-colors duration-300o overflow-x-hidden"
+        className="px-12 w-full flex flex-col md:flex-row items-center justify-around min-h-screen text-gray-500   duration-300 overflow-x-hidden overflow-y-hidden"
       >
         {/* hero background */}
         <div className="wrapper">
