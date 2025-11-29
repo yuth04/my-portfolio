@@ -34,8 +34,8 @@ h4 {
 }
 .pulse-wrapper {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 310px;
+  height: 310px;
   animation: breathe 4s ease-in-out infinite;
 }
 .pulse-wrapper img {

@@ -85,7 +85,7 @@ const About = () => {
             href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view?usp=drive_link"
             download
             target="_blank"
-            className="inline-block px-5 py-3 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
+            className="inline-block px-5 py-3 bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800 text-white rounded-full hover:bg-orange-600 transition"
           >
             {t("about.cv")}
           </a>

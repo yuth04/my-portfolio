@@ -63,8 +63,8 @@ const NavBar = ({ theme, toggleTheme }) => {
   }, [activeSection]);
   return (
     <>
-      <nav className=" flex justify-between items-center px-8 py-4 fixed top-0 right-0 left-0 w-full z-50 bg-gray-800 text-white shadow-md backdrop-blur-sm">
-        <a href="" className="text-orange-500 font-semibold text-3xl">
+      <nav className="bg-slate-800 flex justify-between items-center px-8 py-4 fixed top-0 right-0 left-0 w-full z-50 text-white backdrop-blur-sm">
+        <a href="" className="text-orange-600 font-semibold text-3xl">
           YuTh.
         </a>
         {/* Desktop view */}
@@ -125,9 +125,9 @@ const NavBar = ({ theme, toggleTheme }) => {
         {/* toggle-btn desktop view */}
         <div className="hidden md:flex items-center space-x-4">
           <div className="flex items-center gap-2">
-            <span className="text-white">🌐</span>
+            {/* <span className="text-white">🌐</span> */}
             <select
-              className="px-3 py-1.5 rounded-md bg-gray-700 text-white border border-gray-500 hover:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+              className="cursor-pointer px-3 py-1.5 rounded-md bg-gray-700 text-y border border-gray-500 hover:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
               onChange={(e) => i18n.changeLanguage(e.target.value)}
               value={i18n.language}
             >
@@ -138,7 +138,7 @@ const NavBar = ({ theme, toggleTheme }) => {
 
           <button
             onClick={toggleTheme}
-            className="text-yellow-400 focus:outline-none"
+            className="text-white focus:outline-none"
             aria-label="Toggle Theme"
           >
             {theme === "dark" ? <FiMoon size={24} /> : <FiSun size={24} />}
@@ -146,7 +146,7 @@ const NavBar = ({ theme, toggleTheme }) => {
           {isMobile && !isOpen && (
             <button
               onClick={handleToggle}
-              className="text-orange-500 focus:outline-none"
+              className=" focus:outline-none"
               aria-label="Toggle Menu"
             >
               <FiMenu size={28} />
@@ -160,7 +160,7 @@ const NavBar = ({ theme, toggleTheme }) => {
             <button
               aria-label="Open Menu"
               onClick={handleToggle}
-              className="hover:text-orange-500 focus:outline-none"
+              className="hover:text-orange-500 text-white focus:outline-none"
             >
               <FiMenu size={28} />
             </button>

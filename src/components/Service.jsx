@@ -86,7 +86,7 @@ const Service = () => {
         <button
           data-aos="zoom-out"
           onClick={() => setIsExpanded((prev) => !prev)}
-          className="group flex items-center gap-2 px-8 py-3 text-black bg-white shadow-lg rounded-md font-semibold hover:bg-gray-100 transition-colors duration-300"
+          className="group flex items-center gap-2 px-8 py-3 font-semibold text-gray-700 dark:text-white transition-colors duration-300"
         >
           {isExpanded ? t("service.see_less") : t("service.show_more")}
           <FaArrowRight
