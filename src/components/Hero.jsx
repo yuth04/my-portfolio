@@ -14,14 +14,27 @@ const Hero = () => {
       {/* keep your background exactly as is */}
       <div className="wrapper">
         <div className="box">
-          <div></div><div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div><div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
 
       {/* text content */}
-      <div className="max-w-full text-center md:text-left">
-        <p data-aos="fade-right" className="text-2xl sm:text-3xl text-slate-300 font-semibold">
+      <div className="max-w-full  md:text-left">
+        <p
+          data-aos="fade-right"
+          className="text-2xl sm:text-3xl text-slate-300 font-semibold"
+        >
           {t("hero.des_name")}
         </p>
         <h2
@@ -45,7 +58,10 @@ const Hero = () => {
         </a>
 
         {/* social media links */}
-        <div data-aos="zoom-in-up" className="mt-6 flex justify-center md:justify-start space-x-6 text-2xl">
+        <div
+          data-aos="zoom-in-up"
+          className="mt-6 flex justify-center md:justify-start space-x-6 text-2xl"
+        >
           <a
             href="https://www.facebook.com/share/16nUbygATd/?mibextid=wwXIfr"
             target="_blank"
@@ -79,7 +95,7 @@ const Hero = () => {
       {/* profile image */}
       <div
         data-aos="zoom-out"
-        className="pulse-wrapper w-[180px] sm:w-[210px] md:w-[310px] h-[180px] sm:h-[210px] md:h-[310px] mt-10 md:mt-0"
+        className="pulse-wrapper w-[250px] sm:w-[230px] md:w-[310px] h-[250px] sm:h-[230px] md:h-[310px] mt-10 md:mt-0"
       >
         <div className="border-ring"></div>
         <img
