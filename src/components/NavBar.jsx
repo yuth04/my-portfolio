@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { FiMoon, FiSun, FiMenu, FiX } from "react-icons/fi";
+import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
+import ToggleDarkmode from "./ToggleDarkmode";
 import SittingButton from "./SittingButton";
-const NavBar = ({ theme, toggleTheme }) => {
+
+const Navbar = () => {
   const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const handleClose = () => setIsOpen(false);
-  const handleToggle = () => setIsOpen(!isOpen);
-  useEffect(() => {
-    document.body.style.overflow = isOpen && isMobile ? "hidden" : "auto";
-  }, [isOpen, isMobile]);
+  const [activeSection, setActiveSection] = useState("home");
+  const [isHero, setIsHero] = useState(true);
+
+  const sections = ["home", "about", "service", "project", "contact"];
+
+  // Detect screen size
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
@@ -22,12 +26,33 @@ const NavBar = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const [activeSection, setActiveSection] = useState("home");
-  const sections = ["home", "about", "service", "project", "contact"];
+  // Prevent scroll when menu open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
+
+  // Detect if inside Hero section
+  useEffect(() => {
+    const handleHeroCheck = () => {
+      const hero = document.getElementById("home");
+      if (!hero) return;
+
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      const scrollPos = window.scrollY + 80;
+      setIsHero(scrollPos < heroBottom);
+    };
+
+    window.addEventListener("scroll", handleHeroCheck);
+    handleHeroCheck();
+
+    return () => window.removeEventListener("scroll", handleHeroCheck);
+  }, []);
+
+  // Detect active section
   useEffect(() => {
     const onScroll = () => {
       const scrollY = window.scrollY;
-      const offset = 100;
+      const offset = 120;
 
       sections.forEach((id) => {
         const el = document.getElementById(id);
@@ -44,200 +69,113 @@ const NavBar = ({ theme, toggleTheme }) => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const handleScrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(id);
-      handleClose();
-    }
-  };
+
+  // Change document title
   useEffect(() => {
-    if (activeSection) {
-      const sectionTitle =
-        activeSection.charAt(0).toUpperCase() + activeSection.slice(1);
-      document.title = `${sectionTitle} | My Portfolio`;
-    } else {
-      document.title = "My Portfolio";
-    }
+    document.title = activeSection
+      ? `${activeSection[0].toUpperCase() + activeSection.slice(1)} | My Portfolio`
+      : "My Portfolio";
   }, [activeSection]);
+
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setActiveSection(id);
+    setIsOpen(false);
+  };
+
   return (
     <>
-      <nav className="bg-slate-800 flex justify-between items-center px-8 py-4 fixed top-0 right-0 left-0 w-full z-50 text-white backdrop-blur-sm">
-        <a href="" className="text-orange-600 font-semibold text-3xl">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 px-8 py-4 flex justify-between items-center
+          transition-all duration-300 backdrop-blur-md
+          ${isHero ? "bg-transparent text-white" : "bg-transparent text-slate-900 dark:text-white"}
+        `}
+      >
+        {/* Logo */}
+        <a
+          href="/"
+          className={`text-3xl font-bold transition-colors ${
+            isHero ? "text-orange-400" : "text-orange-600"
+          }`}
+        >
           YuTh.
         </a>
-        {/* Desktop view */}
+
+        {/* Desktop Menu */}
         {!isMobile && (
-          <ul className="flex space-x-5 text-lg">
-            <li
-              className={`cursor-pointer font-semibold ${
-                activeSection === "home"
-                  ? "text-orange-400"
-                  : "hover:text-orange-400"
-              }`}
-              onClick={() => handleScrollTo("home")}
-            >
-              {t("nav.home")}
-            </li>
-            <li
-              className={`cursor-pointer font-semibold ${
-                activeSection === "about"
-                  ? "text-orange-400"
-                  : "hover:text-orange-500"
-              }`}
-              onClick={() => handleScrollTo("about")}
-            >
-              {t("nav.about")}
-            </li>
-            <li
-              className={`font-semibold cursor-pointer ${
-                activeSection === "service"
-                  ? "text-orange-400"
-                  : "hover:text-orange-500"
-              }`}
-              onClick={() => handleScrollTo("service")}
-            >
-              {t("nav.service")}
-            </li>
-            <li
-              className={`cursor-pointer font-semibold ${
-                activeSection === "project"
-                  ? "text-orange-400"
-                  : "hover:text-orange-500"
-              }`}
-              onClick={() => handleScrollTo("project")}
-            >
-              {t("nav.project")}
-            </li>
-            <li
-              className={`font-semibold cursor-pointer ${
-                activeSection === "contact"
-                  ? "text-orange-400"
-                  : "hover:text-orange-500"
-              }`}
-              onClick={() => handleScrollTo("contact")}
-            >
-              {t("nav.contact")}
-            </li>
+          <ul className="flex space-x-6 text-lg">
+            {sections.map((item) => (
+              <li
+                key={item}
+                onClick={() => scrollTo(item)}
+                className={`cursor-pointer font-semibold transition-colors duration-300 ${
+                  activeSection === item
+                    ? "text-orange-500"
+                    : isHero
+                    ? "text-white hover:text-orange-400"
+                    : "text-slate-800 dark:text-gray-200 hover:text-orange-500"
+                }`}
+              >
+                {t(`nav.${item}`)}
+              </li>
+            ))}
           </ul>
         )}
-        {/* toggle-btn desktop view */}
-        <div className="hidden md:flex items-center space-x-4">
-          <div className="flex items-center gap-2">
-            {/* <span className="text-white">🌐</span> */}
-            <select
-              className="cursor-pointer px-3 py-1.5 rounded-md bg-gray-700 text-y border border-gray-500 hover:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
-              onChange={(e) => i18n.changeLanguage(e.target.value)}
-              value={i18n.language}
-            >
-              <option value="en">English</option>
-              <option value="kh">ខ្មែរ</option>
-            </select>
-          </div>
 
-          <button
-            onClick={toggleTheme}
-            className="text-white focus:outline-none"
-            aria-label="Toggle Theme"
+        {/* Desktop Right Controls */}
+        <div className="hidden md:flex items-center gap-4">
+          <select
+            className="cursor-pointer px-2 py-1 rounded-md bg-gray-200 dark:bg-gray-700"
+            value={i18n.language}
+            onChange={(e) => i18n.changeLanguage(e.target.value)}
           >
-            {theme === "dark" ? <FiMoon size={24} /> : <FiSun size={24} />}
-          </button>
-          {isMobile && !isOpen && (
-            <button
-              onClick={handleToggle}
-              className=" focus:outline-none"
-              aria-label="Toggle Menu"
-            >
-              <FiMenu size={28} />
-            </button>
-          )}
+            <option value="en">English</option>
+            <option value="kh">ខ្មែរ</option>
+          </select>
+
+          <ToggleDarkmode />
         </div>
-        {/* toggle-btn mobile view */}
-        <div className="flex md:hidden items-center space-x-4">
-          <SittingButton theme={theme} toggleTheme={toggleTheme} />
-          {isMobile && (
-            <button
-              aria-label="Open Menu"
-              onClick={handleToggle}
-              className="hover:text-orange-500 text-white focus:outline-none"
-            >
-              <FiMenu size={28} />
-            </button>
-          )}
+
+        {/* Mobile control */}
+        <div className={`md:hidden  flex items-center gap-3 ${isHero ? "text-white" : "text-orange-600"}`}>
+          {/* <SittingButton /> */}
+          <ToggleDarkmode />
+          <button onClick={() => setIsOpen(true)}>
+            <Menu size={28} />
+          </button>
         </div>
       </nav>
 
-      {/* mobile view */}
+      {/* Mobile Menu */}
       {isMobile && (
         <div
-          className={`fixed top-0 left-0 w-full h-full bg-gray-800 dark:bg-gray-900 bg-opacity-95  transform transition-transform duration-500 z-50 ${
-            isOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+          className={`fixed inset-0 bg-gray-900 text-white z-50 transition-transform duration-300
+            ${isOpen ? "translate-x-0" : "-translate-x-full"}
+          `}
         >
-          <div className=" absolute top-4 left-7 flex justify-between w-[90%] items-center ">
-            <a href="" className="text-orange-400 text-3xl font-semibold">
+          <div className="flex justify-between items-center px-6 py-4">
+            <a href="/" className="text-orange-500 text-3xl font-bold">
               YuTh.
             </a>
-            <button
-              onClick={handleClose}
-              className="hover:text-orange-500 text-white"
-              aria-label="Close Menu"
-            >
-              <FiX size={28} />
+            <button onClick={() => setIsOpen(false)}>
+              <X size={28} />
             </button>
           </div>
-          <ul className="flex flex-col items-center text-xl text-white mt-24 space-y-6">
-            <li
-              className={`cursor-pointer font-semibold ${
-                activeSection === "home"
-                  ? "text-orange-400"
-                  : "hover:text-orange-400"
-              }`}
-              onClick={() => handleScrollTo("home")}
-            >
-              {t("nav.home")}
-            </li>
-            <li
-              className={`cursor-pointer font-semibold ${
-                activeSection === "about"
-                  ? "text-orange-400"
-                  : "hover:text-orange-500"
-              }`}
-              onClick={() => handleScrollTo("about")}
-            >
-              {t("nav.about")}
-            </li>
-            <li
-              className={`font-semibold cursor-pointer ${
-                activeSection === "service"
-                  ? "text-orange-400"
-                  : "hover:text-orange-500"
-              }`}
-              onClick={() => handleScrollTo("service")}
-            >
-              {t("nav.service")}
-            </li>
-            <li
-              className={`cursor-pointer font-semibold ${
-                activeSection === "project"
-                  ? "text-orange-400"
-                  : "hover:text-orange-500"
-              }`}
-              onClick={() => handleScrollTo("project")}
-            >
-              {t("nav.project")}
-            </li>
-            <li
-              className={`font-semibold cursor-pointer ${
-                activeSection === "contact"
-                  ? "text-orange-400"
-                  : "hover:text-orange-500"
-              }`}
-              onClick={() => handleScrollTo("contact")}
-            >
-              {t("nav.contact")}
-            </li>
+
+          <ul className="flex flex-col items-center space-y-6 mt-20 text-xl">
+            {sections.map((item) => (
+              <li
+                key={item}
+                onClick={() => scrollTo(item)}
+                className={`cursor-pointer font-semibold transition-colors ${
+                  activeSection === item
+                    ? "text-orange-400"
+                    : "hover:text-orange-300"
+                }`}
+              >
+                {t(`nav.${item}`)}
+              </li>
+            ))}
           </ul>
         </div>
       )}
@@ -245,4 +183,4 @@ const NavBar = ({ theme, toggleTheme }) => {
   );
 };
 
-export default NavBar;
+export default Navbar;

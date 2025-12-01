@@ -81,14 +81,32 @@ const About = () => {
           </div>
 
           {/* CV */}
-          <a
+          {/* <a
             href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view?usp=drive_link"
             download
             target="_blank"
             className="inline-block px-5 py-3 bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800 text-white rounded-full hover:bg-orange-600 transition"
           >
             {t("about.cv")}
-          </a>
+          </a> */}
+
+          <button data-aos="zoom-in-up" class="cursor-pointer flex justify-between bg-gradient-to-r bg-slate-900 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
+            Resume
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5 animate-bounce"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+              ></path>
+            </svg>
+          </button>
         </div>
       </div>
     </section>

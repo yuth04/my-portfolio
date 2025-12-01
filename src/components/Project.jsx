@@ -14,7 +14,7 @@ const Project = () => {
   return (
     <section
       id="project"
-      className="bg-gray-100 dark:bg-gray-900 min-h-screen px-12 py-20 transition-colors duration-300"
+      className="bg-gray-100 dark:bg-gray-800 min-h-screen px-12 py-20 transition-colors duration-300"
     >
       {/* Section Title */}
       <div className="flex items-center justify-center mb-2">
@@ -45,25 +45,35 @@ const Project = () => {
 
             {/* Content */}
             <div className="p-5 bg-white dark:bg-gray-800 rounded-b-2xl">
-              <h4 className="text-lg font-bold text-gray-900 dark:text-white">
-                {project.key}
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                {t(`project.items.${project.key}.description`)}
-              </p>
+              <div className="flex justify-between">
+                <h4 className="text-2xl font-bold text-emerald-600 dark:text-white">
+                  {project.key}
+                </h4>
 
+                <div className="flex items-center space-x-2 bg-emerald-50 dark:bg-emerald-900/20 px-3 py-1 rounded-full mt-1">
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                  <span className="text-sm text-emerald-600 dark:text-emerald-400 font-medium">
+                    Completed
+                  </span>
+                </div>
+              </div>
+              <p className=" w-[100%] overflow-hidden whitespace-nowrap text-gray-600 dark:text-gray-300 text-sm mt-2">
+               <span className="marquee"> {t(`project.items.${project.key}.description`)}</span>
+              </p>
               {/* Tech Icons */}
-              <div className="flex gap-3 mt-3 text-xl">
-                {project.tech.map((t, i) => {
-                  const Icon = t.icon;
-                  return (
-                    <Icon
-                      key={i}
-                      className="hover:scale-125 transition-transform duration-300"
-                      title={t.name}
-                    />
-                  );
-                })}
+              <div className="flex justify-between gap-3 mt-3 text-xl">
+                <div className="flex gap-5">
+                  {project.tech.map((t, i) => {
+                    const Icon = t.icon;
+                    return (
+                      <Icon
+                        key={i}
+                        className="hover:scale-125 transition-transform duration-300"
+                        title={t.name}
+                      />
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Buttons */}

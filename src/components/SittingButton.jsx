@@ -43,23 +43,7 @@ const SettingsDropdown = ({ theme, toggleTheme }) => {
             <FiGlobe className="mr-2" />
             Language: {i18n.language === "en" ? "English" : "ខ្មែរ"}
           </button>
-
-          <button
-            onClick={toggleTheme}
-            className="flex items-center w-full px-3 py-2 hover:bg-gray-600 rounded-md text-sm mt-1"
-          >
-            {theme === "dark" ? (
-              <>
-                <FiMoon className="mr-2" />
-                Dark Mode
-              </>
-            ) : (
-              <>
-                <FiSun className="mr-2" />
-                Light Mode
-              </>
-            )}
-          </button>
+          <ToggleDarkmode />
         </div>
       )}
     </div>

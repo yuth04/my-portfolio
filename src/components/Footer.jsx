@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import FooterIcons from './FooterIcons'
 import {
   FaGithub,
   FaLinkedin,
@@ -55,7 +56,7 @@ const Footer = () => {
           >
             {t("footer.social")}
           </h3>
-          <div className="flex justify-center md:justify-end gap-5">
+          {/* <div className="flex justify-center md:justify-end gap-5">
             <a
               data-aos="zoom-in-up"
               href="https://github.com/yuth04"
@@ -84,11 +85,14 @@ const Footer = () => {
             >
               <FaEnvelope size={24} />
             </a>
-          </div>
+          </div> */}
+           <FooterIcons />
         </div>
+       
       </div>
 
       {/* Bottom */}
+      
       <div className="relative mt-10 text-center text-xs text-gray-500 max-w-7xl mx-auto px-6">
         <p>&copy; {new Date().getFullYear()} Phearak YuTh. {t("footer.copyright")}</p>
 
