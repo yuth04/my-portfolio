@@ -84,3 +84,18 @@ h4 {
     border-color: transparent;
   }
 }
+.pulse-wrapper {
+  animation: Moving 6s ease-in-out infinite;
+}
+
+@keyframes Moving {
+  0% 
+  { transform: rotate(0) translateY(0);
+ }
+  50% {
+     transform: rotate(0) translateY(-15px); 
+    }
+  100% {
+     transform: rotate(0) translateY(0); 
+    }
+}

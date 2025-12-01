@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="px-4 sm:px-8 md:px-12 py-20 w-full flex flex-col md:flex-row items-center justify-center gap-10 min-h-screen text-gray-500 duration-300 overflow-x-hidden"
+      className="px-4 md:px-12 py-20 w-full flex md:flex-row flex-col items-center justify-center md:gap-[250px] min-h-screen text-gray-500 duration-300 overflow-hidden relative"
     >
       {/* keep your background exactly as is */}
       <div className="wrapper">
@@ -67,7 +67,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="text-white hover:text-orange-600 dark:hover:text-blue-500 transition duration-300 hover:-translate-y-1"
+            className="text-white hover:text-orange-600  transition duration-300 hover:-translate-y-1"
           >
             <FaFacebookF />
           </a>
@@ -95,8 +95,7 @@ const Hero = () => {
       {/* profile image */}
       <div
         data-aos="zoom-out"
-        className="pulse-wrapper w-[250px] sm:w-[230px] md:w-[310px] h-[250px] sm:h-[230px] md:h-[310px] mt-10 md:mt-0"
-      >
+        className="pulse-wrapper w-[250px]  md:w-[310px] h-[250px]  md:h-[310px] mt-10 md:mt-0 ">
         <div className="border-ring"></div>
         <img
           className="rounded-full w-full h-full object-cover"
