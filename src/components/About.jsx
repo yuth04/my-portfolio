@@ -89,8 +89,12 @@ const About = () => {
           >
             {t("about.cv")}
           </a> */}
-
-          <button data-aos="zoom-in-up" class="cursor-pointer flex justify-between bg-gradient-to-r bg-slate-900 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
+          <a
+            target="_blank"
+            href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view?usp=drive_link"
+            data-aos="zoom-in-up"
+            class="cursor-pointer flex justify-between bg-gradient-to-r bg-slate-900 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]"
+          >
             Resume
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +110,7 @@ const About = () => {
                 d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
               ></path>
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     </section>

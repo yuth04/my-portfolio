@@ -25,19 +25,20 @@ const SwitchLang = () => {
           alt={currentLang}
           className="w-5 h-5"
         />
-        <span className="text-sm flex gap-2 font-medium">Lang    <ArrowDown  size={15}/></span>
+        <span className="text-sm flex gap-2 font-medium">Lang    <ArrowDown className={`transition-transform duration-300  ${isOpen ? "rotate-180" : "rotate-0"}`}  size={15}/></span>
       </button>
 
       {isOpen && (
-        <ul className="absolute mt-2 w-[110px]  border border-gray-300 rounded-md shadow-lg z-10">
+        <ul className="absolute mt-2 w-[110px] text-slate-800 bg-white border border-gray-300 rounded-md shadow-lg z-10">
           {languages.map((lang) => (
             <li
               key={lang.code}
               onClick={() => {
                 i18n.changeLanguage(lang.code);
+
                 setIsOpen(false);
               }}
-              className="flex items-center justify-between px-3 py-2 cursor-pointer hover:bg-gray-700"
+              className="flex items-center justify-between px-3 py-2 cursor-pointer hover:text-white hover:bg-gray-400"
             >
               <div className="flex items-center gap-2">
                 <img src={lang.flag} alt={lang.label} className="w-4 h-4" />

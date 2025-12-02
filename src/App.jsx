@@ -22,7 +22,7 @@ const App = () => {
     AOS.init({duration:800, once:true})
   },[])
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+    <div className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}>
       <NavBar theme={theme} toggleTheme={toggleTheme} />
       <Home />
     </div>

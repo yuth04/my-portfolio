@@ -142,7 +142,7 @@ const Navbar = () => {
           {/* <SittingButton /> */}
           <ToggleDarkmode />
           <button onClick={() => setIsOpen(true)}>
-            <Menu size={28} />
+           {isOpen ?  <Menu className="hidden"  /> : <Menu size={28} />}
           </button>
         </div>
       </nav>
@@ -150,13 +150,13 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobile && (
         <div
-          className={`fixed inset-0 bg-gray-900 text-white z-50 transition-transform duration-300
+          className={`fixed top-0 left-0 w-[75%] inset-0 bg-[#F8FAFC] text-slate-700 dark:bg-slate-900 dark:text-white z-50 transition-transform duration-500
             ${isOpen ? "translate-x-0" : "-translate-x-full"}
           `}
         >
           <div className="flex justify-between items-center px-6 py-4">
             <a href="/" className="text-orange-500 text-3xl font-bold">
-              YuTh.
+              Menu.
             </a>
             <button onClick={() => setIsOpen(false)}>
               <X size={28} />
@@ -168,10 +168,10 @@ const Navbar = () => {
               <li
                 key={item}
                 onClick={() => scrollTo(item)}
-                className={`cursor-pointer font-semibold transition-colors transf ${
+                className={`cursor-pointer  font-semibold transition-colors transf ${
                   activeSection === item
-                    ? "text-orange-400"
-                    : "hover:text-orange-300"
+                    ? "text-white px-6 py-2 rounded-lg  bg-gradient-to-r from-orange-500 to-orange-700"
+                    : ""
                 }
                 `}
               >
