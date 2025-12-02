@@ -3,8 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import ToggleDarkmode from "./ToggleDarkmode";
-import SittingButton from "./SittingButton";
-
+import SwitchLang from "./SwitchLang";
 const Navbar = () => {
   const { t } = useTranslation();
 
@@ -73,7 +72,9 @@ const Navbar = () => {
   // Change document title
   useEffect(() => {
     document.title = activeSection
-      ? `${activeSection[0].toUpperCase() + activeSection.slice(1)} | My Portfolio`
+      ? `${
+          activeSection[0].toUpperCase() + activeSection.slice(1)
+        } | My Portfolio`
       : "My Portfolio";
   }, [activeSection]);
 
@@ -88,7 +89,11 @@ const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 px-8 py-4 flex justify-between items-center
           transition-all duration-300 backdrop-blur-md
-          ${isHero ? "bg-transparent text-white" : "bg-transparent text-slate-900 dark:text-white"}
+          ${
+            isHero
+              ? "bg-transparent text-white"
+              : "bg-transparent text-slate-900 dark:text-white"
+          }
         `}
       >
         {/* Logo */}
@@ -124,20 +129,16 @@ const Navbar = () => {
 
         {/* Desktop Right Controls */}
         <div className="hidden md:flex items-center gap-4">
-          <select
-            className="cursor-pointer px-2 py-1 rounded-md bg-gray-200 dark:bg-gray-700"
-            value={i18n.language}
-            onChange={(e) => i18n.changeLanguage(e.target.value)}
-          >
-            <option value="en">English</option>
-            <option value="kh">ខ្មែរ</option>
-          </select>
-
+          <SwitchLang />
           <ToggleDarkmode />
         </div>
 
         {/* Mobile control */}
-        <div className={`md:hidden  flex items-center gap-3 ${isHero ? "text-white" : "text-orange-600"}`}>
+        <div
+          className={`md:hidden  flex items-center gap-3 ${
+            isHero ? "text-white" : "text-orange-600"
+          }`}
+        >
           {/* <SittingButton /> */}
           <ToggleDarkmode />
           <button onClick={() => setIsOpen(true)}>
@@ -162,20 +163,26 @@ const Navbar = () => {
             </button>
           </div>
 
-          <ul className="flex flex-col items-center space-y-6 mt-20 text-xl">
+          <ul className="flex flex-col items-center space-y-6 mt-10 text-xl">
             {sections.map((item) => (
               <li
                 key={item}
                 onClick={() => scrollTo(item)}
-                className={`cursor-pointer font-semibold transition-colors ${
+                className={`cursor-pointer font-semibold transition-colors transf ${
                   activeSection === item
                     ? "text-orange-400"
                     : "hover:text-orange-300"
-                }`}
+                }
+                `}
               >
                 {t(`nav.${item}`)}
               </li>
             ))}
+          </ul>
+          <ul className="flex flex-col items-center space-y-6 mt-8">
+            <li>
+              <SwitchLang />
+            </li>
           </ul>
         </div>
       )}

@@ -16,7 +16,7 @@ const About = () => {
     { name: "Express", rating: 3.5 },
   ];
   return (
-    <section className="px-6 md:px-12 py-20 bg-gray-200 min-h-screen dark:bg-gray-800 text-black dark:text-white transition-colors duration-300 overflow-x-hidden">
+    <section className="px-6 md:px-12 py-20 bg-gray-200 min-h-screen dark:bg-gray-800 text-black dark:text-white transition-colors duration-300 overflow-hidden">
       <div
         data-aos="zoom-in-up"
         className="flex items-center justify-center mb-2"

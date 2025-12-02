@@ -30,13 +30,13 @@ const Hero = () => {
       </div>
 
       {/* text content */}
-      <div className="max-w-full  md:text-left">
-        <p
-          data-aos="fade-right"
-          className="text-2xl sm:text-3xl text-slate-300 font-semibold"
-        >
-          {t("hero.des_name")}
-        </p>
+      <div className="max-w-full  md:text-left">       
+          <p
+            data-aos="fade-right"
+            className="text-2xl text-shine sm:text-3xl text-slate-300 font-semibold"
+          >
+            {t("hero.des_name")}
+          </p>
         <h2
           data-aos="fade-right"
           className="typing py-3 mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-orange-500"
@@ -58,7 +58,7 @@ const Hero = () => {
         </a>
 
         {/* social media links */}
-        
+
         <div
           data-aos="zoom-in-up"
           className="mt-6 flex justify-center md:justify-start space-x-6 text-2xl"
@@ -71,7 +71,6 @@ const Hero = () => {
             className="text-white hover:text-orange-600  transition duration-300 hover:-translate-y-1"
           >
             <FaFacebookF />
-            
           </a>
           <a
             href="https://t.me/console_log01"
@@ -92,24 +91,6 @@ const Hero = () => {
             <FaInstagram />
           </a>
         </div>
-      
-{/* <div class="flex justify-center items-center">
-  <button
-    href="/"
-    class="group flex justify-center p-2 rounded-md drop-shadow-xl shadow-md text-white font-semibold hover:translate-y-3 transition-all duration-500 "
-  >
-   <FaFacebookF />
-    <span
-      class="absolute opacity-0 group-hover:opacity-100 group-hover:text-gray-700 group-hover:text-sm group-hover:-translate-y-10 duration-700"
-    >
-      Facebook
-    </span>
-  </button>
-</div> */}
-
-       
-
-
       </div>
 
       {/* profile image */}
@@ -118,7 +99,7 @@ const Hero = () => {
         className="pulse-wrapper w-[250px]  md:w-[310px] h-[250px]  md:h-[310px] mt-10 md:mt-0 "
       >
         <div className="border-ring"></div>
-        <img 
+        <img
           className="rounded-full w-full h-full object-cover"
           src={logo}
           alt="Yuth"
