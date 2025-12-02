@@ -25,7 +25,7 @@ const Project = () => {
         <div className="w-16 h-px bg-orange-400 ml-3"></div>
       </div>
 
-      <h2 className="text-3xl font-bold mb-10 text-center text-black dark:text-white">
+      <h2 className="text-3xl  font-bold mb-10 text-center text-slate-700 dark:text-white dark:text-white">
         {t("project.frontend_title")}
       </h2>
 
@@ -46,7 +46,7 @@ const Project = () => {
             {/* Content */}
             <div className="p-5 bg-white dark:bg-gray-800 rounded-b-2xl">
               <div className="flex justify-between">
-                <h4 className="text-2xl font-bold text-emerald-600 dark:text-white">
+                <h4 className="text-ll uppercase font-bold text-emerald-600 dark:text-white">
                   {project.key}
                 </h4>
 

@@ -1,33 +1,33 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
-  FaLaptopCode,
-  FaCode,
-  FaServer,
-  FaLaptop,
-  FaPlug,
-  FaQuestionCircle,
-  FaHandshake,
-  FaTasks,
-  FaComments,
-  FaLightbulb,
-  FaArrowRight,
-  FaDatabase,
-} from "react-icons/fa";
-
+  Code,
+  Monitor,
+  Server,
+  Laptop,
+  Plug,
+  HelpCircle,
+  Users,
+  ListChecks,
+  MessageCircle,
+  Lightbulb,
+  ArrowRight,
+  Database,
+} from "lucide-react";
 const items = {
-  frontend_development: <FaLaptopCode className="text-2xl text-orange-400" />,
-  responsive_design: <FaCode className="text-2xl text-orange-400" />,
-  mysql_knowledge: <FaServer className="text-2xl text-orange-400" />,
-  version_control: <FaLaptop className="text-2xl text-orange-400" />,
-  php_laravel_api: <FaPlug className="text-2xl text-orange-400" />,
-  react_knowledge: <FaQuestionCircle className="text-2xl text-orange-400" />,
-  teamwork: <FaHandshake className="text-2xl text-blue-500" />,
-  time_management: <FaTasks className="text-2xl text-orange-400" />,
-  communication: <FaComments className="text-2xl text-blue-500" />,
-  problem_solving: <FaLightbulb className="text-2xl text-blue-500" />,
-  postgres: <FaDatabase className="text-2xl text-orange-400" />,
+  frontend_development: <Monitor size={26}  />,
+  responsive_design: <Code size={26} />,
+  mysql_knowledge: <Server size={26}  />,
+  version_control: <Laptop size={26}  />,
+  php_laravel_api: <Plug size={26}  />,
+  react_knowledge: <HelpCircle size={26} />,
+  teamwork: <Users size={26}  />,
+  time_management: <ListChecks size={26}  />,
+  communication: <MessageCircle size={26}  />,
+  problem_solving: <Lightbulb size={26}  />,
+  postgres: <Database size={26} />,
 };
+
 
 const Service = () => {
   const { t } = useTranslation();
@@ -49,7 +49,7 @@ const Service = () => {
         data-aos="zoom-in-up"
       >
         <div className="w-16 h-px bg-orange-400 mr-3"></div>
-        <h3 className="text-orange-400 text-sm font-medium text-center">
+        <h3 className=" text-sm font-medium text-center">
           {t("service.my_service")}
         </h3>
         <div className="w-16 h-px bg-orange-400 ml-3"></div>
@@ -57,27 +57,23 @@ const Service = () => {
 
       <h3
         data-aos="zoom-in-up"
-        className="text-3xl font-bold mb-10 text-center"
+        className="text-3xl text-slate-700 dark:text-white font-bold mb-10 text-center"
       >
         {t("service.what_can_i_do")}
       </h3>
 
-      <div className="cursor-pointer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="cursor-pointer grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-6">
         {visibleServices.map(([key, service], index) => (
-          <div
-            key={key}
+          <div key={key}
             data-aos="zoom-in"
             data-aos-delay={index * 100}
-            className="group relative bg-gray-100 dark:bg-gray-800 p-8 rounded-lg text-center shadow-md hover:shadow-lg transition-all duration-300"
+            className="group relative bg-gray-100 dark:bg-gray-800 p-8  rounded-lg text-center shadow-md hover:shadow-lg "
           >
-            <div className="flex justify-center items-center text-4xl text-orange-400 mb-4">
+            <div className="flex  justify-center items-center text-4xl mb-4 transition-transform group-hover:rotate-[10deg]">
               {items[key]}
             </div>
-            <h4 className="text-xl font-semibold mb-2">{service.title}</h4>
-
-            <p className="absolute inset-0 bg-black bg-opacity-80 text-gray-200 dark:text-white opacity-0 group-hover:opacity-100 flex items-center justify-center p-6 text-sm rounded-lg transition-opacity duration-500">
-              {service.description}
-            </p>
+            <h4 className="text-md text-slate-600 dark:text-slate-400 font-semibold mb-2">{service.title}</h4>
+        
           </div>
         ))}
       </div>
@@ -89,7 +85,7 @@ const Service = () => {
           className="group flex items-center gap-2 px-8 py-3 font-semibold text-gray-700 dark:text-white transition-colors duration-300"
         >
           {isExpanded ? t("service.see_less") : t("service.show_more")}
-          <FaArrowRight
+          <ArrowRight
             size={14}
             className={`transition-transform duration-300 ${
               isExpanded ? "-rotate-90" : "group-hover:translate-x-1"

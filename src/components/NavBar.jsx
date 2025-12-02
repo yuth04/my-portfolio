@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileCode } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import ToggleDarkmode from "./ToggleDarkmode";
@@ -99,11 +99,11 @@ const Navbar = () => {
         {/* Logo */}
         <a
           href="/"
-          className={`text-3xl font-bold transition-colors ${
+          className={`text-3xl flex justify-center opacity-75 hover:opacity-90 aligns-center gap-2 font-bold transition-colors ${
             isHero ? "text-orange-400" : "text-orange-600"
           }`}
         >
-          YuTh.
+         <FileCode className="mt-[6px] " /> YuTh.
         </a>
 
         {/* Desktop Menu */}
@@ -168,7 +168,7 @@ const Navbar = () => {
               <li
                 key={item}
                 onClick={() => scrollTo(item)}
-                className={`cursor-pointer  font-semibold transition-colors transf ${
+                className={`cursor-pointer px-6 py-2 rounded-lg  font-semibold transition-colors transf ${
                   activeSection === item
                     ? "text-white px-6 py-2 rounded-lg  bg-gradient-to-r from-orange-500 to-orange-700"
                     : ""

@@ -28,48 +28,46 @@
     "see_less": "See Less",
     "items": {
       "frontend_development": {
-        "title": "Front-end Development",
-        "description": "Building clean and responsive user interfaces while learning best practices with modern frameworks."
+        "title": "Front-end Development"
       },
       "responsive_design": {
-        "title": "Responsive Design",
-        "description": "Creating layouts that adapt across devices, focusing on usability and mobile-first design."
+        "title": "Responsive Design"
+       
       },
       "mysql_knowledge": {
-        "title": "MySQL Knowledge",
-        "description": "Working with relational databases to store and retrieve data efficiently, while improving query skills."
+        "title": "MySQL Knowledge"
+       
       },
       "version_control": {
-        "title": "GitHub Version Control",
-        "description": "Using Git and GitHub to manage code changes, collaborate with teams, and track progress."
+        "title": "GitHub Version Control"
+       
       },
       "php_laravel_api": {
-        "title": "PHP, Laravel & REST API",
-        "description": "Developing backend features and APIs using Laravel and PHP, with a focus on clean architecture."
+        "title": "PHP, Laravel & REST API"
+       
       },
       "react_knowledge": {
-        "title": "React JS",
-        "description": "Building interactive components and learning state management techniques in React."
+        "title": "React JS"
+       
       },
       "teamwork": {
-        "title": "Teamwork",
-        "description": "Contributing to group projects, sharing ideas, and supporting team goals with a positive attitude."
+        "title": "Teamwork"
+       
       },
       "time_management": {
-        "title": "Time Management",
-        "description": "Organizing tasks and meeting deadlines while balancing learning and development."
+        "title": "Time Management"
+      
       },
       "communication": {
-        "title": "Communication",
-        "description": "Practicing clear and respectful communication with peers, mentors, and stakeholders."
+        "title": "Communication"
       },
       "problem_solving": {
-        "title": "Problem Solving",
-        "description": "Approaching challenges with curiosity, asking questions, and applying logical thinking to find solutions."
+        "title": "Problem Solving"
+      
       },
       "postgres": {
-        "title": "PostgreSQL",
-        "description": "Working with PostgreSQL to manage relational data, write efficient queries, and build scalable backends."
+        "title": "PostgreSQL"
+      
       }
     }
   },
@@ -98,7 +96,7 @@
         "description": "A simple React + Tailwind CRUD app without data persistence."
       },
       "weather app": {
-        "name": "weather app",
+        "name": "Weather app",
         "description": "A weather app created with React + Tailwind + Weather api"
       },
       "Dashboard": {
