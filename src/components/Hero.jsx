@@ -37,9 +37,9 @@ const Hero = () => {
       </div>
 
       {/* content */}
-      <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center gap-2">
+      <div className="w-full md:p-10 max-w-7xl flex flex-col lg:flex-row justify-between items-center gap-6">
         {/* text content */}
-        <div className="max-w-full  md:text-left">
+        <div className="max-w-full">
           <p
             data-aos="fade-right"
             className="text-shine text-lg sm:text-xl md:text-3xl  text-slate-300 font-semibold"
@@ -106,7 +106,7 @@ const Hero = () => {
         <div
            data-aos="fade-up"
   
-          className="pulse-wrapper  w-[220px]  md:w-[300px] h-[220px]  md:h-[300px] mt-10 md:mt-0 "
+          className="pulse-wrapper  w-[220px]  md:w-[280px] h-[220px]  md:h-[280px] mt-10 md:mt-0 "
         >
           <div className="border-ring"></div>
           <img

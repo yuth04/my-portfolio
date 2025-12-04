@@ -14,26 +14,32 @@ const Project = () => {
   return (
     <section
       id="project"
-      className="bg-gray-100 dark:bg-gray-800 min-h-screen px-12 py-20 transition-colors duration-300"
-    >
+      className="bg-gray-100 dark:bg-gray-800 min-h-screen px-12 py-20 transition-colors duration-300">
       {/* Section Title */}
-      <div  className="flex items-center justify-center mb-2">
+      <div className="flex items-center justify-center mb-2">
         <div data-aos="fade-up" className="w-16 h-px bg-orange-400 mr-3"></div>
-        <h3 data-aos="fade-up" className="text-orange-400 text-sm font-medium text-center">
+        <h3
+          data-aos="fade-up"
+          className="text-orange-400 text-sm font-medium text-center"
+        >
           {t("project.my_project")}
         </h3>
         <div data-aos="fade-up" className="w-16 h-px bg-orange-400 ml-3"></div>
       </div>
 
-      <h2 data-aos="fade-up" className="text-xl md:text-2xl  font-bold mb-10 text-center text-slate-700 dark:text-white">
+      <h2
+        data-aos="fade-up"
+        className="text-xl md:text-2xl  font-bold mb-10 text-center text-slate-700 dark:text-white"
+      >
         {t("project.frontend_title")}
       </h2>
 
       {/* Projects Grid */}
-      <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {visibleProjects.map((project, index) => (
-          <div data-aos="fade-up"
-     data-aos-anchor-placement="center-bottom"
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
             key={index}
             className="relative group rounded-3xl overflow-hidden shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
           >
@@ -59,7 +65,10 @@ const Project = () => {
                 </div>
               </div>
               <p className=" w-[100%] overflow-hidden whitespace-nowrap text-gray-600 dark:text-gray-300 text-sm mt-2">
-               <span className="marquee"> {t(`project.items.${project.key}.description`)}</span>
+                <span className="marquee">
+                  {" "}
+                  {t(`project.items.${project.key}.description`)}
+                </span>
               </p>
               {/* Tech Icons */}
               <div className="flex justify-between gap-3 mt-3 text-xl">
@@ -102,8 +111,11 @@ const Project = () => {
       </div>
 
       {/* Show More / Less */}
-      <div data-aos="fade-up"
-     data-aos-anchor-placement="center-bottom" className="flex justify-center items-center py-6">
+      <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom"
+        className="flex justify-center items-center py-6"
+      >
         <button
           onClick={toggleProjects}
           className="group flex items-center gap-2 px-8 py-3 text-black dark:text-white font-semibold transition-colors duration-300"
