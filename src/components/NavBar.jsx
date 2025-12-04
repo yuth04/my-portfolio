@@ -8,7 +8,7 @@ const Navbar = () => {
   const { t } = useTranslation();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [activeSection, setActiveSection] = useState("home");
   const [isHero, setIsHero] = useState(true);
 
@@ -17,7 +17,7 @@ const Navbar = () => {
   // Detect screen size
   useEffect(() => {
     const handleResize = () => {
-      const mobile = window.innerWidth <= 768;
+      const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
       if (!mobile) setIsOpen(false);
     };
@@ -87,13 +87,13 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 px-8 py-4 flex justify-between items-center
+        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-2.5 md:py-4 flex justify-between items-center
           transition-all duration-300 backdrop-blur-md
-          ${
-            isHero
-              ? "bg-transparent text-white"
-              : "bg-transparent text-slate-900 dark:text-white"
-          }
+         ${
+           isHero
+             ? "bg-transparent text-white"
+             : "bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-md"
+         }
         `}
       >
         {/* Logo */}
@@ -103,12 +103,12 @@ const Navbar = () => {
             isHero ? "text-orange-400" : "text-orange-600"
           }`}
         >
-         <FileCode className="mt-[6px] " /> YuTh.
+          <FileCode className="mt-[6px] " /> YuTh.
         </a>
 
         {/* Desktop Menu */}
         {!isMobile && (
-          <ul className="flex space-x-6 text-lg">
+          <ul className="flex space-x-6 text-md">
             {sections.map((item) => (
               <li
                 key={item}
@@ -142,7 +142,7 @@ const Navbar = () => {
           {/* <SittingButton /> */}
           <ToggleDarkmode />
           <button onClick={() => setIsOpen(true)}>
-           {isOpen ?  <Menu className="hidden"  /> : <Menu size={28} />}
+            {!isOpen && <Menu size={28} />}
           </button>
         </div>
       </nav>
@@ -150,7 +150,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobile && (
         <div
-          className={`fixed top-0 left-0 w-[75%] inset-0 bg-[#F8FAFC] text-slate-700 dark:bg-slate-900 dark:text-white z-50 transition-transform duration-500
+          className={`fixed top-0 left-0 h-full w-[75%] bg-[#F8FAFC] text-slate-700 dark:bg-slate-900 dark:text-white z-50 transition-transform duration-500
             ${isOpen ? "translate-x-0" : "-translate-x-full"}
           `}
         >
@@ -163,7 +163,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <ul className="flex flex-col items-center space-y-6 mt-10 text-xl">
+          <ul className="flex flex-col items-center space-y-6 mt-10 text-">
             {sections.map((item) => (
               <li
                 key={item}

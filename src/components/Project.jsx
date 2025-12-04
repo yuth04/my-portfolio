@@ -17,22 +17,23 @@ const Project = () => {
       className="bg-gray-100 dark:bg-gray-800 min-h-screen px-12 py-20 transition-colors duration-300"
     >
       {/* Section Title */}
-      <div className="flex items-center justify-center mb-2">
-        <div className="w-16 h-px bg-orange-400 mr-3"></div>
-        <h3 className="text-orange-400 text-sm font-medium text-center">
+      <div  className="flex items-center justify-center mb-2">
+        <div data-aos="fade-up" className="w-16 h-px bg-orange-400 mr-3"></div>
+        <h3 data-aos="fade-up" className="text-orange-400 text-sm font-medium text-center">
           {t("project.my_project")}
         </h3>
-        <div className="w-16 h-px bg-orange-400 ml-3"></div>
+        <div data-aos="fade-up" className="w-16 h-px bg-orange-400 ml-3"></div>
       </div>
 
-      <h2 className="text-3xl  font-bold mb-10 text-center text-slate-700 dark:text-white dark:text-white">
+      <h2 data-aos="fade-up" className="text-xl md:text-2xl  font-bold mb-10 text-center text-slate-700 dark:text-white">
         {t("project.frontend_title")}
       </h2>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {visibleProjects.map((project, index) => (
-          <div
+          <div data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom"
             key={index}
             className="relative group rounded-3xl overflow-hidden shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
           >
@@ -101,7 +102,8 @@ const Project = () => {
       </div>
 
       {/* Show More / Less */}
-      <div className="flex justify-center items-center py-6">
+      <div data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" className="flex justify-center items-center py-6">
         <button
           onClick={toggleProjects}
           className="group flex items-center gap-2 px-8 py-3 text-black dark:text-white font-semibold transition-colors duration-300"

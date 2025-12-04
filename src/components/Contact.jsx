@@ -46,7 +46,7 @@ const Contact = () => {
       <div className="max-w-3xl mx-auto text-center">
         <h2
           data-aos="zoom-in-up"
-          className="text-4xl font-bold text-orange-500 mb-6"
+          className="text-2xl md:text-4xl font-bold text-orange-500 mb-6"
         >
           {t("contact.title")}
         </h2>

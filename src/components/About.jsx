@@ -30,7 +30,7 @@ const About = () => {
 
       <h2
         data-aos="zoom-in-up"
-        className="text-3xl font-bold mb-6 text-center text-slate-700 dark:text-white"
+        className="text-xl md:text-2xl font-bold mb-6 text-center text-slate-700 dark:text-white"
       >
         {t("about.Who_am_i")}
       </h2>

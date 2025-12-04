@@ -7,7 +7,7 @@ import ToggleDarkmode from "./ToggleDarkmode";
 const Nav = ({ theme, toggleTheme }) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const handleClose = () => setIsOpen(false);
   const handleToggle = () => setIsOpen(!isOpen);
   const [isHero, setIsHero] = useState(true);
@@ -31,7 +31,7 @@ const Nav = ({ theme, toggleTheme }) => {
   }, [isOpen, isMobile]);
   useEffect(() => {
     const handleResize = () => {
-      const mobile = window.innerWidth <= 768;
+      const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
       if (!mobile) setIsOpen(false);
     };

@@ -57,7 +57,7 @@ const Service = () => {
 
       <h3
         data-aos="zoom-in-up"
-        className="text-3xl text-slate-700 dark:text-white font-bold mb-10 text-center"
+        className="text-xl md:text-2xl text-slate-700 dark:text-white font-bold mb-10 text-center"
       >
         {t("service.what_can_i_do")}
       </h3>

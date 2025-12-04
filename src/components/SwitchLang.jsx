@@ -18,7 +18,7 @@ const SwitchLang = () => {
     <div className="relative inline-block text-left">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 shadow-md bg-white text-slate-800 rounded-md"
+        className="flex items-center gap-2 px-2 py-2 shadow-md bg-white text-slate-800 rounded-md"
       >
         <img
           src={languages.find((lang) => lang.code === currentLang)?.flag}
