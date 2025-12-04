@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="px-4 md:px-12 pt-28 md:pt-20 min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="px-4 md:px-12 pt-20 min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* keep your background exactly as is */}
       <div className="wrapper">
