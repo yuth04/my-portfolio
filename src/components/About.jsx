@@ -18,7 +18,7 @@ const About = () => {
   return (
     <section className="px-6 md:px-12 py-20 bg-gray-200 min-h-screen dark:bg-gray-800 text-black dark:text-white transition-colors duration-300 overflow-hidden">
       <div
-        data-aos="zoom-in-up"
+        data-aos="zoom-in-up" data-aos-delay = "100"
         className="flex items-center justify-center mb-2"
       >
         <div className="w-16 h-px bg-orange-400 mr-3"></div>
@@ -29,7 +29,7 @@ const About = () => {
       </div>
 
       <h2
-        data-aos="zoom-in-up"
+        data-aos="zoom-in-up" data-aos-delay = "200"
         className="text-xl md:text-2xl font-bold mb-6 text-center text-slate-700 dark:text-white"
       >
         {t("about.Who_am_i")}
@@ -37,12 +37,12 @@ const About = () => {
       <div className="flex flex-col items-center md:flex-row gap-10 ">
         <img
           className="w-72 rounded-lg border shadow-lg"
-          data-aos="zoom-in-up"
+          data-aos="zoom-in-up" data-aos-delay = "400"
           src={profile}
           alt="Nheung Phearakyuth"
         />
 
-        <div data-aos="zoom-in-up">
+        <div data-aos="zoom-in-up" data-aos-delay = "300">
           <p className="text-gray- 700 dark:text-gray-300 mb-4">
             {t("about.greeting")}{" "}
             <span className="text-orange-400 font-semibold">

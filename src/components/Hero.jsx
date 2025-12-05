@@ -1,6 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTelegramPlane, FaInstagram } from "react-icons/fa";
-import logo from "../assets/hero/hero.jpg";
+import logo from "../assets/hero/download (1).jpg";
 import { useTranslation } from "react-i18next";
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="px-4 md:px-12 pt-20 min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="px-4 pt-20 md:pt-10 min-h-screen h-auto flex items-center justify-center p-4 relative overflow-hidden"
     >
       {/* keep your background exactly as is */}
       <div className="wrapper">
@@ -28,51 +28,61 @@ const Hero = () => {
           <div></div>
         </div>
       </div>
-      {/* badge */}
-      <div data-aos="zoom-in"  className="absolute top-[60px] md:top-[70px] left-[15px] md:left-[100px] flex items-center gap-2 bg-slate-900/20 px-4 py-1.5 rounded-full border border-emerald-400 shadow-md">
-        <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-        <span className="text-sm text-emerald-400">
-          Welcome to my Portfolio
-        </span>
-      </div>
 
-      {/* content */}
-      <div className="w-full md:p-10 max-w-7xl flex flex-col lg:flex-row justify-between items-center gap-6">
+      {/* main content */}
+      <div className="w-full md:p-10 max-w-7xl flex flex-col lg:flex-row justify-between items-center gap-10">
         {/* text content */}
-        <div className="max-w-full">
+        <div className="flex flex-col ">
+          {/* badge */}
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            className="mb-10 md:mb-12 flex justify-center items-center w-[100%] md:w-[60%] gap-2 bg-slate-900/20 px-4 py-1.5 rounded-full border border-emerald-400 shadow-md"
+          >
+            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+            <span className="text-sm text-emerald-400">
+              Welcome to my Portfolio
+            </span>
+          </div>
+          {/* greeting  */}
           <p
             data-aos="fade-right"
-            className="text-shine text-lg sm:text-xl md:text-3xl  text-slate-300 font-semibold"
+            data-aos-delay="200"
+            className="text-shine mb-4 md:mb-8 text-3xl sm:text-xl md:text-6xl  text-slate-300 font-semibold"
           >
             {t("hero.des_name")}
           </p>
+          {/* Name */}
           <h2
             data-aos="fade-right"
-            className="typing py-3 mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-orange-500"
+            data-aos-delay="300"
+            className="typing py-2 mb-4 md:mb-8 text-3xl sm:text-4xl md:text-5xl font-bold text-orange-500"
           >
             &nbsp;&nbsp;{t("hero.name")}
           </h2>
+          {/* carrer */}
           <p
-            data-aos="fade-left"
-            className="text-base sm:text-lg mt-4 text-gray-300 animate-pulse font-semibold"
+            data-aos="fade-right"
+            data-aos-delay="400"
+            className="text-base  mb-4 md:mb-8 sm:text-lg text-gray-300  font-semibold"
           >
             {t("hero.carrer")}
           </p>
           <a
-            data-aos="fade-left"
+            data-aos="fade-right"
+            data-aos-delay="500"
             href="#about"
-            className="inline-block mt-6 text-sm sm:text-base px-6 md:px-7 py-2.5 md:py-3 rounded-full text-white font-semibold bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800"
+            className="inline-block mb-4 py-2 md:py-3  w-[50%] md:[30%] text-center rounded-full text-white  font-semibold bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800"
           >
             {t("hero.btn_know")}
           </a>
-
           {/* social media links */}
 
           <div
-            data-aos="fade-up"
-            className="mt-6 flex  space-x-6 text-xl sm:text-2xl"
+            
+            className="flex  space-x-6 text-xl sm:text-2xl"
           >
-            <a
+            <a data-aos="fade-up" data-aos-delay="500"
               href="https://www.facebook.com/share/16nUbygATd/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
@@ -81,7 +91,7 @@ const Hero = () => {
             >
               <FaFacebookF />
             </a>
-            <a
+            <a data-aos="fade-up" data-aos-delay="600"
               href="https://t.me/console_log01"
               target="_blank"
               rel="noopener noreferrer"
@@ -90,7 +100,7 @@ const Hero = () => {
             >
               <FaTelegramPlane />
             </a>
-            <a
+            <a data-aos="fade-up" data-aos-delay="700"
               href="https://www.instagram.com/yuth_004?igsh=cHQ0Y3N2NjZhbHZi&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
@@ -104,11 +114,15 @@ const Hero = () => {
 
         {/* profile image */}
         <div
-           data-aos="fade-up"
-  
-          className="pulse-wrapper  w-[220px]  md:w-[280px] h-[220px]  md:h-[280px] mt-10 md:mt-0 "
+          data-aos="fade-up"
+          data-aos-delay="500"
+          className="pulse-wrapper  w-[320px]  md:w-[380px] h-[320px]  md:h-[380px] mt-10 md:mt-0 "
         >
-          <div className="border-ring"></div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="500"
+            className="border-ring"
+          ></div>
           <img
             className="rounded-full w-full h-full object-cover"
             src={logo}

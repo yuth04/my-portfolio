@@ -87,12 +87,12 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-2.5 md:py-4 flex justify-between items-center
+        className={` fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-2.5 md:py-4 flex justify-between items-center
           transition-all duration-300 backdrop-blur-md
          ${
            isHero
              ? "bg-transparent text-white"
-             : "bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-md"
+             : "bg-white  text-slate-900 dark:text-white shadow-md"
          }
         `}
       >
@@ -108,7 +108,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         {!isMobile && (
-          <ul className="flex space-x-6 text-md">
+          <ul className="hidden md:flex space-x-6 text-md">
             {sections.map((item) => (
               <li
                 key={item}
@@ -118,7 +118,7 @@ const Navbar = () => {
                     ? "text-orange-500"
                     : isHero
                     ? "text-white hover:text-orange-400"
-                    : "text-slate-800 dark:text-gray-200 hover:text-orange-500"
+                    : "text-slate-800  hover:text-orange-500"
                 }`}
               >
                 {t(`nav.${item}`)}
@@ -135,7 +135,7 @@ const Navbar = () => {
 
         {/* Mobile control */}
         <div
-          className={`md:hidden  flex items-center gap-3 ${
+          className={`flex md:hidden   items-center gap-3 ${
             isHero ? "text-white" : "text-orange-600"
           }`}
         >
@@ -150,8 +150,8 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobile && (
         <div
-          className={`fixed top-0 left-0 h-full w-[75%] bg-[#F8FAFC] text-slate-700 dark:bg-slate-900 dark:text-white z-50 transition-transform duration-500
-            ${isOpen ? "translate-x-0" : "-translate-x-full"}
+          className={`overflow-y-auto fixed top-0 right-0 h-full w-[60%] bg-[#F8FAFC] text-slate-700 dark:bg-slate-900 dark:text-white z-50 transition-transform duration-500
+            ${isOpen ? "-translate-x-0" : "translate-x-full"}
           `}
         >
           <div className="flex justify-between items-center px-6 py-4">
@@ -168,9 +168,9 @@ const Navbar = () => {
               <li
                 key={item}
                 onClick={() => scrollTo(item)}
-                className={`cursor-pointer px-6 py-2 rounded-lg  font-semibold transition-colors transf ${
+                className={` cursor-pointer px-6 py-2 rounded-lg  font-semibold transition-colors transf ${
                   activeSection === item
-                    ? "text-white px-6 py-2 rounded-lg  bg-gradient-to-r from-orange-500 to-orange-700"
+                    ? "text-white px-6 py-2 rounded-lg opacity-80  bg-gradient-to-r from-orange-500 to-orange-700"
                     : ""
                 }
                 `}
@@ -185,7 +185,14 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+        
       )}
+       {isOpen && (
+      <div
+        className="fixed inset-0 bg-slate-900 bg-opacity-40 z-40 pointer-events-none"
+        onClick={() => setIsOpen(false)}
+      ></div>
+    )}
     </>
   );
 };

@@ -23,7 +23,7 @@ const App = () => {
   },[])
   return (
     <div className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}>
-      <NavBar theme={theme} toggleTheme={toggleTheme} />
+      <NavBar theme={theme} toggleTheme={toggleTheme}  />
       <Home />
     </div>
   );

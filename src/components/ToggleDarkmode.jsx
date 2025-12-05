@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 
-const ToggleDarkmode = () => {
+const ToggleDarkmode = ({isHero, setIshero}) => {
   const [dark, setDark] = useState(() => {
     const stored = localStorage.getItem("theme");
     return stored === "dark" ? true : false;
@@ -33,7 +33,7 @@ const ToggleDarkmode = () => {
       {/* SUN */}
       <FiSun
         size={16}
-        className="absolute left-[12px] text-white transition-all peer-checked:opacity-60"
+        className={`absolute left-[12px] dark:text-orange-600 text-white transition-all peer-checked:opacity-60 ${!isHero && "text-orange-600"}`}
       />
 
       {/* MOON */}
