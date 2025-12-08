@@ -7,11 +7,11 @@ import khFlag from "../assets/flags/khmer.png";
 
 const SwitchLang = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const currentLang = i18n.language;
+  const currentLang = i18n.language || "en";
 
   const languages = [
-    { code: "en",label: "EN",  flag: egFlag },
-    { code: "kh",label:"KH",  flag: khFlag },
+    { code: "en", flag: egFlag },
+    { code: "kh",  flag: khFlag },
   ];
 
   return (
@@ -25,11 +25,11 @@ const SwitchLang = () => {
           alt={currentLang}
           className="w-5 h-5"
         />
-        <span className="text-sm flex gap-2 font-medium">Lang    <ArrowDown className={`transition-transform duration-300  ${isOpen ? "rotate-180" : "rotate-0"}`}  size={15}/></span>
+        <span className="text-sm flex gap-2 font-medium"><ArrowDown className={`transition-transform duration-300  ${isOpen ? "rotate-180" : "rotate-0"}`}  size={15}/></span>
       </button>
 
       {isOpen && (
-        <ul className="absolute mt-2 w-[110px] text-slate-800 bg-white border border-gray-300 rounded-md shadow-lg z-10">
+        <ul className="absolute mt-1 w-[60px] text-slate-800 bg-white border border-gray-300 rounded-md shadow-lg z-10">
           {languages.map((lang) => (
             <li
               key={lang.code}
@@ -42,10 +42,10 @@ const SwitchLang = () => {
             >
               <div className="flex items-center gap-2">
                 <img src={lang.flag} alt={lang.label} className="w-4 h-4" />
-                <span>{lang.label}</span>
+                {/* <span>{lang.label}</span> */}
               </div>
               {currentLang === lang.code && (
-                <FaCheck className="text-orange-500 text-xs" />
+                <FaCheck className="text-slate-600 text-xs" />
               )}
             </li>
           ))}

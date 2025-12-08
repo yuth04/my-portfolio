@@ -48,10 +48,11 @@ const Hero = () => {
           <p
             data-aos="fade-right"
             data-aos-delay="200"
-            className="text-shine mb-4 md:mb-8 text-3xl sm:text-xl md:text-6xl  text-slate-300 font-semibold"
+            className="text-shine mb-4 md:mb-8 text-3xl md:text-5xl text-slate-300 font-semibold"
           >
             {t("hero.des_name")}
           </p>
+
           {/* Name */}
           <h2
             data-aos="fade-right"
@@ -64,7 +65,7 @@ const Hero = () => {
           <p
             data-aos="fade-right"
             data-aos-delay="400"
-            className="text-base  mb-4 md:mb-8 sm:text-lg text-gray-300  font-semibold"
+            className="text-base mb-4 md:mb-6 sm:text-lg text-gray-400  font-semibold"
           >
             {t("hero.carrer")}
           </p>
@@ -72,17 +73,16 @@ const Hero = () => {
             data-aos="fade-right"
             data-aos-delay="500"
             href="#about"
-            className="inline-block mb-4 py-2 md:py-3  w-[50%] md:[30%] text-center rounded-full text-white  font-semibold bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800"
+            className=" inline-block w-[50%] md:w-[30%] mb-4 py-3 text-sm md:text-md  text-center rounded-full text-white  font-semibold border transition duration-500 border-orange-500 hover:bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800"
           >
             {t("hero.btn_know")}
           </a>
           {/* social media links */}
 
-          <div
-            
-            className="flex  space-x-6 text-xl sm:text-2xl"
-          >
-            <a data-aos="fade-up" data-aos-delay="500"
+          <div className="flex  space-x-6 text-xl sm:text-2xl">
+            <a
+              data-aos="fade-up"
+              data-aos-delay="500"
               href="https://www.facebook.com/share/16nUbygATd/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
@@ -91,7 +91,9 @@ const Hero = () => {
             >
               <FaFacebookF />
             </a>
-            <a data-aos="fade-up" data-aos-delay="600"
+            <a
+              data-aos="fade-up"
+              data-aos-delay="600"
               href="https://t.me/console_log01"
               target="_blank"
               rel="noopener noreferrer"
@@ -100,7 +102,9 @@ const Hero = () => {
             >
               <FaTelegramPlane />
             </a>
-            <a data-aos="fade-up" data-aos-delay="700"
+            <a
+              data-aos="fade-up"
+              data-aos-delay="700"
               href="https://www.instagram.com/yuth_004?igsh=cHQ0Y3N2NjZhbHZi&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
