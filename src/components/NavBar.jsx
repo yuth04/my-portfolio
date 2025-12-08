@@ -87,7 +87,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={` fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-2.5 md:py-4 flex justify-between items-center
+        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-2.5 md:py-4 flex justify-between items-center
           transition-all duration-300 backdrop-blur-md
          ${
            isHero
@@ -151,7 +151,7 @@ const Navbar = () => {
       {isMobile && (
         <div
           className={`overflow-y-auto fixed top-0 right-0 h-full w-[60%] bg-[#F8FAFC] text-slate-700 dark:bg-slate-900 dark:text-white z-50 transition-transform duration-500
-            ${isOpen ? "-translate-x-0" : "translate-x-full"}
+            ${isOpen ? "translate-x-0" : "translate-x-full"}
           `}
         >
           <div className="flex justify-between items-center px-6 py-4">
@@ -166,11 +166,12 @@ const Navbar = () => {
           <ul className="flex flex-col items-center space-y-6 mt-10 text-">
             {sections.map((item) => (
               <li
+                
                 key={item}
                 onClick={() => scrollTo(item)}
                 className={` cursor-pointer px-6 py-2 rounded-lg  font-semibold transition-colors transf ${
                   activeSection === item
-                    ? "text-white px-6 py-2 rounded-lg opacity-80  bg-gradient-to-r from-orange-500 to-orange-700"
+                    ? "text-white px-6 py-1 rounded-lg opacity-80  bg-gradient-to-r from-orange-500 to-orange-700"
                     : ""
                 }
                 `}
@@ -185,14 +186,13 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        
       )}
-       {isOpen && (
-      <div
-        className="fixed inset-0 bg-slate-900 bg-opacity-40 z-40 pointer-events-none"
-        onClick={() => setIsOpen(false)}
-      ></div>
-    )}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-slate-900 bg-opacity-40 z-40"
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
     </>
   );
 };
