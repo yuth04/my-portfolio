@@ -1,6 +1,7 @@
 import React from "react";
 import profile from "../assets/hero/profile.jpg";
 import { useTranslation } from "react-i18next";
+import Education from "./Education";
 
 const About = () => {
   const { t } = useTranslation();
@@ -17,71 +18,82 @@ const About = () => {
   ];
 
   return (
-    <section className="relative py-28 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-950 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+    <section className="relative py-28 bg-gray-100 dark:bg-slate-800 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+
         {/* Header */}
-        <div className="text-center mb-10" data-aos="fade-up">
-          <div className="flex items-center justify-center mb-3">
-            <div className="w-20 h-[2px] bg-purple-500 mr-3 rounded"></div>
-            <h3 className="text-sm font-medium uppercase tracking-widest">
+        <div className="text-center mb-16" data-aos="fade-up">
+          <div className="flex items-center justify-center mb-4">
+            <span className="w-16 h-[2px] bg-purple-500 mr-3"></span>
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-purple-500">
               {t("about.about_me")}
             </h3>
-            <div className="w-20 h-[2px] bg-purple-500 ml-3 rounded"></div>
+            <span className="w-16 h-[2px] bg-purple-500 ml-3"></span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-white">
+
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
             {t("about.Who_am_i")}
           </h2>
         </div>
+
         {/* Content */}
-        <div className="grid lg:grid-cols-3 gap-14 items-start">
-          {/* Image */}
+        <div className="grid lg:grid-cols-3 gap-16 items-start">
+
+          {/* Profile Image */}
           <div
-            className="lg:col-span-1 relative lg:sticky lg:top-24"
+            className="relative lg:sticky lg:top-28"
             data-aos="zoom-in"
-            data-aos-delay="150"
-            data-aos-duration="1000" // animation duration
-            data-aos-easing="ease-out-back" // easing effect
+            data-aos-duration="900"
           >
-            <div className="absolute inset-0 bg-orange-500/10 rounded-3xl blur-2xl"></div>
-            <img
-              src={profile}
-              alt="Nheung Phearakyuth"
-              className="relative w-full rounded-3xl object-cover shadow-xl max-h-screen transform transition-transform duration-1000"
-            />
+            <div className="absolute inset-0 bg-purple-500/20 rounded-3xl blur-3xl"></div>
+
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-purple-500/20">
+              <img
+                src={profile}
+                alt="Nheung Phearakyuth"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
           </div>
-          {/* Text */}
+
+          {/* Text Content */}
           <div
             className="lg:col-span-2 space-y-8"
             data-aos="fade-left"
-            data-aos-delay="300"
+            data-aos-delay="200"
           >
-            <p className="text-lg text-gray-700 dark:text-gray-300">
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               {t("about.greeting")}{" "}
-              <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">
+              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">
                 {t("about.name")}
               </span>
               {t("about.des_1")}
             </p>
 
-            <p className="text-gray-600 dark:text-gray-400  max-w-2xl">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl">
               {t("about.des_2")}
             </p>
 
             {/* Skills */}
-            <div data-aos="fade-up" data-aos-delay="450">
-              <h3 className="text-start text-sm uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-4">
+            <div data-aos="fade-up" data-aos-delay="300">
+              <h3 className="text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4">
                 Technologies
               </h3>
+
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill, index) => (
                   <span
                     key={index}
                     data-aos="fade-up"
-                    data-aos-delay={index * 100}
+                    data-aos-delay={index * 80}
                     className="px-4 py-2 rounded-full text-sm font-semibold
-               bg-gradient-to-r from-purple-400 via-purple-400 to-purple-500
-               text-white border border-purple-500/30
-               backdrop-blur-md transition duration-300 hover:translate-y-[-2px] hover:shadow-lg"
+                               bg-white/70 dark:bg-white/10
+                               text-gray-800 dark:text-white
+                               border border-purple-500/30
+                               backdrop-blur-md
+                               transition-all duration-300
+                               hover:bg-purple-500 hover:text-white
+                               hover:-translate-y-1 hover:shadow-lg"
                   >
                     {skill}
                   </span>
@@ -89,17 +101,21 @@ const About = () => {
               </div>
             </div>
 
-            {/* Actions */}
+        
+            {/* Resume Button */}
             <div
-              className="flex gap-6 pt-4"
+              className="pt-6"
               data-aos="fade-up"
-              data-aos-delay="600"
+              data-aos-delay="500"
             >
               <a
+                href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view"
                 target="_blank"
                 rel="noreferrer"
-                href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view"
-                className="cursor-pointer flex justify-between bg-slate-900 px-4 py-2 rounded-full text-white tracking-wider shadow-xl hover:scale-105 duration-300 font-mono w-[150px]"
+                className="inline-flex items-center gap-3 px-6 py-3
+                           rounded-full bg-gradient-to-r from-slate-800 to-slate-900
+                           text-white font-semibold shadow-xl
+                           hover:scale-105 transition-all duration-300"
               >
                 Resume
                 <svg
@@ -118,9 +134,13 @@ const About = () => {
                 </svg>
               </a>
             </div>
+
           </div>
         </div>
       </div>
+          {/* Education */}
+            <Education />
+
     </section>
   );
 };

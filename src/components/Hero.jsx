@@ -1,5 +1,10 @@
 import React from "react";
-import { FaFacebookF, FaTelegramPlane, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTelegramPlane,
+  FaInstagram,
+  FaGithub,
+} from "react-icons/fa";
 import logo from "../assets/hero/download (1).jpg";
 import { useTranslation } from "react-i18next";
 
@@ -37,10 +42,10 @@ const Hero = () => {
           <div
             data-aos="fade-right"
             data-aos-delay="100"
-            className="mb-10 md:mb-12 flex justify-center items-center w-[100%] md:w-[60%] gap-2 bg-slate-900/20 px-4 py-1.5 rounded-full border border-emerald-400 shadow-md"
+            className="mb-10 md:mb-12 flex justify-center items-center w-[100%] md:w-[60%] gap-2 bg-slate-900/20 px-4 py-1.5 rounded-full border border-purple-400 shadow-md"
           >
-            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-            <span className="text-sm text-emerald-400">
+            <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+            <span className="text-sm text-purple-400">
               Welcome to my Portfolio
             </span>
           </div>
@@ -73,61 +78,69 @@ const Hero = () => {
           >
             {t("hero.carrer")}
           </p>
-         <a
-  data-aos="fade-right"
-  data-aos-delay="500"
-  href="#about"
-  className="inline-block w-[50%] md:w-[30%] mb-4 py-3 text-sm md:text-md text-center 
+          <a
+            data-aos="fade-right"
+            data-aos-delay="500"
+            href="#about"
+            className="inline-block w-[50%] md:w-[30%] mb-4 py-3 text-sm md:text-md text-center 
              rounded-full font-bold text-white 
              bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700
              shadow-lg transition-all duration-500 transform
              hover:from-purple-600 hover:via-purple-700 hover:to-purple-800
              hover:shadow-2xl hover:-translate-y-1.5 hover:scale-105
              hover:text-purple-100"
->
-  {t("hero.btn_know")}
-</a>
+          >
+            {t("hero.btn_know")}
+          </a>
 
           {/* social media links */}
 
-          <div className="flex space-x-6 text-xl sm:text-2xl">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="500"
+            className="flex space-x-3 text-xl sm:text-2xl"
+          >
             <a
-              data-aos="fade-up"
-              data-aos-delay="500"
               href="https://www.facebook.com/share/16nUbygATd/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 
-               text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-110 transition duration-300"
+              className="flex items-center justify-center w-12 h-12 rounded-full hover:bg-gradient-to-tr from-purple-400 to-purple-600 
+               text-white border border-purple-400 transform hover:-translate-y-1 transition duration-500"
             >
               <FaFacebookF />
             </a>
 
             <a
-              data-aos="fade-up"
-              data-aos-delay="600"
-              href="https://t.me/console_log01"
+              href="https://t.me/yuth_04"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 
-               text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-110 transition duration-300"
+              className="flex items-center justify-center w-12 h-12 rounded-full hover:bg-gradient-to-tr from-purple-400 to-purple-600 
+               text-white border border-purple-400  transform hover:-translate-y-1 transition duration-300"
             >
               <FaTelegramPlane />
             </a>
 
             <a
-              data-aos="fade-up"
-              data-aos-delay="700"
               href="https://www.instagram.com/yuth_004?igsh=cHQ0Y3N2NjZhbHZi&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 
-               text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-110 transition duration-300"
+              className="flex items-center justify-center w-12 h-12 rounded-full hover:bg-gradient-to-tr from-purple-400 to-purple-600 
+               text-white border border-purple-400 transform hover:-translate-y-1 transition duration-300"
             >
               <FaInstagram />
+            </a>
+            <a
+              href="https://github.com/yuth04"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex items-center justify-center w-12 h-12 rounded-full hover:bg-gradient-to-tr from-purple-400 to-purple-600 
+               text-white border border-purple-400 transform hover:-translate-y-1 transition duration-300"
+            >
+              <FaGithub />
             </a>
           </div>
         </div>

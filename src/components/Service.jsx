@@ -71,7 +71,7 @@ const Service = () => {
                 {items[key]}
               </div>
             </div>
-            <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
+            <h4 className="text-lg text-center font-semibold text-gray-800 dark:text-gray-100 mb-2">
               {service.title}
             </h4>
             <p className="text-sm text-gray-500 dark:text-gray-300">
@@ -84,9 +84,11 @@ const Service = () => {
       </div>
 
       {/* Show More / See Less Button */}
-      <div className="flex justify-center items-center py-6">
+      <div  data-aos="fade-up"
+            data-aos-delay="600"
+           className="flex justify-center items-center py-6">
         <button
-          data-aos="zoom-out"
+          
           onClick={() => setIsExpanded((prev) => !prev)}
           className=" group flex items-center gap-2 px-8 py-3 text-black dark:text-white font-semibold transition-colors duration-300"
         >

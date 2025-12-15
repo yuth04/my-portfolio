@@ -140,9 +140,10 @@ const Navbar = () => {
           }`}
         >
           {/* <SittingButton /> */}
-          <ToggleDarkmode />
+          <ToggleDarkmode hero={isHero} setIshero={setIsHero} />
           <button onClick={() => setIsOpen(true)}>
-            {!isOpen && <Menu size={28} />}
+            {/* {!isOpen && <Menu size={28} />} */}
+            <Menu  size={28}/>
           </button>
         </div>
       </nav>
@@ -175,7 +176,7 @@ const Navbar = () => {
         ${
           activeSection === item
             ? "text-white bg-purple-500 opacity-90"
-            : "text-slate-800 dark:text-white hover:text-purple-500 dark:hover:text-cyan-400"
+            : "text-slate-800 dark:text-white hover:text-purple-500 dark:hover:text-purple-500"
         }
       `}
               >

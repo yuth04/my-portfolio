@@ -21,59 +21,73 @@
     "des_2": "I'm always eager to learn new skills and take on new challenges. With a strong foundation in both front-end and back-end development, I strive to create user-friendly digital experiences that not only look good but also perform efficiently.",
     "cv": "Download CV"
   },
-"service": {
-  "my_service": "My Skills",
-  "what_can_i_do": "What Can I Do",
-  "show_more": "Show More",
-  "see_less": "See Less",
-  "items": {
-    "frontend_development": {
-      "title": "Front-end Development",
-      "description": "Build modern, responsive, and interactive user interfaces."
-    },
-    "responsive_design": {
-      "title": "Responsive Design",
-      "description": "Create layouts that look perfect on all devices and screen sizes."
-    },
-    "mysql_knowledge": {
-      "title": "MySQL Knowledge",
-      "description": "Design and optimize relational databases for efficiency and reliability."
-    },
-    "version_control": {
-      "title": "GitHub Version Control",
-      "description": "Track, manage, and collaborate on code using Git."
-    },
-    "php_laravel_api": {
-      "title": "PHP, Laravel & REST API",
-      "description": "Develop backend APIs and web applications with Laravel."
-    },
-    "react_knowledge": {
-      "title": "React JS",
-      "description": "Build dynamic single-page applications with reusable components."
-    },
-    "teamwork": {
-      "title": "Teamwork",
-      "description": "Collaborate effectively with colleagues to deliver high-quality projects."
-    },
-    "time_management": {
-      "title": "Time Management",
-      "description": "Prioritize tasks and deliver projects on schedule."
-    },
-    "communication": {
-      "title": "Communication",
-      "description": "Clearly convey ideas and feedback across teams and clients."
-    },
-    "problem_solving": {
-      "title": "Problem Solving",
-      "description": "Analyze challenges and find efficient solutions."
-    },
-    "postgres": {
-      "title": "PostgreSQL",
-      "description": "Design and maintain PostgreSQL databases with high performance."
+  "education": {
+    "our_education": "Education Journey",
+
+    "primary_school": "Primary School",
+    "primary_info": "Learned basic skills, teamwork, and curiosity from an early age.",
+
+    "secondary_school": "Secondary School",
+    "secondary_info": "Studied science and math, and joined coding clubs and science fairs.",
+
+    "high_school": "High School",
+    "high_school_info": "Completed a science diploma and excelled in math and computer courses.",
+
+    "bachelor_degree": "Bachelor of Computer Science",
+    "bachelor_info": "Studied software engineering and web development, completing real projects."
+  },
+  "service": {
+    "my_service": "My Skills",
+    "what_can_i_do": "What Can I Do",
+    "show_more": "Show More",
+    "see_less": "See Less",
+    "items": {
+      "frontend_development": {
+        "title": "Front-end Development",
+        "description": "Build modern, responsive, and interactive user interfaces."
+      },
+      "responsive_design": {
+        "title": "Responsive Design",
+        "description": "Create layouts that look perfect on all devices and screen sizes."
+      },
+      "mysql_knowledge": {
+        "title": "MySQL Knowledge",
+        "description": "Design and optimize relational databases for efficiency and reliability."
+      },
+      "version_control": {
+        "title": "GitHub Version Control",
+        "description": "Track, manage, and collaborate on code using Git."
+      },
+      "php_laravel_api": {
+        "title": "PHP, Laravel & REST API",
+        "description": "Develop backend APIs and web applications with Laravel."
+      },
+      "react_knowledge": {
+        "title": "React JS",
+        "description": "Build dynamic single-page applications with reusable components."
+      },
+      "teamwork": {
+        "title": "Teamwork",
+        "description": "Collaborate effectively with colleagues to deliver high-quality projects."
+      },
+      "time_management": {
+        "title": "Time Management",
+        "description": "Prioritize tasks and deliver projects on schedule."
+      },
+      "communication": {
+        "title": "Communication",
+        "description": "Clearly convey ideas and feedback across teams and clients."
+      },
+      "problem_solving": {
+        "title": "Problem Solving",
+        "description": "Analyze challenges and find efficient solutions."
+      },
+      "postgres": {
+        "title": "PostgreSQL",
+        "description": "Design and maintain PostgreSQL databases with high performance."
+      }
     }
-  }
-}
-,
+  },
   "project": {
     "my_project": "MY PROJECT",
     "frontend_title": "My Front-End Projects",

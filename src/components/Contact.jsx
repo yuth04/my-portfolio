@@ -86,9 +86,9 @@ const Contact = () => {
             className="w-full p-3 rounded-md border dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
           ></textarea>
 
-          <div className="flex justify-center items-center">
+          <div  data-aos="zoom-in-up" className="flex justify-center items-center">
             <button
-              data-aos="zoom-in-up"
+            
               type="submit"
               disabled={loading}
               className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white font-semibold rounded-md transition-all duration-300 hover:gap-3"
