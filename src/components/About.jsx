@@ -14,13 +14,12 @@ const About = () => {
     "PHP",
     "MySQL",
     "PostgreSQL",
-    "Express.js",
+    "Express",
   ];
 
   return (
     <section className="relative py-28 bg-gray-100 dark:bg-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <div className="flex items-center justify-center mb-4">
@@ -38,7 +37,6 @@ const About = () => {
 
         {/* Content */}
         <div className="grid lg:grid-cols-3 gap-16 items-start">
-
           {/* Profile Image */}
           <div
             className="relative lg:sticky lg:top-28"
@@ -85,15 +83,13 @@ const About = () => {
                   <span
                     key={index}
                     data-aos="fade-up"
-                    data-aos-delay={index * 80}
+                    data-aos-delay={index * 100}
                     className="px-4 py-2 rounded-full text-sm font-semibold
-                               bg-white/70 dark:bg-white/10
-                               text-gray-800 dark:text-white
-                               border border-purple-500/30
-                               backdrop-blur-md
-                               transition-all duration-300
-                               hover:bg-purple-500 hover:text-white
-                               hover:-translate-y-1 hover:shadow-lg"
+               text-white
+               backdrop-blur-md
+               transition-all duration-300
+               bg-purple-500
+               hover:shadow-xl"
                   >
                     {skill}
                   </span>
@@ -101,13 +97,8 @@ const About = () => {
               </div>
             </div>
 
-        
             {/* Resume Button */}
-            <div
-              className="pt-6"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
+            <div className="pt-6" data-aos="fade-up" data-aos-delay="500">
               <a
                 href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view"
                 target="_blank"
@@ -134,13 +125,11 @@ const About = () => {
                 </svg>
               </a>
             </div>
-
           </div>
         </div>
       </div>
-          {/* Education */}
-            <Education />
-
+      {/* Education */}
+      <Education />
     </section>
   );
 };
