@@ -6,7 +6,8 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: linear-gradient(90deg, #020006 0%, #090979 35%, #00d4ff 100%);
+  /* background-color: #4B4BD7; */
+  background: linear-gradient(90deg, #020006 0%, #090979 35%, #5d5dee 100%);
   /* z-index: -1; */
 }
 .box div {

@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16">
+    <footer className="bg-gray-8s00 text-gray-300 py-16">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-12">
         {/* Brand */}
         <div className="text-center md:text-left">
