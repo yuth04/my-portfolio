@@ -16,17 +16,17 @@ import {
 } from "lucide-react";
 
 const items = {
-  frontend_development: <Monitor size={26} />,
-  responsive_design: <Code size={26} />,
-  mysql_knowledge: <Server size={26} />,
-  version_control: <Laptop size={26} />,
-  php_laravel_api: <Plug size={26} />,
-  react_knowledge: <HelpCircle size={26} />,
-  teamwork: <Users size={26} />,
-  time_management: <ListChecks size={26} />,
-  communication: <MessageCircle size={26} />,
-  problem_solving: <Lightbulb size={26} />,
-  postgres: <Database size={26} />,
+  frontend_development: <Monitor size={28} className="text-orange-500" />,
+  responsive_design: <Code size={28} className="text-indigo-500" />,
+  mysql_knowledge: <Server size={28} className="text-green-500" />,
+  version_control: <Laptop size={28} className="text-purple-500" />,
+  php_laravel_api: <Plug size={28} className="text-red-500" />,
+  react_knowledge: <HelpCircle size={28} className="text-blue-500" />,
+  teamwork: <Users size={28} className="text-yellow-500" />,
+  time_management: <ListChecks size={28} className="text-pink-500" />,
+  communication: <MessageCircle size={28} className="text-teal-500" />,
+  problem_solving: <Lightbulb size={28} className="text-orange-400" />,
+  postgres: <Database size={28} className="text-cyan-500" />,
 };
 
 const Service = () => {
@@ -35,48 +35,50 @@ const Service = () => {
 
   const serviceItems = t("service.items", { returnObjects: true });
   const serviceArray = Object.entries(serviceItems);
-  const visibleServices = isExpanded ? serviceArray : serviceArray.slice(0, 6);
+  const visibleServices = isExpanded ? serviceArray : serviceArray.slice(0, 8);
 
   return (
     <section
       id="service"
-      className="dark:bg-gray-900 px-6 md:px-12 py-20 text-black dark:text-white transition-colors duration-300"
+      className="dark:bg-gray-900 px-6 md:px-16 py-20 text-gray-800 dark:text-gray-100 transition-colors duration-300"
     >
-      {/* Heading */}
-      <div
-        className="flex items-center justify-center mb-2"
-        data-aos="zoom-in-up"
-      >
-        <div className="w-16 h-px bg-orange-400 mr-3"></div>
-        <h3 className="text-sm font-medium text-center">
-          {t("service.my_service")}
-        </h3>
-        <div className="w-16 h-px bg-orange-400 ml-3"></div>
+      {/* Header */}
+      <div className="text-center mb-10" data-aos="fade-up">
+        <div className="flex items-center justify-center mb-3">
+          <div className="w-20 h-[2px] bg-purple-500 mr-3 rounded"></div>
+          <h3 className="text-sm font-medium uppercase tracking-widest">
+            {t("service.my_service")}
+          </h3>
+          <div className="w-20 h-[2px] bg-purple-500 ml-3 rounded"></div>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-white">
+          {t("service.what_can_i_do")}
+        </h2>
+       
       </div>
 
-      <h3
-        data-aos="zoom-in-up"
-        className="text-xl md:text-2xl font-bold mb-10 text-center text-slate-700 dark:text-white"
-      >
-        {t("service.what_can_i_do")}
-      </h3>
-
       {/* Service Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {visibleServices.map(([key, service], index) => (
           <div
             key={key}
-            data-aos="zoom-in"
+            data-aos="fade-up"
             data-aos-delay={index * 100}
-            className=" group relative p-8 rounded-lg text-center shadow-md bg-gray-100 dark:bg-gray-800 hover:shadow-lg transition-all duration-300"
+            className="group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden"
           >
-            <div className="flex justify-center items-center text-4xl mb-4 transition-transform group-hover:rotate-12">
-              {items[key]}
+            <div className="flex justify-center mb-5">
+              <div className="p-4 bg-gray-100 dark:bg-gray-700 rounded-full group-hover:scale-110 transition-transform duration-300">
+                {items[key]}
+              </div>
             </div>
-            <h4 className="text-md text-slate-600 dark:text-slate-400 font-semibold mb-2">
+            <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
               {service.title}
             </h4>
-             <span className="absolute bottom-0 left-0 w-full h-[1px] group-hover:h-[2px] bg-orange-500 rounded-t-full"></span>
+            <p className="text-sm text-gray-500 dark:text-gray-300">
+              {service.description}
+            </p>
+           <span className="absolute bottom-0 left-0 w-0 group-hover:w-full h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full transition-all duration-300"></span>
+
           </div>
         ))}
       </div>

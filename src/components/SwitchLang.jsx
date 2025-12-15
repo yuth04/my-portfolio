@@ -25,7 +25,7 @@ const SwitchLang = () => {
           alt={currentLang}
           className="w-5 h-5"
         />
-        <span className="text-sm flex gap-2 font-medium"><ArrowDown className={`transition-transform duration-300  ${isOpen ? "rotate-180" : "rotate-0"}`}  size={15}/></span>
+        <span className="text-sm flex gap-2 font-medium"><ArrowDown className={`text-purple-600 transition-transform duration-300  ${isOpen ? "rotate-180" : "rotate-0"}`}  size={15}/></span>
       </button>
 
       {isOpen && (
@@ -38,14 +38,14 @@ const SwitchLang = () => {
 
                 setIsOpen(false);
               }}
-              className="flex items-center justify-between px-3 py-2 cursor-pointer hover:text-white hover:bg-gray-400"
+              className="flex items-center justify-between px-3 py-2 cursor-pointer hover:text-white hover:bg-slate-200"
             >
               <div className="flex items-center gap-2">
                 <img src={lang.flag} alt={lang.label} className="w-4 h-4" />
                 {/* <span>{lang.label}</span> */}
               </div>
               {currentLang === lang.code && (
-                <FaCheck className="text-slate-600 text-xs" />
+                <FaCheck className="text-purple-600 text-xs" />
               )}
             </li>
           ))}

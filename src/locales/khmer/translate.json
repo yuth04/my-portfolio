@@ -2,7 +2,7 @@
   "nav": {
     "home": "ទំព័រដើម",
     "about": "អំពីខ្ញុំ",
-    "service": "សេវាកម្ម",
+    "service": "ជំនាញ",
     "project": "គម្រោង",
     "contact": "ទាក់ទង"
   },
@@ -28,47 +28,48 @@
     "see_less": "បង្រួមបង្ហាញ",
     "items": {
       "frontend_development": {
-        "title": "ការអភិវឌ្ឍផ្នែកខាងមុខ"
-       
+        "title": "ការអភិវឌ្ឍផ្នែកមុខងារ (Front-end)",
+        "description": "បង្កើតផ្ទៃមុខនិងអន្តរកម្មទាន់សម័យ និងឆ្លើយតបទៅនឹងទូរស័ព្ទទាំងអស់។"
       },
       "responsive_design": {
-        "title": "ការរចនាឆ្លើយតប"
-       
+        "title": "ការរចនាឆ្លើយតប",
+        "description": "បង្កើតលេយោបញ្ជាដែលស្អាតលើគ្រប់ប្រភេទអេក្រង់ និងឧបករណ៍។"
       },
       "mysql_knowledge": {
-        "title": "ចំណេះដឹងអំពី MySQL"
-        
+        "title": "ចំណេះដឹង MySQL",
+        "description": "រចនា និងបង្កើតមូលដ្ឋានទិន្នន័យសម្រាប់ប្រសិទ្ធភាព និងទុកចិត្តបាន។"
       },
       "version_control": {
-        "title": "ការគ្រប់គ្រងកំណែជាមួយ GitHub"
-       
+        "title": "ការត្រួតពិនិត្យកំណែ GitHub",
+        "description": "តាមដាន និងគ្រប់គ្រងកូដជាក្រុម។"
       },
       "php_laravel_api": {
-        "title": "PHP, Laravel និង REST API"
-      
+        "title": "PHP, Laravel & REST API",
+        "description": "អភិវឌ្ឍ API និងកម្មវិធីវេបសាយខាងខាងក្រោយជាមួយ Laravel។"
       },
       "react_knowledge": {
-        "title": "React JS"
+        "title": "React JS",
+        "description": "បង្កើតកម្មវិធី single-page ទាន់សម័យជាមួយសមាសភាគដែលអាចប្រើឡើងវិញ។"
       },
       "teamwork": {
-        "title": "ការធ្វើការជាក្រុម"
-       
+        "title": "ការងារជាក្រុម",
+        "description": "សហការជាមួយក្រុមដើម្បីផ្តល់សេវាកម្មគុណភាពខ្ពស់។"
       },
       "time_management": {
-        "title": "ការគ្រប់គ្រងពេលវេលា"
-       
+        "title": "ការគ្រប់គ្រងពេលវេលា",
+        "description": "អាចតម្រៀបចំណាត់ថ្នាក់ភារកិច្ច និងបញ្ចប់គម្រោងតាមកាលវិភាគ។"
       },
       "communication": {
-        "title": "ការទំនាក់ទំនង"
-       
+        "title": "ការទំនាក់ទំនង",
+        "description": "ផ្ញើសារ និងផ្តល់មតិយោបល់យ៉ាងច្បាស់លាស់ក្នុងក្រុមនិងអតិថិជន។"
       },
       "problem_solving": {
-        "title": "ការដោះស្រាយបញ្ហា"
-     
+        "title": "ការដោះស្រាយបញ្ហា",
+        "description": "វិភាគបញ្ហា និងស្វែងរកដំណោះស្រាយមានប្រសិទ្ធភាព។"
       },
       "postgres": {
-        "title": "PostgreSQL"
-       
+        "title": "PostgreSQL",
+        "description": "រចនា និងថែរក្សាថ្នាក់ទិន្នន័យ PostgreSQL ដោយមានប្រសិទ្ធភាពខ្ពស់។"
       }
     }
   },

@@ -1,116 +1,124 @@
 import React from "react";
-import profile from "../assets/hero/hero.jpg";
+import profile from "../assets/hero/profile.jpg";
 import { useTranslation } from "react-i18next";
+
 const About = () => {
   const { t } = useTranslation();
+
   const skills = [
-    { name: "HTML, CSS", rating: 4 },
-    { name: "Java", rating: 2 },
-    { name: "JavaScript", rating: 3 },
-    { name: "jQuery", rating: 2 },
-    { name: "PHP", rating: 3 },
-    { name: "MySQL", rating: 3 },
-    { name: "PostgreSQL", rating: 3 },
-    { name: "Laravel", rating: 3.5 },
-    { name: "React", rating: 3.5 },
-    { name: "Express", rating: 3.5 },
+    "HTML & CSS",
+    "JavaScript",
+    "React",
+    "Laravel",
+    "PHP",
+    "MySQL",
+    "PostgreSQL",
+    "Express.js",
   ];
+
   return (
-    <section className="px-6 md:px-12 py-20 bg-gray-200 min-h-screen dark:bg-gray-800 text-black dark:text-white transition-colors duration-300 overflow-hidden">
-      <div
-        data-aos="zoom-in-up" data-aos-delay = "100"
-        className="flex items-center justify-center mb-2"
-      >
-        <div className="w-16 h-px bg-orange-400 mr-3"></div>
-        <h3 className="text-orange-400 text-sm font-medium text-center">
-          {t("about.about_me")}
-        </h3>
-        <div className="w-16 h-px bg-orange-400 ml-3"></div>
-      </div>
-
-      <h2
-        data-aos="zoom-in-up" data-aos-delay = "200"
-        className="text-xl md:text-2xl font-bold mb-6 text-center text-slate-700 dark:text-white"
-      >
-        {t("about.Who_am_i")}
-      </h2>
-      <div className="flex flex-col items-center md:flex-row gap-10 ">
-        <img
-          className="w-72 rounded-lg border shadow-lg"
-          data-aos="zoom-in-up" data-aos-delay = "400"
-          src={profile}
-          alt="Nheung Phearakyuth"
-        />
-
-        <div data-aos="zoom-in-up" data-aos-delay = "300">
-          <p className="text-gray- 700 dark:text-gray-300 mb-4">
-            {t("about.greeting")}{" "}
-            <span className="text-orange-400 font-semibold">
-              {t("about.name")}
-            </span>
-            {t("about.des_1")}
-          </p>
-
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
-            {t("about.des_2")}
-          </p>
-
-          {/* SKills */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            {skills.map((skill, index) => (
-              <div key={index}>
-                <p className="font-semibold text-gray-800 dark:text-white">
-                  {skill.name}
-                </p>
-                <div className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <span
-                      key={i}
-                      className={
-                        i < Math.floor(skill.rating)
-                          ? "text-orange-400"
-                          : "text-gray-400 dark:text-gray-600"
-                      }
-                    >
-                      ★
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+    <section className="relative py-28 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-950 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        {/* Header */}
+        <div className="text-center mb-10" data-aos="fade-up">
+          <div className="flex items-center justify-center mb-3">
+            <div className="w-20 h-[2px] bg-purple-500 mr-3 rounded"></div>
+            <h3 className="text-sm font-medium uppercase tracking-widest">
+              {t("about.about_me")}
+            </h3>
+            <div className="w-20 h-[2px] bg-purple-500 ml-3 rounded"></div>
           </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-white">
+            {t("about.Who_am_i")}
+          </h2>
+        </div>
+        {/* Content */}
+        <div className="grid lg:grid-cols-3 gap-14 items-start">
+          {/* Image */}
+          <div
+            className="lg:col-span-1 relative lg:sticky lg:top-24"
+            data-aos="zoom-in"
+            data-aos-delay="150"
+            data-aos-duration="1000" // animation duration
+            data-aos-easing="ease-out-back" // easing effect
+          >
+            <div className="absolute inset-0 bg-orange-500/10 rounded-3xl blur-2xl"></div>
+            <img
+              src={profile}
+              alt="Nheung Phearakyuth"
+              className="relative w-full rounded-3xl object-cover shadow-xl max-h-screen transform transition-transform duration-1000"
+            />
+          </div>
+          {/* Text */}
+          <div
+            className="lg:col-span-2 space-y-8"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
+            <p className="text-lg text-gray-700 dark:text-gray-300">
+              {t("about.greeting")}{" "}
+              <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">
+                {t("about.name")}
+              </span>
+              {t("about.des_1")}
+            </p>
 
-          {/* CV */}
-          {/* <a
-            href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view?usp=drive_link"
-            download
-            target="_blank"
-            className="inline-block px-5 py-3 bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800 text-white rounded-full hover:bg-orange-600 transition"
-          >
-            {t("about.cv")}
-          </a> */}
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view?usp=drive_link"
-            data-aos="zoom-in-up"
-            class="cursor-pointer flex justify-between bg-gradient-to-r bg-slate-900 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]"
-          >
-            Resume
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              class="w-5 h-5 animate-bounce"
+            <p className="text-gray-600 dark:text-gray-400  max-w-2xl">
+              {t("about.des_2")}
+            </p>
+
+            {/* Skills */}
+            <div data-aos="fade-up" data-aos-delay="450">
+              <h3 className="text-start text-sm uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-4">
+                Technologies
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                    className="px-4 py-2 rounded-full text-sm font-semibold
+               bg-gradient-to-r from-purple-400 via-purple-400 to-purple-500
+               text-white border border-purple-500/30
+               backdrop-blur-md transition duration-300 hover:translate-y-[-2px] hover:shadow-lg"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div
+              className="flex gap-6 pt-4"
+              data-aos="fade-up"
+              data-aos-delay="600"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-              ></path>
-            </svg>
-          </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://drive.google.com/file/d/1GLHtxuIGvGX40uqiJHvsr-hForVfdklo/view"
+                className="cursor-pointer flex justify-between bg-slate-900 px-4 py-2 rounded-full text-white tracking-wider shadow-xl hover:scale-105 duration-300 font-mono w-[150px]"
+              >
+                Resume
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="currentColor"
+                  className="w-5 h-5 animate-bounce"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

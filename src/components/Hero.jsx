@@ -54,13 +54,17 @@ const Hero = () => {
           </p>
 
           {/* Name */}
+          {/* Name */}
           <h2
             data-aos="fade-right"
             data-aos-delay="300"
-            className="typing py-2 mb-4 md:mb-8 text-3xl sm:text-4xl md:text-5xl font-bold text-orange-500"
+            className="typing py-2 mb-4 md:mb-8 text-3xl sm:text-4xl md:text-5xl font-bold 
+             bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600
+             text-transparent bg-clip-text drop-shadow-lg"
           >
             &nbsp;&nbsp;{t("hero.name")}
           </h2>
+
           {/* carrer */}
           <p
             data-aos="fade-right"
@@ -69,17 +73,24 @@ const Hero = () => {
           >
             {t("hero.carrer")}
           </p>
-          <a
-            data-aos="fade-right"
-            data-aos-delay="500"
-            href="#about"
-            className=" inline-block w-[50%] md:w-[30%] mb-4 py-3 text-sm md:text-md  text-center rounded-full text-white  font-semibold border transition duration-500 border-orange-500 hover:bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800"
-          >
-            {t("hero.btn_know")}
-          </a>
+         <a
+  data-aos="fade-right"
+  data-aos-delay="500"
+  href="#about"
+  className="inline-block w-[50%] md:w-[30%] mb-4 py-3 text-sm md:text-md text-center 
+             rounded-full font-bold text-white 
+             bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700
+             shadow-lg transition-all duration-500 transform
+             hover:from-purple-600 hover:via-purple-700 hover:to-purple-800
+             hover:shadow-2xl hover:-translate-y-1.5 hover:scale-105
+             hover:text-purple-100"
+>
+  {t("hero.btn_know")}
+</a>
+
           {/* social media links */}
 
-          <div className="flex  space-x-6 text-xl sm:text-2xl">
+          <div className="flex space-x-6 text-xl sm:text-2xl">
             <a
               data-aos="fade-up"
               data-aos-delay="500"
@@ -87,10 +98,12 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="text-white hover:text-orange-600  transition duration-300 hover:-translate-y-1"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 
+               text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-110 transition duration-300"
             >
               <FaFacebookF />
             </a>
+
             <a
               data-aos="fade-up"
               data-aos-delay="600"
@@ -98,10 +111,12 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
-              className="text-white hover:text-orange-600 dark:hover:text-blue-500 transition duration-300 hover:-translate-y-1"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 
+               text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-110 transition duration-300"
             >
               <FaTelegramPlane />
             </a>
+
             <a
               data-aos="fade-up"
               data-aos-delay="700"
@@ -109,7 +124,8 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className=" text-white hover:text-orange-600 dark:hover:text-blue-500 transition duration-300 hover:-translate-y-1"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 
+               text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-110 transition duration-300"
             >
               <FaInstagram />
             </a>
@@ -127,6 +143,7 @@ const Hero = () => {
             data-aos-delay="500"
             className="border-ring"
           ></div>
+
           <img
             className="rounded-full w-full h-full object-cover"
             src={logo}

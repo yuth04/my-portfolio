@@ -14,10 +14,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_qg7a01q", // your service ID
-        "template_ww3fmng", // your template ID
+        "service_qg7a01q",
+        "template_ww3fmng",
         form.current,
-        "avDA3Qugc5K0YNMt9" // your user/public key
+        "avDA3Qugc5K0YNMt9"
       )
       .then(() => {
         setSent(true);
@@ -46,7 +46,7 @@ const Contact = () => {
       <div className="max-w-3xl mx-auto text-center">
         <h2
           data-aos="zoom-in-up"
-          className="text-2xl md:text-4xl font-bold text-orange-500 mb-6"
+          className="text-3xl md:text-4xl font-bold text-purple-500 mb-6"
         >
           {t("contact.title")}
         </h2>
@@ -67,7 +67,7 @@ const Contact = () => {
             name="user_name"
             required
             placeholder={t("contact.placeholder_name")}
-            className="w-full dark:outline-white focus:outline-orange-400 p-3 rounded-md border dark:bg-gray-800 dark:border-gray-700"
+            className="w-full p-3 rounded-md border dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
           />
           <input
             data-aos="zoom-in-up"
@@ -75,7 +75,7 @@ const Contact = () => {
             name="user_email"
             required
             placeholder={t("contact.placeholder_email")}
-            className="w-full p-3 dark:outline-white focus:outline-orange-400 rounded-md border dark:bg-gray-800 dark:border-gray-700"
+            className="w-full p-3 rounded-md border dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
           />
           <textarea
             data-aos="zoom-in-up"
@@ -83,42 +83,33 @@ const Contact = () => {
             rows="5"
             required
             placeholder={t("contact.placeholder_message")}
-            className="w-full dark:outline-white focus:outline-orange-400 p-3 rounded-md border dark:bg-gray-800 dark:border-gray-700"
+            className="w-full p-3 rounded-md border dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
           ></textarea>
 
-          <div className="flex justify-center aligns-center">
+          <div className="flex justify-center items-center">
             <button
               data-aos="zoom-in-up"
               type="submit"
               disabled={loading}
-              class="flex items-center  bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800 text-white gap-1 px-4 py-2 cursor-pointer  font-semibold tracking-widest rounded-md  duration-300 hover:gap-2 hover:translate-x-3"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white font-semibold rounded-md transition-all duration-300 hover:gap-3"
             >
               {loading ? t("contact.loading") : t("contact.send_btn")}
               <svg
-                class="w-5 h-5"
+                className="w-5 h-5"
                 stroke="currentColor"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
                 ></path>
               </svg>
             </button>
           </div>
-
-          {/* <button
-            data-aos="zoom-in-up"
-            type="submit"
-            disabled={loading}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md"
-          >
-            {loading ? t("contact.loading") : t("contact.send_btn")}
-          </button> */}
         </form>
       </div>
     </section>

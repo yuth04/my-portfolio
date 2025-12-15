@@ -100,7 +100,7 @@ const Navbar = () => {
         <a
           href="/"
           className={`text-3xl flex justify-center opacity-75 hover:opacity-90 aligns-center gap-2 font-bold transition-colors ${
-            isHero ? "text-orange-400" : "text-orange-600"
+            isHero ? "text-purple-600" : "text-purple-800"
           }`}
         >
           <FileCode className="mt-[6px] " /> YuTh.
@@ -115,10 +115,10 @@ const Navbar = () => {
                 onClick={() => scrollTo(item)}
                 className={`cursor-pointer font-semibold transition-colors duration-300 ${
                   activeSection === item
-                    ? "text-orange-500"
+                    ? "text-purple-500 hover:text-purple-400"
                     : isHero
-                    ? "text-white hover:text-orange-400"
-                    : "text-slate-800  hover:text-orange-500"
+                    ? "ttext-purple-500 hover:text-purple-400"
+                    : "text-slate-800  hover:text-purple-400"
                 }`}
               >
                 {t(`nav.${item}`)}
@@ -136,7 +136,7 @@ const Navbar = () => {
         {/* Mobile control */}
         <div
           className={`flex md:hidden   items-center gap-3 ${
-            isHero ? "text-white" : "text-orange-600"
+            isHero ? "text-white" : "text-purple-500"
           }`}
         >
           {/* <SittingButton /> */}
@@ -155,7 +155,10 @@ const Navbar = () => {
           `}
         >
           <div className="flex justify-between items-center px-6 py-4">
-            <a href="/" className="text-orange-500 text-3xl font-bold">
+            <a
+              href="/"
+              className="text-purple-500 hover:text-purple-400 text-3xl font-bold"
+            >
               Menu.
             </a>
             <button onClick={() => setIsOpen(false)}>
@@ -163,23 +166,24 @@ const Navbar = () => {
             </button>
           </div>
 
-          <ul className="flex flex-col items-center space-y-6 mt-10 text-">
+          <ul className="flex flex-col items-center space-y-6 mt-10">
             {sections.map((item) => (
               <li
-                
                 key={item}
                 onClick={() => scrollTo(item)}
-                className={` cursor-pointer px-6 py-2 rounded-lg  font-semibold transition-colors transf ${
-                  activeSection === item
-                    ? "text-white px-6 py-1 rounded-lg opacity-80  bg-gradient-to-r from-orange-500 to-orange-700"
-                    : ""
-                }
-                `}
+                className={`cursor-pointer px-6 py-2 rounded-lg font-semibold transition-colors duration-300
+        ${
+          activeSection === item
+            ? "text-white bg-purple-500 opacity-90"
+            : "text-slate-800 dark:text-white hover:text-purple-500 dark:hover:text-cyan-400"
+        }
+      `}
               >
                 {t(`nav.${item}`)}
               </li>
             ))}
           </ul>
+
           <ul className="flex flex-col items-center space-y-6 mt-8">
             <li>
               <SwitchLang />
