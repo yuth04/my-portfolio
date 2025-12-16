@@ -2,23 +2,43 @@ import React from "react";
 import profile from "../assets/hero/profile.jpg";
 import { useTranslation } from "react-i18next";
 import Education from "./Education";
+import Tools from "./Tools";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiLaravel,
+  SiPhp,
+  SiMysql,
+  SiPostgresql,
+  SiExpress,
+} from "react-icons/si";
 
 const About = () => {
   const { t } = useTranslation();
 
   const skills = [
-    "HTML & CSS",
-    "JavaScript",
-    "React",
-    "Laravel",
-    "PHP",
-    "MySQL",
-    "PostgreSQL",
-    "Express",
+    {
+      name: "HTML & CSS",
+      icon: (
+        <>
+          <SiHtml5 className="text-orange-500" />{" "}
+          <SiCss3 className="text-blue-600" />
+        </>
+      ),
+    },
+    { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
+    { name: "React", icon: <SiReact className="text-cyan-400" /> },
+    { name: "Laravel", icon: <SiLaravel className="text-red-600" /> },
+    { name: "PHP", icon: <SiPhp className="text-indigo-600" /> },
+    { name: "MySQL", icon: <SiMysql className="text-blue-700" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-800" /> },
+    { name: "Express", icon: <SiExpress className="text-gray-800" /> },
   ];
 
   return (
-    <section className="relative py-28 bg-gray-100 dark:bg-slate-800 overflow-hidden">
+    <section className="relative py-20 bg-gray-100 dark:bg-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
@@ -84,17 +104,20 @@ const About = () => {
                     key={index}
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
-                    className="px-4 py-2 rounded-full text-sm font-semibold
+                    className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold
                text-white
                backdrop-blur-md
                transition-all duration-300
-               bg-purple-500
+               bg-purple-400
                hover:shadow-xl"
                   >
-                    {skill}
+                    {skill.icon}
+                    {skill.name}
                   </span>
                 ))}
               </div>
+
+              <Tools />
             </div>
 
             {/* Resume Button */}

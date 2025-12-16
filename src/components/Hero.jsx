@@ -5,7 +5,7 @@ import {
   FaInstagram,
   FaGithub,
 } from "react-icons/fa";
-import logo from "../assets/hero/download (1).jpg";
+import logo from '../assets/hero/coder.jpg'
 import { useTranslation } from "react-i18next";
 
 const Hero = () => {
