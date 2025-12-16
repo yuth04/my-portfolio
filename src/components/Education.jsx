@@ -131,7 +131,7 @@ const Education = () => {
           {/* Secondary */}
           <div data-aos="fade-up" data-aos-delay="150">
             <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" />
-            <p className="text-xs font-semibold text-purple-600">2016-2018</p>
+            <p className="text-xs font-semibold text-purple-600">2016-2019</p>
             <h5 className="text-sm font-bold dark:text-white">
               {t("education.secondary_school")}
             </h5>
@@ -143,7 +143,7 @@ const Education = () => {
           {/* High School */}
           <div data-aos="fade-up" data-aos-delay="300">
             <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" />
-            <p className="text-xs font-semibold text-purple-600">2018-2022</p>
+            <p className="text-xs font-semibold text-purple-600">2019-2022</p>
             <h5 className="text-sm font-bold dark:text-white">
               {t("education.high_school")}
             </h5>
@@ -155,7 +155,7 @@ const Education = () => {
           {/* Bachelor */}
           <div data-aos="fade-up" data-aos-delay="450">
             <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" />
-            <p className="text-xs font-semibold text-purple-600">2022-2025</p>
+            <p className="text-xs font-semibold text-purple-600">2022-2026</p>
             <h5 className="text-sm font-bold dark:text-white">
               {t("education.bachelor_degree")}
             </h5>
