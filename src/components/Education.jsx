@@ -98,7 +98,7 @@ const Education = () => {
           data-aos-delay="600"
         >
           <p className="text-sm font-semibold text-purple-500 text-center mb-2">
-            2022-2025
+            2022-2026
           </p>
           <div className="w-4 h-4 mx-auto rounded-full bg-purple-500 shadow-[0_0_14px_6px_rgba(168,85,247,0.9)]" />
           <div className="w-48 p-4 mt-8 rounded-xl backdrop-blur-md bg-white/10 border border-purple-500/30 -translate-y-[220px]">
