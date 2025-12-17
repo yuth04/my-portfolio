@@ -163,7 +163,7 @@ const Navbar = () => {
               Menu.
             </a>
             <button onClick={() => setIsOpen(false)}>
-              <X size={28} />
+              <X className="text-purple-500" size={28} />
             </button>
           </div>
 

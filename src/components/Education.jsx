@@ -22,6 +22,7 @@ const Education = () => {
           className="absolute inset-0 w-full h-full"
           viewBox="0 0 1000 200"
           preserveAspectRatio="none"
+          
         >
           <path
             d={svgPath}
