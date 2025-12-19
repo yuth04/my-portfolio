@@ -1,21 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
-
-const ToggleDarkmode = ({isHero, setIshero}) => {
-  const [dark, setDark] = useState(() => {
-    const stored = localStorage.getItem("theme");
-    return stored === "dark" ? true : false;
-  });
-
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [dark]);
+import useDarkMode from "../hooks/useDarkMode";
+const ToggleDarkmode = ({isHero}) => {
+  const {dark, setDark }  = useDarkMode();
 
   
   return (

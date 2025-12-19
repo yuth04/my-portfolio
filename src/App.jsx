@@ -19,7 +19,7 @@ const App = () => {
   };
 
   useEffect(()=>{
-    AOS.init({duration:800, once:true})
+    AOS.init({duration:700, once:true})
   },[])
   return (
     <div className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}>
