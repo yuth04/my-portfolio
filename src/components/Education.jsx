@@ -119,7 +119,8 @@ const Education = () => {
         <div className="pl-10 space-y-12">
           {/* Primary */}
           <div data-aos="fade-up">
-            <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" />
+            <div className="absolute -left-[26px] top-1 w-3 h-3  mx-auto rounded-full bg-purple-500 shadow-[0_0_14px_6px_rgba(168,85,247,0.9)]" />
+            {/* <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500 hover:bg-purple-400" /> */}
             <p className="text-xs font-semibold text-purple-600">2010-2016</p>
             <h5 className="text-sm font-bold dark:text-white">
               {t("education.primary_school")}
@@ -131,7 +132,8 @@ const Education = () => {
 
           {/* Secondary */}
           <div data-aos="fade-up" data-aos-delay="150">
-            <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" />
+            <div className="absolute -left-[26px] top-1 w-3 h-3  mx-auto rounded-full bg-purple-500 shadow-[0_0_14px_6px_rgba(168,85,247,0.9)]" />
+            {/* <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" /> */}
             <p className="text-xs font-semibold text-purple-600">2016-2019</p>
             <h5 className="text-sm font-bold dark:text-white">
               {t("education.secondary_school")}
@@ -143,7 +145,9 @@ const Education = () => {
 
           {/* High School */}
           <div data-aos="fade-up" data-aos-delay="300">
-            <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" />
+            <div className="absolute -left-[26px] top-1 w-3 h-3  mx-auto rounded-full bg-purple-500 shadow-[0_0_14px_6px_rgba(168,85,247,0.9)]" />
+
+            {/* <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" /> */}
             <p className="text-xs font-semibold text-purple-600">2019-2022</p>
             <h5 className="text-sm font-bold dark:text-white">
               {t("education.high_school")}
@@ -155,7 +159,8 @@ const Education = () => {
 
           {/* Bachelor */}
           <div data-aos="fade-up" data-aos-delay="450">
-            <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" />
+            <div className="absolute -left-[26px] top-1 w-3 h-3  mx-auto rounded-full bg-purple-500 shadow-[0_0_14px_6px_rgba(168,85,247,0.9)]" />
+            {/* <div className="absolute -left-[26px] top-2 w-3 h-3 rounded-full bg-purple-500" /> */}
             <p className="text-xs font-semibold text-purple-600">2022-2026</p>
             <h5 className="text-sm font-bold dark:text-white">
               {t("education.bachelor_degree")}

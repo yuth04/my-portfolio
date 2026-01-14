@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { projects } from "./data";
 import { useTranslation } from "react-i18next";
-
+import { ChevronsDown } from "lucide-react";
 const Project = () => {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -113,14 +113,19 @@ const Project = () => {
       >
         <button
           onClick={toggleProjects}
-          className="group flex items-center gap-2 px-8 py-3 text-black dark:text-white font-semibold transition-colors duration-300"
+          className="group p-3 rounded-full
+               text-gray-700 dark:text-gray-200
+               
+               transition-all duration-300 ease-out"
         >
-          {isExpanded ? t("project.see_less") : t("project.show_more")}
-          <FaArrowRight
-            size={14}
-            className={`transition-transform duration-300 ${
-              isExpanded ? "-rotate-90" : "group-hover:translate-x-1"
-            }`}
+          <ChevronsDown
+            size={22}
+            className={`
+        transition-all duration-300 ease-out
+        group-hover:translate-y-1
+        group-hover:scale-110
+        ${isExpanded ? "rotate-180" : ""}
+      `}
           />
         </button>
       </div>

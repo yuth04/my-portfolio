@@ -58,7 +58,7 @@ const Hero = () => {
             {t("hero.des_name")}
           </p>
 
-          {/* Name */}
+        
           {/* Name */}
           <h2
             data-aos="fade-right"

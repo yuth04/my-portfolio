@@ -4,7 +4,7 @@ import { SiPostman,  SiVercel,  SiIntellijidea, } from "react-icons/si";
 
 const tools = [
 { name: "VS Code", icon: <FaCode className="text-blue-500" /> },
-{ name: "Figma", icon: <FaFigma className="text-pink-500" /> },
+// { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
 { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
 { name: "GitHub", icon: <FaGithub className="text-gray-200" /> },
 { name: "Chrome DevTools", icon: <FaChrome className="text-yellow-400" /> },
