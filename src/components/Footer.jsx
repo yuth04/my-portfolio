@@ -125,7 +125,7 @@ const Footer = () => {
               className="group flex items-center w-fit gap-3 hover:text-purple-500 transition-colors"
             >
               <Mail size={16} className="text-purple-400/70 group-hover:text-purple-500" />
-              <span>youremail@example.com</span>
+              <span>yuth.code@gmail.com</span>
             </motion.a>
 
             <motion.a
@@ -134,7 +134,7 @@ const Footer = () => {
               className="group flex items-center w-fit gap-3 hover:text-purple-500 transition-colors"
             >
               <Phone size={16} className="text-purple-400/70 group-hover:text-purple-500" />
-              <span>+855 12 345 678</span>
+              <span>+855 86 721 976</span>
             </motion.a>
 
             <div className="flex items-center gap-3 w-fit">
