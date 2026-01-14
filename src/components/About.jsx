@@ -3,6 +3,8 @@ import profile from "../assets/hero/profile.jpg";
 import { useTranslation } from "react-i18next";
 import Education from "./Education";
 import Tools from "./Tools";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants } from "./motion";
 import {
   SiHtml5,
   SiCss3,
@@ -13,7 +15,7 @@ import {
   SiMysql,
   SiPostgresql,
   SiExpress,
-  SiNextdotjs
+  SiNextdotjs,
 } from "react-icons/si";
 
 const About = () => {
@@ -45,11 +47,20 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <div className="flex items-center justify-center mb-4">
-            <span className="w-16 h-[2px] bg-purple-500 mr-3"></span>
+            <motion.span
+              initial={{ width: 0 }}
+              whileInView={{ width: 64 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="w-16 h-[2px] bg-purple-500 mr-3"
+            ></motion.span>
             <h3 className="text-sm font-semibold uppercase tracking-widest text-purple-500">
               {t("about.about_me")}
             </h3>
-            <span className="w-16 h-[2px] bg-purple-500 ml-3"></span>
+            <motion.span
+               initial={{ width: 0 }}
+              whileInView={{ width: 64 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+             className="w-16 h-[2px] bg-purple-500 ml-3"></motion.span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">

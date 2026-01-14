@@ -3,6 +3,8 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { projects } from "./data";
 import { useTranslation } from "react-i18next";
 import { ChevronsDown } from "lucide-react";
+import { containerVariants, itemVariants } from "./motion";
+import { motion } from "framer-motion";
 const Project = () => {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -18,11 +20,19 @@ const Project = () => {
       {/* header */}
       <div className="text-center mb-10" data-aos="fade-up">
         <div className="flex items-center justify-center mb-3">
-          <div className="w-20 h-[2px] bg-purple-500 mr-3 rounded"></div>
+          <motion.div
+           initial={{ width: 0 }}
+            whileInView={{ width: 64 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          className="w-20 h-[2px] bg-purple-500 mr-3 rounded"></motion.div>
           <h3 className="text-sm font-medium uppercase tracking-widest">
             {t("project.my_project")}
           </h3>
-          <div className="w-20 h-[2px] bg-purple-500 ml-3 rounded"></div>
+          <motion.div
+           initial={{ width: 0 }}
+            whileInView={{ width: 64 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          className="w-20 h-[2px] bg-purple-500 ml-3 rounded"></motion.div>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-white">
           {t("project.frontend_title")}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ChevronsDown } from "lucide-react";
+import { containerVariants, itemVariants } from "./motion";
+import { motion } from "framer-motion";
 import {
   Monitor,
   Smartphone,
@@ -47,11 +49,21 @@ const Service = () => {
       {/* Header */}
       <div className="text-center mb-12" data-aos="fade-up">
         <div className="flex items-center justify-center mb-4">
-          <div className="w-20 h-[2px] bg-purple-500 mr-3 rounded" />
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 64 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-20 h-[2px] bg-purple-500 mr-3 rounded"
+          />
           <h3 className="text-sm font-medium uppercase tracking-widest">
             {t("service.my_service")}
           </h3>
-          <div className="w-20 h-[2px] bg-purple-500 ml-3 rounded" />
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 64 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-20 h-[2px] bg-purple-500 ml-3 rounded"
+          />
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-white">
@@ -89,29 +101,29 @@ const Service = () => {
       </div>
 
       {/* Show More / See Less */}
-       <div
-             data-aos="fade-up"
-             data-aos-anchor-placement="center-bottom"
-             className="flex justify-center items-center py-6"
-           >
-             <button
-               onClick={()=>setIsExpanded((prev)=> !prev)}
-               className="group p-3 rounded-full
+      <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom"
+        className="flex justify-center items-center py-6"
+      >
+        <button
+          onClick={() => setIsExpanded((prev) => !prev)}
+          className="group p-3 rounded-full
                     text-gray-700 dark:text-gray-200
                     
                     transition-all duration-300 ease-out"
-             >
-               <ChevronsDown
-                 size={22}
-                 className={`
+        >
+          <ChevronsDown
+            size={22}
+            className={`
              transition-all duration-300 ease-out
              group-hover:translate-y-1
              group-hover:scale-110
              ${isExpanded ? "rotate-180" : ""}
            `}
-               />
-             </button>
-           </div>
+          />
+        </button>
+      </div>
     </section>
   );
 };

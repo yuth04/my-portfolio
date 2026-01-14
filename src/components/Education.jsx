@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
+import { containerVariants, itemVariants } from "./motion";
+import { motion } from "framer-motion";
 const Education = () => {
   const { t } = useTranslation();
 
@@ -22,7 +23,6 @@ const Education = () => {
           className="absolute inset-0 w-full h-full"
           viewBox="0 0 1000 200"
           preserveAspectRatio="none"
-          
         >
           <path
             d={svgPath}
@@ -115,7 +115,13 @@ const Education = () => {
 
       {/* ================= MOBILE ================= */}
       <div className="md:hidden relative px-6">
-        <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-purple-500/40" />
+        <motion.div
+          initial={{ height: 0 }}
+          whileInView={{ height: 410 }}
+          transition={{ duration: 1.2, delay: 1.2 }}
+          viewport={{once: true}}
+          className="absolute left-6 top-0 bottom-0 w-[2px] bg-purple-500/40"
+        />
         <div className="pl-10 space-y-12">
           {/* Primary */}
           <div data-aos="fade-up">
