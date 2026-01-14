@@ -5,6 +5,13 @@ import { motion } from "framer-motion";
 const Education = () => {
   const { t } = useTranslation();
 
+  const pathVariants = {
+    hidden: { pathLength: 0 },
+    visible: {
+      pathLength: 1.9,
+      transition: { duration: 5, ease: "easeInOut" },
+    },
+  };
   const svgPath =
     "M0 100 C 200 0, 300 150, 500 100 C 700 50, 800 200, 1000 100";
 
@@ -19,19 +26,23 @@ const Education = () => {
 
       {/* ================= DESKTOP ================= */}
       <div className="relative hidden md:block w-full h-[400px]">
-        <svg
+        <motion.svg
           className="absolute inset-0 w-full h-full"
           viewBox="0 0 1000 200"
           preserveAspectRatio="none"
         >
-          <path
+          <motion.path
             d={svgPath}
             fill="none"
             stroke="#A855F7"
             strokeWidth="4"
             vectorEffect="non-scaling-stroke"
+            variants={pathVariants}
+            initial="hidden"
+            animate="visible"
+            // style={{ width: "100%", height: "100%" }}
           />
-        </svg>
+        </motion.svg>
 
         {/* Primary School */}
         <div
@@ -119,7 +130,7 @@ const Education = () => {
           initial={{ height: 0 }}
           whileInView={{ height: 410 }}
           transition={{ duration: 1.2, delay: 1.2 }}
-          viewport={{once: true}}
+          viewport={{ once: true }}
           className="absolute left-6 top-0 bottom-0 w-[2px] bg-purple-500/40"
         />
         <div className="pl-10 space-y-12">
