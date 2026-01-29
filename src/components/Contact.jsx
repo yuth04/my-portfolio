@@ -19,11 +19,6 @@ const Contact = () => {
           {t("contact.subtitle")}
         </p>
 
-        {sent && (
-          <p className="text-green-500 mb-4 font-semibold transition-opacity duration-500">
-            ✅ {t("contact.success_message")}
-          </p>
-        )}
 
         <form ref={form} onSubmit={sendEmail} className="space-y-6">
           <input

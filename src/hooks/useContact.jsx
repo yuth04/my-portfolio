@@ -1,41 +1,46 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
+import toast from "react-hot-toast";
 
 const useContact = () => {
   const form = useRef();
-  const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  // Email format check
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
-    emailjs
-      .sendForm(
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    const email = form.current.user_email.value;
+
+    if (!isValidEmail(email)) {
+      toast.error("Invalid email address");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await emailjs.sendForm(
         "service_qg7a01q",
         "template_ww3fmng",
         form.current,
-        "avDA3Qugc5K0YNMt9"
-      )
-      .then(() => {
-        setSent(true);
-        setLoading(false);
-        form.current.reset();
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
-        alert(t("contact.error_message"));
-        setLoading(false);
-      });
+        "avDA3Qugc5K0YNMt9",
+      );
+
+      toast.success("Message sent successfully!");
+      form.current.reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("Failed to send message!");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  useEffect(() => {
-    if (sent) {
-      const timer = setTimeout(() => setSent(false), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [sent]);
-  return { form, sent, loading, sendEmail };
+  return { form, loading, sendEmail };
 };
 
 export default useContact;

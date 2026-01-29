@@ -163,6 +163,7 @@ const About = () => {
             </div>
           </div>
         </div>
+        
       </div>
       {/* Education */}
       <Education />

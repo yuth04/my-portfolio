@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -23,6 +24,7 @@ const App = () => {
   },[])
   return (
     <div className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}>
+      <Toaster position="top-right" />
       <NavBar theme={theme} toggleTheme={toggleTheme}  />
       <Home />
     </div>

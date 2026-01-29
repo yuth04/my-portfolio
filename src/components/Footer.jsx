@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import FooterIcons from "./FooterIcons";
-import { FaArrowUp } from "react-icons/fa";
 import { motion } from "framer-motion"; // Make sure to: npm install framer-motion
 import {
   Home,
@@ -12,7 +11,8 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
-import  {containerVariants, itemVariants}  from "./motion";
+import { containerVariants, itemVariants } from "./motion";
+import toast from "react-hot-toast";
 const linkIcons = {
   home: <Home size={16} />,
   about: <User size={16} />,
@@ -31,25 +31,11 @@ const Footer = () => {
     { key: "project", label: t("footer.links.project") },
     { key: "contact", label: t("footer.links.contact") },
   ];
-
-
-  // const containerVariants = {
-  //   hidden: { opacity: 0, y: 30 },
-  //   visible: {
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: {
-  //       duration: 0.6,
-  //       staggerChildren: 0.15, 
-  //       ease: "easeOut",
-  //     },
-  //   },
-  // };
-
-  // const itemVariants = {
-  //   hidden: { opacity: 0, y: 20 },
-  //   visible: { opacity: 1, y: 0 },
-  // };
+  const info = ["+855 86 721 976", "yuth.code@gmail.com"];
+  const handleCopy = async (value) => {
+    await navigator.clipboard.writeText(value);
+    toast.success("Copied!", value);
+  };
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 overflow-hidden">
@@ -79,11 +65,11 @@ const Footer = () => {
             <h3 className="text-sm font-semibold uppercase tracking-widest text-white">
               Quick Links
             </h3>
-            <motion.div 
+            <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 48 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="h-[2px] bg-purple-500 ml-3 rounded" 
+              className="h-[2px] bg-purple-500 ml-3 rounded"
             />
           </div>
 
@@ -110,31 +96,35 @@ const Footer = () => {
             <h3 className="text-sm font-semibold uppercase tracking-widest text-white">
               Get In Touch
             </h3>
-            <motion.div 
+            <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 48 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="h-[2px] bg-purple-500 ml-3 rounded" 
+              className="h-[2px] bg-purple-500 ml-3 rounded"
             />
           </div>
 
           <div className="flex flex-col gap-4 text-sm text-gray-400">
             <motion.a
               whileHover={{ x: 5 }}
-              href="mailto:youremail@example.com"
               className="group flex items-center w-fit gap-3 hover:text-purple-500 transition-colors"
             >
-              <Mail size={16} className="text-purple-400/70 group-hover:text-purple-500" />
-              <span>yuth.code@gmail.com</span>
+              <Mail
+                size={16}
+                className="text-purple-400/70 group-hover:text-purple-500"
+              />
+              <span onClick={() => handleCopy(info[1])}>{info[1]}</span>
             </motion.a>
 
             <motion.a
               whileHover={{ x: 5 }}
-              href="tel:+85512345678"
               className="group flex items-center w-fit gap-3 hover:text-purple-500 transition-colors"
             >
-              <Phone size={16} className="text-purple-400/70 group-hover:text-purple-500" />
-              <span>+855 86 721 976</span>
+              <Phone
+                size={16}
+                className="text-purple-400/70 group-hover:text-purple-500"
+              />
+              <span onClick={() => handleCopy(info[0])}>{info[0]}</span>
             </motion.a>
 
             <div className="flex items-center gap-3 w-fit">
@@ -146,14 +136,15 @@ const Footer = () => {
       </motion.div>
 
       {/* Bottom Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
         className="border-t border-gray-800 mt-16 pt-8 relative max-w-7xl mx-auto px-6 text-center"
       >
         <p className="text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} Phearak YuTh. {t("footer.copyright")}
+          &copy; {new Date().getFullYear()} Phearak YuTh.{" "}
+          {t("footer.copyright")}
         </p>
       </motion.div>
     </footer>

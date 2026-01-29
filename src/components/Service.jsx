@@ -101,29 +101,35 @@ const Service = () => {
       </div>
 
       {/* Show More / See Less */}
-      <div
-        data-aos="fade-up"
-        data-aos-anchor-placement="center-bottom"
-        className="flex justify-center items-center py-6"
-      >
-        <button
-          onClick={() => setIsExpanded((prev) => !prev)}
-          className="group p-3 rounded-full
-                    text-gray-700 dark:text-gray-200
-                    
-                    transition-all duration-300 ease-out"
-        >
-          <ChevronsDown
-            size={22}
-            className={`
-             transition-all duration-300 ease-out
-             group-hover:translate-y-1
-             group-hover:scale-110
-             ${isExpanded ? "rotate-180" : ""}
-           `}
-          />
-        </button>
-      </div>
+       <div
+             data-aos="fade-up"
+             data-aos-anchor-placement="center-bottom"
+             className="flex justify-center items-center py-6"
+           >
+             <motion.button
+               onClick={()=> setIsExpanded(!isExpanded)}
+               className="group p-3 rounded-full text-gray-700 dark:text-gray-200"
+               whileHover={{ scale: 1.15 }}
+               whileTap={{ scale: 0.9 }}
+             >
+               <motion.div
+                 animate={{
+                   rotate: isExpanded ? 180 : 0,
+                   y: [0, 6, 0],
+                 }}
+                 transition={{
+                   rotate: { duration: 0.3 },
+                   y: {
+                     duration: 1.2,
+                     repeat: Infinity,
+                     ease: "easeInOut",
+                   },
+                 }}
+               >
+                 <ChevronsDown size={22} />
+               </motion.div>
+             </motion.button>
+           </div>
     </section>
   );
 };
