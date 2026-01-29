@@ -67,11 +67,11 @@ const useNavBar = () => {
   }, []);
 
   // Change document title
-  useEffect(() => {
-    document.title = activeSection
-      ? `${activeSection.charAt(0).toUpperCase() + activeSection.slice(1)} | My Portfolio`
-      : "My Portfolio";
-  }, [activeSection]);
+  // useEffect(() => {
+  //   document.title = activeSection
+  //     ? `${activeSection.charAt(0).toUpperCase() + activeSection.slice(1)} | My Portfolio`
+  //     : "My Portfolio";
+  // }, [activeSection]);
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
