@@ -123,7 +123,7 @@
     }
   },
   "contact": {
-    "title": "Contact Me",
+    "title": "Get In Touch",
     "subtitle": "Send me a message and I’ll reply via email!",
     "success_message": "Message sent!",
     "error_message": "Failed to send message. Try again.",

@@ -136,7 +136,7 @@ const About = () => {
             {/* Resume Button */}
             <div className="pt-6" data-aos="fade-up" data-aos-delay="500">
               <a
-                href="https://drive.google.com/file/d/1P-D2baiDnhbCAW8nv2oE6IOb5X8afXU4/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1FmfJKXgMwZcXwvC3ahdqFveNqmHxhRFp/view?usp=drive_link"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3
