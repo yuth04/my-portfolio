@@ -9,7 +9,7 @@ const Project = () => {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const visibleProjects = isExpanded ? projects : projects.slice(0, 3);
+  const visibleProjects = isExpanded ? projects : projects.slice(0, 6);
   const toggleProjects = () => setIsExpanded((prev) => !prev);
 
   return (

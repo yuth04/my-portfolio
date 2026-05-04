@@ -97,29 +97,33 @@
     "show_more": "បង្ហាញបន្ថែម",
     "see_less": "បង្រួមបង្ហាញ",
     "items": {
-      "portfolio": {
-        "name": "គេហទំព័រផ្ទាល់ខ្លួន",
-        "description": "គេហទំព័រផ្ទាល់ខ្លួនសម្រាប់បង្ហាញគម្រោង និងជំនាញរបស់ខ្ញុំ។"
-      },
-      "ecommerce": {
+      "E-commerce Website": {
         "name": "ហាងលក់ទំនិញតាមអនឡាញ",
         "description": "គេហទំព័រពាណិជ្ជកម្មដែលបង្កើតដោយ HTML និង CSS (Bootstrap)។"
       },
-      "phone": {
+      "Product Filter App": {
         "name": "ហាងលក់ទូរស័ព្ទ",
         "description": "គេហទំព័របង្ហាញទូរស័ព្ទជាមួយមុខងាររើសតាមប្រភេទ។"
       },
-      "crud": {
+      "CRUD Application (static)": {
         "name": "កម្មវិធី CRUD សិស្ស",
         "description": "កម្មវិធី React + Tailwind CRUD មួយដែលមិនមានការរក្សាទិន្នន័យ។"
       },
-      "weather app": {
+      "Full-Stack E-commerce Web Application": {
+        "name": "Vendo E-commerce",
+        "description": "កម្មវិធី e-commerce ដែលបង្កើតដោយ React និង Tailwind CSS មានប្រព័ន្ធបង្ហាញផលិតផល តម្រងប្រភេទផលិតផល (category filtering) និងមុខងារ shopping cart ជាមួយ UI ទំនើប និងងាយប្រើប្រាស់។"
+      },
+      "Weather App": {
         "name": "កម្មវិធីអាកាសធាតុ",
         "description": "កម្មវិធីអាកាសធាតុ ដែលបង្កើតដោយ React + Tailwind + Weather API"
       },
       "Dashboard": {
         "name": "ប្រព័ន្ធផ្ទាំងគ្រប់គ្រង",
         "description": "ចំណុចប្រទាក់អ្នកប្រើប្រាស់កណ្តាលដែលបង្ហាញសូចនាករប្រតិបត្តិការសំខាន់ៗ (KPIs) និងព័ត៌មានសំខាន់ៗភ្លាមៗ អនុញ្ញាតឱ្យអ្នកប្រើប្រាស់តាមដានស្ថានភាព និងដំណើរការរបស់ប្រព័ន្ធ។"
+      },
+      "Portfolio Website": {
+        "name": "គេហទំព័រផ្ទាល់ខ្លួន",
+        "description": "គេហទំព័រផ្ទាល់ខ្លួនសម្រាប់បង្ហាញគម្រោង និងជំនាញរបស់ខ្ញុំ។"
       }
     }
   },

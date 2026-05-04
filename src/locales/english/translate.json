@@ -96,29 +96,33 @@
     "show_more": "Show More",
     "see_less": "See Less",
     "items": {
-      "portfolio": {
-        "name": "Portfolio Website",
-        "description": "A personal portfolio to showcase my projects and skills."
-      },
-      "ecommerce": {
+      "E-commerce Website": {
         "name": "E-commerce Store",
         "description": "A front-end online store built with HTML and CSS (Bootstrap)."
       },
-      "phone": {
+      "Product Filter App": {
         "name": "Phone Store",
         "description": "A phone product showcase site with filtering functionality."
       },
-      "crud": {
+      "CRUD Application (static)": {
         "name": "Student CRUD",
         "description": "A simple React + Tailwind CRUD app without data persistence."
       },
-      "weather app": {
-        "name": "Weather app",
+      "Full-Stack E-commerce Web Application": {
+        "name": "Vendo E-commerce",
+        "description": "A full-featured e-commerce platform built with React, Laravel API, and Tailwind CSS, including product management, category filtering, shopping cart, and responsive user interface."
+      },
+      "Weather App": {
+        "name": "Weather App",
         "description": "A weather app created with React + Tailwind + Weather api"
       },
       "Dashboard": {
-        "name": "Dashboard system",
+        "name": "Dashboard",
         "description": "A central user interface that presents key performance indicators (KPIs) and critical information at a glance, allowing users to monitor the status and performance of the system."
+      },
+      "Portfolio Website": {
+        "name": "Portfolio Website",
+        "description": "A personal portfolio to showcase my projects and skills."
       }
     }
   },
