@@ -1,9 +1,10 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Toaster } from "react-hot-toast";
+import CustomCursor from "./components/CustomeCursor";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -19,13 +20,16 @@ const App = () => {
     }
   };
 
-  useEffect(()=>{
-    AOS.init({duration:700, once:true})
-  },[])
+  useEffect(() => {
+    AOS.init({ duration: 700, once: true });
+  }, []);
   return (
-    <div className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}>
+    <div
+      className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}
+    >
+      <CustomCursor />
       <Toaster position="top-right" />
-      <NavBar theme={theme} toggleTheme={toggleTheme}  />
+      <NavBar theme={theme} toggleTheme={toggleTheme} />
       <Home />
     </div>
   );

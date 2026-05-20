@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "service": "Skills",
+    "service": "Service",
     "project": "Project",
     "contact": "Contact"
   },
@@ -37,54 +37,46 @@
     "bachelor_info": "Studied software engineering and web development, completing real projects."
   },
   "service": {
-    "my_service": "My Skills",
-    "what_can_i_do": "What Can I Do",
+    "my_service": "My Services",
+    "what_can_i_do": "What I Can Do",
     "show_more": "Show More",
     "see_less": "See Less",
     "items": {
+      "web_development": {
+        "title": "Web Development",
+        "description": "Build modern, clean, and responsive websites that help your business grow online."
+      },
       "frontend_development": {
-        "title": "Front-end Development",
-        "description": "Build modern, responsive, and interactive user interfaces."
+        "title": "Frontend Development",
+        "description": "Design and build clean, fast, and user-friendly interfaces that people enjoy using."
+      },
+      "backend_development": {
+        "title": "Backend Development",
+        "description": "Build strong, scalable, and secure backend systems to power your web applications."
+      },
+      "api_development": {
+        "title": "API Development",
+        "description": "Design and build secure RESTful APIs that connect your systems and services together."
+      },
+      "authentication": {
+        "title": "Authentication & Security",
+        "description": "Implement secure login systems using JWT and Laravel Sanctum to protect your data and users."
+      },
+      "database_design": {
+        "title": "Database Design",
+        "description": "Design and optimize databases using MySQL, PostgreSQL, and MongoDB for reliable data storage."
       },
       "responsive_design": {
         "title": "Responsive Design",
-        "description": "Create layouts that look perfect on all devices and screen sizes."
+        "description": "Make sure your website looks great and works perfectly on mobile, tablet, and desktop."
       },
-      "mysql_knowledge": {
-        "title": "MySQL Knowledge",
-        "description": "Design and optimize relational databases for efficiency and reliability."
+      "deployment": {
+        "title": "Deployment & CI/CD",
+        "description": "Package and deploy your application using Docker and GitHub Actions for smooth and reliable delivery."
       },
-      "version_control": {
-        "title": "GitHub Version Control",
-        "description": "Track, manage, and collaborate on code using Git."
-      },
-      "php_laravel_api": {
-        "title": "PHP, Laravel & REST API",
-        "description": "Develop backend APIs and web applications with Laravel."
-      },
-      "react_knowledge": {
-        "title": "React JS",
-        "description": "Build dynamic single-page applications with reusable components."
-      },
-      "teamwork": {
-        "title": "Teamwork",
-        "description": "Collaborate effectively with colleagues to deliver high-quality projects."
-      },
-      "time_management": {
-        "title": "Time Management",
-        "description": "Prioritize tasks and deliver projects on schedule."
-      },
-      "communication": {
-        "title": "Communication",
-        "description": "Clearly convey ideas and feedback across teams and clients."
-      },
-      "problem_solving": {
-        "title": "Problem Solving",
-        "description": "Analyze challenges and find efficient solutions."
-      },
-      "postgres": {
-        "title": "PostgreSQL",
-        "description": "Design and maintain PostgreSQL databases with high performance."
+      "maintenance": {
+        "title": "Maintenance & Support",
+        "description": "Maintain, update, and fix issues on your existing websites and applications to keep them running well."
       }
     }
   },
@@ -123,6 +115,10 @@
       "Portfolio Website": {
         "name": "Portfolio Website",
         "description": "A personal portfolio to showcase my projects and skills."
+      },
+      "nextjs": {
+        "title": "Next.js",
+        "description": "Build fast, SEO-friendly React applications with server-side rendering."
       }
     }
   },

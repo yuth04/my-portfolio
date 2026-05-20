@@ -42,81 +42,102 @@ const Project = () => {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {visibleProjects.map((project, index) => (
           <div
             data-aos="fade-up"
             data-aos-delay={index * 100}
             key={index}
-            className="relative group rounded-3xl overflow-hidden shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
+            className="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700/60
+                 rounded-2xl overflow-hidden
+                 transition-all duration-300 hover:-translate-y-1
+                 hover:border-gray-300 dark:hover:border-gray-600"
           >
             {/* Image */}
-            <img
-              src={project.image}
-              alt={project.key}
-              className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+            <div className="relative overflow-hidden h-36">
+              <img
+                src={project.image}
+                alt={project.key}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              {/* Badge */}
+              <div
+                className="absolute bottom-2.5 left-3 flex items-center gap-1.5
+                        bg-black/40 backdrop-blur-sm border border-white/15
+                        px-2.5 py-1 rounded-full"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                <span className="text-[11px] font-medium text-white tracking-wide">
+                  Completed
+                </span>
+              </div>
+            </div>
 
-            {/* Content */}
-            <div className="p-5 bg-white dark:bg-gray-800 rounded-b-2xl">
-              <div className="flex justify-between">
-                <h4 className="text-ll uppercase font-bold text-emerald-600 dark:text-white">
+            {/* Body */}
+            <div className="p-4">
+              <div className="flex items-start justify-between gap-2 mb-1.5">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-white leading-tight">
                   {project.key}
                 </h4>
-
-                <div className="flex items-center space-x-2 bg-emerald-50 dark:bg-emerald-900/20 px-3 py-1 rounded-full mt-1">
-                  <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                  <span className="text-sm text-emerald-600 dark:text-emerald-400 font-medium">
-                    Completed
-                  </span>
-                </div>
               </div>
-              <p className=" w-[100%] overflow-hidden whitespace-nowrap text-gray-600 dark:text-gray-300 text-sm mt-2">
+
+              <p
+                className="w-full overflow-hidden whitespace-nowrap text-sm
+                      text-gray-500 dark:text-gray-400 mb-3"
+              >
                 <span className="marquee">
-                  {" "}
                   {t(`project.items.${project.key}.description`)}
                 </span>
               </p>
-              {/* Tech Icons */}
-              <div className="flex justify-between gap-3 mt-3 text-xl">
-                <div className="flex gap-5">
-                  {project.tech.map((t, i) => {
-                    const Icon = t.icon;
-                    return (
-                      <Icon
-                        key={i}
-                        className="hover:scale-125 transition-transform duration-300"
-                        title={t.name}
-                      />
-                    );
-                  })}
-                </div>
+
+              <div className="border-t border-gray-100 dark:border-gray-800 my-2.5" />
+
+              {/* Tech chips */}
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {project.tech.map((tech, i) => {
+                  const Icon = tech.icon;
+                  return (
+                    <span
+                      key={i}
+                      title={tech.name}
+                      className="flex items-center gap-1 text-[11px] text-gray-500 dark:text-gray-400
+                           bg-gray-100 dark:bg-gray-800
+                           border border-gray-200 dark:border-gray-700
+                           px-2 py-0.5 rounded-md"
+                    >
+                      <Icon size={11} />
+                      {tech.name}
+                    </span>
+                  );
+                })}
               </div>
 
-              {/* Buttons */}
-              <div className="flex justify-between items-center mt-4">
+              {/* Links */}
+              <div className="flex items-center justify-between">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-orange-500 transition"
+                  className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400
+                       hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
-                  <FaGithub /> {t("project.github")}
+                  <FaGithub size={13} /> {t("project.github")}
                 </a>
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm font-semibold text-purple-500 hover:underline"
+                  className="flex items-center gap-1 text-xs font-semibold
+                       text-purple-500 hover:underline"
                 >
-                  {t("project.live_demo")} <FaExternalLinkAlt size={12} />
+                  {t("project.live_demo")} <FaExternalLinkAlt size={10} />
                 </a>
               </div>
             </div>
           </div>
         ))}
       </div>
-
       {/* Show More / Less */}
       <div
         data-aos="fade-up"
