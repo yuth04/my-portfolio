@@ -27,7 +27,7 @@ const App = () => {
     <div
       className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}
     >
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <Toaster position="top-right" />
       <NavBar theme={theme} toggleTheme={toggleTheme} />
       <Home />
