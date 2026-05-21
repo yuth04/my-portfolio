@@ -110,14 +110,26 @@ const skills = [
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: {
+    transition: { staggerChildren: 0.12, repeat: Infinity, repeatDelay: 3 },
+  },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  hidden: { opacity: 0, scale: 0.9, y: 24 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.34, 1.56, 0.64, 4],
+      repeat: Infinity,
+      repeatType: "loop",
+      repeatDelay: 4,
+    },
+  },
 };
-
 const About = () => {
   const { t } = useTranslation();
 
@@ -131,20 +143,20 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <div className="flex items-center justify-center mb-4">
-            <motion.span
+            <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 64 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="h-[2px] bg-purple-500 mr-3 rounded"
+              className="w-20 h-[2px] bg-purple-500 mr-3 rounded"
             />
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-purple-500">
+            <h3 className="text-sm font-medium uppercase tracking-widest">
               {t("about.about_me")}
             </h3>
-            <motion.span
+            <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 64 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="h-[2px] bg-purple-500 ml-3 rounded"
+              className="w-20 h-[2px] bg-purple-500 ml-3 rounded"
             />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
@@ -158,6 +170,7 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="relative lg:sticky lg:top-28"
           >
@@ -205,6 +218,7 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
             className="lg:col-span-2 space-y-8"
           >
@@ -230,8 +244,9 @@ const About = () => {
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
+                // whileInView="visible"
+                animate="visible"
+                viewport={{ once: false }}
                 className="flex flex-wrap gap-2"
               >
                 {skills.map((skill, index) => (
@@ -261,6 +276,7 @@ const About = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="pt-2"
             >

@@ -139,7 +139,7 @@ const Hero = () => {
 
           {/* socials */}
           <motion.div {...fadeUp(0.6)} className="flex items-center gap-3">
-            <span className="text-xs uppercase tracking-widest text-gray-600 mr-1">Follow</span>
+            {/* <span className="text-xs uppercase tracking-widest text-gray-600 mr-1">Follow</span> */}
             {SOCIALS.map(({ href, label, icon }) => (
               <a
                 key={label}
