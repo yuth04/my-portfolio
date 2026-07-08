@@ -83,14 +83,14 @@ export const projects = [
     ]
   },
 
-  {
-    key: "Portfolio Website",
-    image: portfolio,
-    github: "https://github.com/yuth04",
-    demo: "https://portfolio-phi-ten-qfj8ctdnfn.vercel.app",
-    tech: [
-      { name: "React", icon: FaReact },
-      { name: "Tailwind CSS", icon: SiTailwindcss }
-    ]
-  }
+  // {
+  //   key: "Portfolio Website",
+  //   image: portfolio,
+  //   github: "https://github.com/yuth04",
+  //   demo: "https://portfolio-phi-ten-qfj8ctdnfn.vercel.app",
+  //   tech: [
+  //     { name: "React", icon: FaReact },
+  //     { name: "Tailwind CSS", icon: SiTailwindcss }
+  //   ]
+  // }
 ];

@@ -113,31 +113,33 @@ const Service = () => {
       </div>
 
       {/* Show More / Less */}
-      <div
-        data-aos="fade-up"
-        data-aos-anchor-placement="center-bottom"
-        className="flex justify-center items-center py-6"
-      >
-        <motion.button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="group p-3 rounded-full text-gray-700 dark:text-gray-200"
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.9 }}
+      {visibleServices.length > 7 && (
+        <div
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+          className="flex justify-center items-center py-6"
         >
-          <motion.div
-            animate={{
-              rotate: isExpanded ? 180 : 0,
-              y: [0, 6, 0],
-            }}
-            transition={{
-              rotate: { duration: 0.3 },
-              y: { duration: 1.2, repeat: Infinity, ease: "easeInOut" },
-            }}
+          <motion.button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="group p-3 rounded-full text-gray-700 dark:text-gray-200"
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
           >
-            <ChevronsDown size={22} />
-          </motion.div>
-        </motion.button>
-      </div>
+            <motion.div
+              animate={{
+                rotate: isExpanded ? 180 : 0,
+                y: [0, 6, 0],
+              }}
+              transition={{
+                rotate: { duration: 0.3 },
+                y: { duration: 1.2, repeat: Infinity, ease: "easeInOut" },
+              }}
+            >
+              <ChevronsDown size={22} />
+            </motion.div>
+          </motion.button>
+        </div>
+      )}
     </section>
   );
 };
