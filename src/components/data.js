@@ -34,7 +34,7 @@ export const projects = [
   },
 
   {
-    key: "E-commerce Website",
+    key: "E-commerce Website (Clone)",
     image: ten_11,
     github: "https://github.com/yuth04",
     demo: "https://ten-11.vercel.app/",
@@ -46,7 +46,7 @@ export const projects = [
   },
 
   {
-    key: "Full-Stack E-commerce Web Application",
+    key: "VENDO E-commerce Web Application",
     image: vendo,
     github: "https://github.com/yuth04",
     demo: "https://vendo-ecommerce-two.vercel.app/",

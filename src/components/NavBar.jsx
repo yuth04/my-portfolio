@@ -30,14 +30,19 @@ const Navbar = () => {
         `}
       >
         {/* Logo */}
-        <a
-          href="/"
-          className={`text-3xl flex justify-center opacity-75 hover:opacity-90 aligns-center gap-2 font-bold transition-colors ${
+        <button
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+          className={`text-3xl flex justify-center opacity-75 hover:opacity-90 items-center gap-2 font-bold transition-colors ${
             isHero ? "text-purple-600" : "text-purple-800"
           }`}
         >
-          <FileCode className="mt-[6px] " /> YuTh.
-        </a>
+          <FileCode className="mt-[6px]" /> YuTh.
+        </button>
 
         {/* Desktop Menu */}
         {!isMobile && (
@@ -50,8 +55,8 @@ const Navbar = () => {
                   activeSection === item
                     ? "text-purple-500 hover:text-purple-400"
                     : isHero
-                    ? "ttext-purple-500 hover:text-purple-400"
-                    : "text-slate-800  hover:text-purple-400"
+                      ? "ttext-purple-500 hover:text-purple-400"
+                      : "text-slate-800  hover:text-purple-400"
                 }`}
               >
                 {t(`nav.${item}`)}

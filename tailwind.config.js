@@ -23,6 +23,7 @@ export default {
           '100%': { transform: 'scale(1)', opacity: 0.8 },
         },
       },
+      
     },
   },
   plugins: [],

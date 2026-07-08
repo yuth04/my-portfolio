@@ -118,7 +118,8 @@ const Footer = () => {
                 fontSize: "26px",
                 fontWeight: "800",
                 letterSpacing: "-0.03em",
-                background: "linear-gradient(135deg, #ffffff 30%, #a78bfa 100%)",
+                background:
+                  "linear-gradient(135deg, #ffffff 30%, #a78bfa 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -229,7 +230,9 @@ const Footer = () => {
             Get In Touch
           </p>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "12px" }}
+          >
             {/* Email */}
             <motion.button
               whileHover={{ x: 4 }}
@@ -262,7 +265,14 @@ const Footer = () => {
               }}
             >
               <Mail size={14} style={{ color: "#7c5cfc", flexShrink: 0 }} />
-              <span style={{ flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <span
+                style={{
+                  flex: 1,
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
                 {info[1]}
               </span>
               {copiedItem === "email" ? (
@@ -351,6 +361,7 @@ const Footer = () => {
           flexWrap: "wrap",
         }}
       >
+        <div></div>
         <p
           style={{
             fontSize: "12px",
@@ -358,7 +369,8 @@ const Footer = () => {
             letterSpacing: "0.02em",
           }}
         >
-          &copy; {new Date().getFullYear()} Phearak YuTh. {t("footer.copyright")}
+          &copy; {new Date().getFullYear()} Phearak YuTh.{" "}
+          {t("footer.copyright")}
         </p>
 
         <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>

@@ -9,7 +9,7 @@
   "hero": {
     "des_name": "Hello, I'm ",
     "name": "Phearak YuTh...",
-    "carrer": "Frontend & Backend Developer",
+    "carrer": "Full Stack Developer",
     "btn_know": "Know More"
   },
   "about": {
@@ -17,7 +17,7 @@
     "Who_am_i": "Who Am I",
     "greeting": "Hi, I'm",
     "name": "Nheung Phearak YuTh",
-    "des_1": ", a passionate Web Development Computer Science's student at Norton University. I specialize in building clean, modern, and responsive websites using the latest web technologies.",
+    "des_1": ", a passionate​​ Computer Science's student at Norton University. I specialize in building clean, modern, and responsive websites using the latest web technologies.",
     "des_2": "I'm always eager to learn new skills and take on new challenges. With a strong foundation in both front-end and back-end development, I strive to create user-friendly digital experiences that not only look good but also perform efficiently.",
     "cv": "Download CV"
   },
@@ -82,7 +82,7 @@
   },
   "project": {
     "my_project": "MY PROJECT",
-    "frontend_title": "My Front-End Projects",
+    "frontend_title": "My Projects",
     "github": "GitHub",
     "live_demo": "Live Demo",
     "show_more": "Show More",
@@ -100,7 +100,7 @@
         "name": "Student CRUD",
         "description": "A simple React + Tailwind CRUD app without data persistence."
       },
-      "Full-Stack E-commerce Web Application": {
+      "VENDO E-commerce Web Application": {
         "name": "Vendo E-commerce",
         "description": "A full-featured e-commerce platform built with React, Laravel API, and Tailwind CSS, including product management, category filtering, shopping cart, and responsive user interface."
       },
@@ -134,8 +134,8 @@
     "placeholder_message": "Your message"
   },
   "footer": {
-    "name": "Phearak YuTh",
-    "tagline": "Frontend & Backend Developer",
+    "name": "Nheung Phearak YuTh",
+    "tagline": "Full Stack Developer",
     "social": "Social Media",
     "back_to_top": "Back to top",
     "copyright": "All rights reserved.",

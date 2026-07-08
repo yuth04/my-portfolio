@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../assets/hero/profile.jpg";
+import profile from "../assets/hero/programming.webp";
 import { useTranslation } from "react-i18next";
 import Education from "./Education";
 import Tools from "./Tools";
@@ -273,7 +273,7 @@ const About = () => {
             <Tools />
 
             {/* Resume Button */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -306,7 +306,7 @@ const About = () => {
                   />
                 </svg>
               </a>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
