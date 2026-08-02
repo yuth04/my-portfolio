@@ -5,6 +5,7 @@ import i18n from "../i18n";
 import ToggleDarkmode from "./ToggleDarkmode";
 import SwitchLang from "./SwitchLang";
 import useNavBar from "../hooks/useNavBar";
+import { motion } from "framer-motion";
 const Navbar = () => {
   const { t } = useTranslation();
   const {
@@ -17,16 +18,35 @@ const Navbar = () => {
     sections,
     scrollTo,
   } = useNavBar();
+  const isFloating = activeSection === "home" || activeSection === "about";
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-2.5 md:py-4 flex justify-between items-center
-          transition-all duration-300 backdrop-blur-md
-         ${
-           isHero
-             ? "bg-transparent text-white"
-             : "bg-white  text-slate-900 dark:text-white shadow-md"
-         }
+        className={`fixed top-0 left-2 right-2 z-50 px-6 md:px-8 py-2.5 md:py-4 flex justify-between items-center
+          transition-all duration-300 backdrop-blur-md rounded-xl
+          ${
+            isFloating
+              ? `
+          top-2
+          left-2
+          right-2
+          md:top-1
+          md:left-4
+          md:right-4
+          rounded-xl
+        `
+              : `
+          top-0
+          left-0
+          right-0
+          rounded-xl
+        `
+          }
+          ${
+            isHero
+              ? "bg-transparent text-white"
+              : "bg-white  text-slate-900 dark:text-white shadow-md"
+          }
         `}
       >
         {/* Logo */}
@@ -55,7 +75,7 @@ const Navbar = () => {
                   activeSection === item
                     ? "text-purple-500 hover:text-purple-400"
                     : isHero
-                      ? "ttext-purple-500 hover:text-purple-400"
+                      ? "text-purple-500 hover:text-purple-400 top-2"
                       : "text-slate-800  hover:text-purple-400"
                 }`}
               >

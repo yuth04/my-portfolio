@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../assets/hero/programming.webp";
+import profile from "../assets/hero/yuth.jpg";
 import { useTranslation } from "react-i18next";
 import Education from "./Education";
 import Tools from "./Tools";
@@ -22,114 +22,39 @@ import {
 } from "react-icons/si";
 
 const skills = [
-  {
-    name: "HTML5",
-    icon: <SiHtml5 />,
-    color: "text-orange-500",
-    bg: "bg-orange-500/10 hover:bg-orange-500/20 border-orange-500/20",
-  },
-  {
-    name: "CSS3",
-    icon: <SiCss3 />,
-    color: "text-blue-500",
-    bg: "bg-blue-500/10 hover:bg-blue-500/20 border-blue-500/20",
-  },
-  {
-    name: "JavaScript",
-    icon: <SiJavascript />,
-    color: "text-yellow-400",
-    bg: "bg-yellow-400/10 hover:bg-yellow-400/20 border-yellow-400/20",
-  },
-  {
-    name: "TypeScript",
-    icon: <SiTypescript />,
-    color: "text-blue-400",
-    bg: "bg-blue-400/10 hover:bg-blue-400/20 border-blue-400/20",
-  },
-  {
-    name: "React.js",
-    icon: <SiReact />,
-    color: "text-cyan-400",
-    bg: "bg-cyan-400/10 hover:bg-cyan-400/20 border-cyan-400/20",
-  },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs />,
-    color: "text-white",
-    bg: "bg-white/10 hover:bg-white/20 border-white/20",
-  },
-  {
-    name: "Laravel",
-    icon: <SiLaravel />,
-    color: "text-red-500",
-    bg: "bg-red-500/10 hover:bg-red-500/20 border-red-500/20",
-  },
-  {
-    name: "PHP",
-    icon: <SiPhp />,
-    color: "text-indigo-400",
-    bg: "bg-indigo-400/10 hover:bg-indigo-400/20 border-indigo-400/20",
-  },
-  {
-    name: "Node.js",
-    icon: <SiNodedotjs />,
-    color: "text-green-500",
-    bg: "bg-green-500/10 hover:bg-green-500/20 border-green-500/20",
-  },
-  {
-    name: "MySQL",
-    icon: <SiMysql />,
-    color: "text-blue-600",
-    bg: "bg-blue-600/10 hover:bg-blue-600/20 border-blue-600/20",
-  },
-  {
-    name: "PostgreSQL",
-    icon: <SiPostgresql />,
-    color: "text-sky-500",
-    bg: "bg-sky-500/10 hover:bg-sky-500/20 border-sky-500/20",
-  },
-  {
-    name: "MongoDB",
-    icon: <SiMongodb />,
-    color: "text-green-400",
-    bg: "bg-green-400/10 hover:bg-green-400/20 border-green-400/20",
-  },
-  {
-    name: "Tailwind",
-    icon: <SiTailwindcss />,
-    color: "text-teal-400",
-    bg: "bg-teal-400/10 hover:bg-teal-400/20 border-teal-400/20",
-  },
-  {
-    name: "Docker",
-    icon: <SiDocker />,
-    color: "text-blue-400",
-    bg: "bg-blue-400/10 hover:bg-blue-400/20 border-blue-400/20",
-  },
+  { name: "HTML5", icon: <SiHtml5 />, color: "text-orange-500", bg: "bg-orange-500/10 hover:bg-orange-500/20 border-orange-500/20" },
+  { name: "CSS3", icon: <SiCss3 />, color: "text-blue-500", bg: "bg-blue-500/10 hover:bg-blue-500/20 border-blue-500/20" },
+  { name: "JavaScript", icon: <SiJavascript />, color: "text-yellow-400", bg: "bg-yellow-400/10 hover:bg-yellow-400/20 border-yellow-400/20" },
+  { name: "TypeScript", icon: <SiTypescript />, color: "text-blue-400", bg: "bg-blue-400/10 hover:bg-blue-400/20 border-blue-400/20" },
+  { name: "React.js", icon: <SiReact />, color: "text-cyan-400", bg: "bg-cyan-400/10 hover:bg-cyan-400/20 border-cyan-400/20" },
+  { name: "Next.js", icon: <SiNextdotjs />, color: "text-white", bg: "bg-white/10 hover:bg-white/20 border-white/20" },
+  { name: "Laravel", icon: <SiLaravel />, color: "text-red-500", bg: "bg-red-500/10 hover:bg-red-500/20 border-red-500/20" },
+  { name: "PHP", icon: <SiPhp />, color: "text-indigo-400", bg: "bg-indigo-400/10 hover:bg-indigo-400/20 border-indigo-400/20" },
+  { name: "Node.js", icon: <SiNodedotjs />, color: "text-green-500", bg: "bg-green-500/10 hover:bg-green-500/20 border-green-500/20" },
+  { name: "MySQL", icon: <SiMysql />, color: "text-blue-600", bg: "bg-blue-600/10 hover:bg-blue-600/20 border-blue-600/20" },
+  { name: "PostgreSQL", icon: <SiPostgresql />, color: "text-sky-500", bg: "bg-sky-500/10 hover:bg-sky-500/20 border-sky-500/20" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "text-green-400", bg: "bg-green-400/10 hover:bg-green-400/20 border-green-400/20" },
+  { name: "Tailwind", icon: <SiTailwindcss />, color: "text-teal-400", bg: "bg-teal-400/10 hover:bg-teal-400/20 border-teal-400/20" },
+  { name: "Docker", icon: <SiDocker />, color: "text-blue-400", bg: "bg-blue-400/10 hover:bg-blue-400/20 border-blue-400/20" },
 ];
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12, repeat: Infinity, repeatDelay: 3 },
+    transition: { staggerChildren: 0.06 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.9, y: 24 },
+  hidden: { opacity: 0, scale: 0.9, y: 16 },
   visible: {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.34, 1.56, 0.64, 4],
-      repeat: Infinity,
-      repeatType: "loop",
-      repeatDelay: 4,
-    },
+    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
   },
 };
+
 const About = () => {
   const { t } = useTranslation();
 
@@ -141,25 +66,27 @@ const About = () => {
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-4">
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 64 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-20 h-[2px] bg-purple-500 mr-3 rounded"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="h-[2px] bg-gradient-to-r from-transparent to-purple-500 mr-3 rounded"
             />
-            <h3 className="text-sm font-medium uppercase tracking-widest">
+            <h3 className="text-sm font-medium uppercase tracking-widest text-purple-500">
               {t("about.about_me")}
             </h3>
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 64 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-20 h-[2px] bg-purple-500 ml-3 rounded"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="h-[2px] bg-gradient-to-l from-transparent to-purple-500 ml-3 rounded"
             />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
             {t("about.Who_am_i")}
           </h2>
         </div>
@@ -168,22 +95,23 @@ const About = () => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Profile Image */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative lg:sticky lg:top-28"
           >
             {/* Glow */}
-            <div className="absolute inset-0 bg-purple-500/20 rounded-3xl blur-3xl" />
+            <div className="absolute -inset-4 bg-gradient-to-tr from-purple-500/20 via-pink-500/10 to-transparent rounded-[2rem] blur-3xl" />
 
             {/* Image */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-purple-500/20">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 border border-purple-500/20">
               <img
                 src={profile}
                 alt="Nheung Phearakyuth"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0" />
               {/* Overlay badge */}
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="bg-white/10 dark:bg-slate-900/60 backdrop-blur-md rounded-2xl px-4 py-3 border border-white/20">
@@ -197,16 +125,20 @@ const About = () => {
               </div>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-3 mt-4">
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 text-center border border-gray-200 dark:border-slate-700 shadow-sm">
-                <p className="text-2xl font-bold text-purple-500">10+</p>
+            {/* Stats — single glass panel instead of two separate boxes */}
+            <div className="grid grid-cols-2 mt-4 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm">
+              <div className="p-4 text-center border-r border-gray-200 dark:border-slate-700">
+                <p className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  10+
+                </p>
                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                   Projects Done
                 </p>
               </div>
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 text-center border border-gray-200 dark:border-slate-700 shadow-sm">
-                <p className="text-2xl font-bold text-purple-500">14+</p>
+              <div className="p-4 text-center">
+                <p className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  14+
+                </p>
                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                   Technologies
                 </p>
@@ -216,11 +148,11 @@ const About = () => {
 
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-            className="lg:col-span-2 space-y-8"
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-2 space-y-10"
           >
             {/* Description */}
             <div className="space-y-4">
@@ -244,9 +176,8 @@ const About = () => {
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
-                // whileInView="visible"
-                animate="visible"
-                viewport={{ once: false }}
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
                 className="flex flex-wrap gap-2"
               >
                 {skills.map((skill, index) => (
@@ -271,42 +202,6 @@ const About = () => {
 
             {/* Tools */}
             <Tools />
-
-            {/* Resume Button */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="pt-2"
-            >
-              <a
-                href="https://drive.google.com/file/d/1Dsgi7ogE4ATSw429ZmLRRYXMx8y2UxZx/view?usp=drive_link"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-3 px-7 py-3.5
-                           rounded-full bg-gradient-to-r from-purple-600 to-pink-600
-                           text-white font-semibold shadow-xl shadow-purple-500/25
-                           hover:scale-105 hover:shadow-purple-500/40
-                           transition-all duration-300"
-              >
-                Download Resume
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className="w-5 h-5 animate-bounce"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-                  />
-                </svg>
-              </a>
-            </motion.div> */}
           </motion.div>
         </div>
       </div>

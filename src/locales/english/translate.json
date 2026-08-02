@@ -88,37 +88,41 @@
     "show_more": "Show More",
     "see_less": "See Less",
     "items": {
-      "E-commerce Website": {
-        "name": "E-commerce Store",
-        "description": "A front-end online store built with HTML and CSS (Bootstrap)."
-      },
+   
       "Product Filter App": {
         "name": "Phone Store",
+        "status": "In Progress",
         "description": "A phone product showcase site with filtering functionality."
       },
       "CRUD Application (static)": {
         "name": "Student CRUD",
+        "status": "Completed",
         "description": "A simple React + Tailwind CRUD app without data persistence."
       },
       "VENDO E-commerce Web Application": {
         "name": "Vendo E-commerce",
+        "status": "In Progress",
         "description": "A full-featured e-commerce platform built with React, Laravel API, and Tailwind CSS, including product management, category filtering, shopping cart, and responsive user interface."
       },
       "Weather App": {
         "name": "Weather App",
+        "status": "Completed",
         "description": "A weather app created with React + Tailwind + Weather api"
       },
       "Dashboard": {
         "name": "Dashboard",
+        "status": "Completed",
         "description": "A central user interface that presents key performance indicators (KPIs) and critical information at a glance, allowing users to monitor the status and performance of the system."
+      },
+         "E-commerce Website (Clone)": {
+        "name": "E-commerce Store",
+        "status": "In Progress",
+        "description": "A front-end online store built with HTML and CSS (Bootstrap)."
       },
       "Portfolio Website": {
         "name": "Portfolio Website",
+        "status": "Completed",
         "description": "A personal portfolio to showcase my projects and skills."
-      },
-      "nextjs": {
-        "title": "Next.js",
-        "description": "Build fast, SEO-friendly React applications with server-side rendering."
       }
     }
   },

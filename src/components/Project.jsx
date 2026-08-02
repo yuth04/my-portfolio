@@ -69,7 +69,7 @@ const Project = () => {
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-[11px] font-medium text-white tracking-wide">
-                  Completed
+                  {t(`project.items.${project.key}.status`)}
                 </span>
               </div>
             </div>

@@ -187,37 +187,6 @@ const Hero = () => {
               alt="Yuth"
             />
           </div>
-
-          {/* floating stat chips */}
-          {/* <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.9, duration: 0.5 }}
-            className="absolute -right-4 top-8 flex items-center gap-2
-                       bg-gray-900/80 border border-purple-500/30 backdrop-blur-sm
-                       px-3 py-2 rounded-2xl shadow-xl"
-          >
-            <span className="text-lg">🚀</span>
-            <div>
-              <p className="text-[10px] text-gray-400 leading-none">Projects</p>
-              <p className="text-sm font-bold text-white leading-tight">20+</p>
-            </div>
-          </motion.div> */}
-
-          {/* <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.0, duration: 0.5 }}
-            className="absolute -left-4 bottom-10 flex items-center gap-2
-                       bg-gray-900/80 border border-purple-500/30 backdrop-blur-sm
-                       px-3 py-2 rounded-2xl shadow-xl"
-          >
-            <span className="text-lg">✨</span>
-            <div>
-              <p className="text-[10px] text-gray-400 leading-none">Experience</p>
-              <p className="text-sm font-bold text-white leading-tight">2+ yrs</p>
-            </div>
-          </motion.div> */}
         </motion.div>
 
       </div>
