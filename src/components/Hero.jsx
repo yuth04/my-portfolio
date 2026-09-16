@@ -1,194 +1,230 @@
-import React from "react";
+import { useMemo } from "react";
 import {
   FaFacebookF,
   FaTelegramPlane,
   FaInstagram,
   FaGithub,
 } from "react-icons/fa";
-import { HiArrowDown } from "react-icons/hi";
 import logo from "../assets/hero/coder.jpg";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useTypewriter } from "../hooks/useTypewriter";
 
-const fadeRight = (delay = 0) => ({
-  initial: { opacity: 0, x: -28 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
-});
+/* ------------------------------------------------------------------ */
+/*  motion                                                             */
+/* ------------------------------------------------------------------ */
 
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
+const rise = (delay = 0) => ({
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
 });
+
+/* ------------------------------------------------------------------ */
+/*  data                                                               */
+/* ------------------------------------------------------------------ */
 
 const SOCIALS = [
-  {
-    href: "https://www.facebook.com/share/16nUbygATd/?mibextid=wwXIfr",
-    label: "Facebook",
-    icon: <FaFacebookF />,
-  },
+  { href: "https://github.com/yuth04", label: "GitHub", icon: <FaGithub /> },
   {
     href: "https://t.me/yuth_04",
     label: "Telegram",
     icon: <FaTelegramPlane />,
   },
   {
+    href: "https://www.facebook.com/share/16nUbygATd/?mibextid=wwXIfr",
+    label: "Facebook",
+    icon: <FaFacebookF />,
+  },
+  {
     href: "https://www.instagram.com/yuth_004?igsh=cHQ0Y3N2NjZhbHZi&utm_source=qr",
     label: "Instagram",
     icon: <FaInstagram />,
   },
-  {
-    href: "https://github.com/yuth04",
-    label: "GitHub",
-    icon: <FaGithub />,
-  },
 ];
+
+const STACK_MAIN = ["React", "Laravel", "Node", "Express", "Postgres"];
+const STACK_ALSO = ["TypeScript", "Tailwind", "Docker"];
+
+/* ------------------------------------------------------------------ */
+/*  component                                                          */
+/* ------------------------------------------------------------------ */
 
 const Hero = () => {
   const { t } = useTranslation();
+  const reduce = useReducedMotion();
+  const rawNames = t("hero.name", { returnObjects: true });
 
+  // Memoize array to prevent resetting on every render
+  const namesArray = useMemo(() => {
+    return Array.isArray(rawNames) ? rawNames : [];
+  }, [rawNames]);
+
+  const typedText = useTypewriter(namesArray);
+  const m = (delay = 0) => ({
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, delay },
+  });
   return (
     <section
       id="home"
-      className="px-4 pt-20 md:pt-10 min-h-screen h-auto flex items-center justify-center p-4 relative overflow-hidden"
+      className="relative overflow-hidden bg-[#F6F3FE] dark:bg-[#150C27]
+                 px-4 pt-24 pb-0 md:pt-24"
     >
-      {/* ── original background — untouched ── */}
-      <div className="wrapper">
-        <div className="box">
-          <div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div>
-        </div>
-      </div>
-
-      {/* ── main content ── */}
-      <div className="relative z-10 w-full md:p-10 max-w-7xl flex flex-col lg:flex-row justify-between items-center gap-12">
-
-        {/* ── LEFT: text ── */}
-        <div className="flex flex-col max-w-xl">
-
-          {/* available badge */}
-          <motion.div {...fadeRight(0.1)}
-            className="mb-8 self-start flex items-center gap-2
-                       px-4 py-1.5 rounded-full
-                       bg-slate-900/30 border border-purple-500/40
-                       backdrop-blur-sm shadow-lg shadow-purple-900/20"
-          >
-            <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-            <span className="text-xs font-medium tracking-widest uppercase text-purple-300">
-              Welcome to my Portfolio
-            </span>
-          </motion.div>
-
-          {/* greeting */}
-          <motion.p {...fadeRight(0.2)}
-            className="text-shine mb-3 text-2xl md:text-3xl text-slate-300 font-medium"
-          >
-            {t("hero.des_name")}
-          </motion.p>
-
-          {/* name */}
-          <motion.h1 {...fadeRight(0.3)}
-            className="typing mb-5 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight
-                       bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500
-                       text-transparent bg-clip-text drop-shadow-lg"
-          >
-            &nbsp;&nbsp;{t("hero.name")}
-          </motion.h1>
-
-          {/* career */}
-          <motion.p {...fadeRight(0.4)}
-            className="mb-8 text-base sm:text-lg text-gray-400 font-medium leading-relaxed"
-          >
-            {t("hero.carrer")}
-          </motion.p>
-
-          {/* CTA row */}
-          <motion.div {...fadeRight(0.5)} className="flex items-center gap-4 mb-10 flex-wrap">
-            <a
-              href="#about"
-              className="group inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-white
-                         bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700
-                         shadow-lg shadow-purple-900/40
-                         transition-all duration-300
-                         hover:from-purple-600 hover:to-purple-800
-                         hover:-translate-y-1 hover:scale-105 hover:shadow-purple-700/50"
+      <div className="relative z-10 mx-auto max-w-6xl">
+        {/* ============ text + portrait ============ */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-12 items-center">
+          {/* ---------- left ---------- */}
+          <div>
+            <motion.p
+              {...m(0.05)}
+              className="flex items-center gap-2.5 mb-5 text-[15px] font-medium
+                         text-slate-500 dark:text-slate-400"
             >
-              {t("hero.btn_know")}
-              <HiArrowDown className="transition-transform duration-300 group-hover:translate-y-0.5" />
-            </a>
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Open to work — Phnom Penh or remote
+            </motion.p>
 
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold
-                         text-purple-300 border border-purple-500/50
-                         backdrop-blur-sm bg-purple-900/10
-                         transition-all duration-300
-                         hover:bg-purple-500/20 hover:border-purple-400
-                         hover:-translate-y-1"
+            <motion.p
+              {...m(0.1)}
+              className="mb-2 text-2xl md:text-3xl font-medium text-violet-500"
             >
-              Hire me
-            </a>
-          </motion.div>
+              {t("hero.des_name")}
+            </motion.p>
 
-          {/* divider */}
-          <motion.div {...fadeUp(0.55)}
-            className="mb-6 h-px w-24 bg-gradient-to-r from-purple-500 to-transparent rounded-full"
-          />
+            {/* <motion.h1
+              {...m(0.16)}
+              className="typing font-extrabold tracking-[-0.045em] leading-[0.9] p-2
+                         text-[clamp(3rem,8vw,4.6rem)]
+                         bg-gradient-to-br from-slate-900 to-violet-600
+                         dark:from-white dark:to-violet-400
+                         bg-clip-text text-transparent"
+            >
+              {t("hero.name")}
+            </motion.h1> */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.16 }}
+              {...m(0.16)}
+              className="text font-extrabold tracking-[-0.045em] leading-[0.9] p-2
+                 text-3xl md:text-[clamp(3rem,3vw,4.6rem)]
+                 bg-gradient-to-br from-slate-900 to-violet-600
+                 dark:from-white dark:to-violet-400
+                 bg-clip-text text-transparent"
+            >
+              {typedText}
+              <span className="cursor animate-pulse text-violet-600 dark:text-violet-400"></span>
+            </motion.h1>
+            <motion.p
+              {...m(0.24)}
+              className="mt-7 max-w-[54ch] text-[17px] leading-relaxed
+                         text-slate-600 dark:text-slate-400"
+            >
+              <span className="font-semibold text-slate-900 dark:text-white">
+                {t("hero.carrer")}
+              </span>{" "}
+              {t("hero.des")}
+            </motion.p>
 
-          {/* socials */}
-          <motion.div {...fadeUp(0.6)} className="flex items-center gap-3">
-            {/* <span className="text-xs uppercase tracking-widest text-gray-600 mr-1">Follow</span> */}
-            {SOCIALS.map(({ href, label, icon }) => (
+            <motion.div {...m(0.32)} className="mt-8 flex flex-wrap gap-3.5">
               <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="flex items-center justify-center w-10 h-10 rounded-full text-base
-                           text-gray-400 border border-gray-700/60
-                           bg-gray-900/30 backdrop-blur-sm
-                           transition-all duration-300
-                           hover:text-white hover:border-purple-500
-                           hover:bg-purple-600/20 hover:-translate-y-1"
+                href="#about"
+                className="inline-flex items-center justify-center rounded-xl
+                           bg-violet-600 px-7 py-3.5 text-[15px] font-bold text-white
+                           shadow-[0_16px_34px_-16px_rgba(124,58,237,0.9)]
+                           transition-transform duration-200 hover:-translate-y-0.5
+                           hover:bg-violet-500
+                           focus-visible:outline focus-visible:outline-2
+                           focus-visible:outline-offset-2 focus-visible:outline-violet-400"
               >
-                {icon}
+                {t("hero.btn_know")}
               </a>
-            ))}
-          </motion.div>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-xl
+                           border border-slate-300 dark:border-white/15
+                           px-7 py-3.5 text-[15px] font-bold
+                           text-slate-800 dark:text-white
+                           transition-all duration-200 hover:-translate-y-0.5
+                           hover:border-violet-400 hover:bg-violet-50 dark:hover:bg-violet-500/10
+                           focus-visible:outline focus-visible:outline-2
+                           focus-visible:outline-offset-2 focus-visible:outline-violet-400"
+              >
+                {t("hero.hire_me")}
+              </a>
+            </motion.div>
+          </div>
+
+          {/* ---------- right: portrait ---------- */}
+          <motion.figure
+            {...m(0.2)}
+            className="relative m-0 w-full max-w-[277px] justify-self-center lg:justify-self-end"
+          >
+            <div
+              aria-hidden
+              className="absolute -inset-2 rounded-[28px]
+                         bg-gradient-to-br from-violet-500 via-fuchsia-500 to-violet-700
+                         opacity-50 blur-[2px]"
+            />
+            <div className="relative overflow-hidden rounded-3xl bg-[#0C0A18] shadow-2xl">
+              <img
+                src={logo}
+                alt="Phearak Yuth at his laptop"
+                className="block w-full h-auto"
+              />
+            </div>
+          </motion.figure>
         </div>
 
-        {/* ── RIGHT: profile image ── */}
-        <motion.div
-          {...fadeUp(0.5)}
-          className="relative flex-shrink-0"
+        {/* ============ bottom rail ============ */}
+        <motion.dl
+          {...m(0.4)}
+          className="mt-20 grid grid-cols-1 sm:grid-cols-3
+                     border-t border-slate-200 dark:border-white/10 m-0 md:text-center"
         >
-          {/* outer glow ring */}
-          <div className="absolute inset-0 rounded-full
-                          bg-gradient-to-tr from-purple-600/30 via-transparent to-purple-400/20
-                          blur-2xl scale-110 animate-pulse" />
-
-          {/* spinning dashed ring */}
-          <div className="absolute inset-[-12px] rounded-full border border-dashed border-purple-500/30
-                          animate-spin" style={{ animationDuration: "18s" }} />
-
-          {/* static ring */}
-          <div className="absolute inset-[-6px] rounded-full border border-purple-500/20" />
-
-          {/* image */}
-          <div className="pulse-wrapper relative w-[280px] md:w-[360px] h-[280px] md:h-[360px]">
-            <div className="border-ring" />
-            <img
-              className="rounded-full w-full h-full object-cover
-                         ring-4 ring-purple-600/30 ring-offset-4 ring-offset-transparent"
-              src={logo}
-              alt="Yuth"
-            />
+          <div className="py-7 pr-6 sm:border-r border-slate-200 dark:border-white/10">
+            <dt className="text-sm text-slate-500 dark:text-slate-500 mb-2">
+              Main stack
+            </dt>
+            <dd className="m-0 font-semibold text-slate-900 dark:text-white">
+              {STACK_MAIN.join(", ")}
+            </dd>
           </div>
-        </motion.div>
-
+          <div className="py-7   sm:border-r border-slate-200 dark:border-white/10">
+            <dt className="text-sm text-slate-500 dark:text-slate-500 mb-2">
+              Also comfortable with
+            </dt>
+            <dd className="m-0 font-semibold text-slate-900 dark:text-white">
+              {STACK_ALSO.join(", ")}
+            </dd>
+          </div>
+          <div className="py-7 ">
+            <dt className="text-sm  text-slate-500 dark:text-slate-500 mb-3">
+              Find me
+            </dt>
+            <dd className="m-0 flex md:justify-center gap-3">
+              {SOCIALS.map(({ href, label, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="grid h-10 w-10 place-items-center rounded-full
+                             text-slate-500 dark:text-slate-400
+                             transition-all duration-200
+                             hover:-translate-y-1 hover:text-violet-600 dark:hover:text-violet-400
+                             focus-visible:outline focus-visible:outline-2
+                             focus-visible:outline-offset-2 focus-visible:outline-violet-400"
+                >
+                  {icon}
+                </a>
+              ))}
+            </dd>
+          </div>
+        </motion.dl>
       </div>
     </section>
   );

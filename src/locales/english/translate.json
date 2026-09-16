@@ -8,9 +8,11 @@
   },
   "hero": {
     "des_name": "Hello, I'm ",
-    "name": "Phearak YuTh...",
-    "carrer": "Full Stack Developer",
-    "btn_know": "Know More"
+    "name": ["Phearak YuTh...","a Full Stack Developer..."],
+    "carrer": "A Full Stack Developer",
+    "btn_know": "Know More",
+    "des": "who builds web apps end to end — from the database schema up to the interface people actually touch. Lately: booking systems, dashboards, and Khmer-first interfaces.",
+    "hire_me":"Hire me"
   },
   "about": {
     "about_me": "ABOUT ME",
@@ -88,7 +90,6 @@
     "show_more": "Show More",
     "see_less": "See Less",
     "items": {
-   
       "Product Filter App": {
         "name": "Phone Store",
         "status": "In Progress",
@@ -114,7 +115,7 @@
         "status": "Completed",
         "description": "A central user interface that presents key performance indicators (KPIs) and critical information at a glance, allowing users to monitor the status and performance of the system."
       },
-         "E-commerce Website (Clone)": {
+      "E-commerce Website (Clone)": {
         "name": "E-commerce Store",
         "status": "In Progress",
         "description": "A front-end online store built with HTML and CSS (Bootstrap)."

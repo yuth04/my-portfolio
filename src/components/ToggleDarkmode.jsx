@@ -1,34 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 import useDarkMode from "../hooks/useDarkMode";
-const ToggleDarkmode = ({isHero}) => {
-  const {dark, setDark }  = useDarkMode();
 
-  
+const ToggleDarkmode = ({ isHero }) => {
+  const { dark, setDark } = useDarkMode();
+
   return (
-    <label className="relative inline-flex items-center cursor-pointer">
-      <input
-        type="checkbox"
-        checked={dark}
-        onChange={() => setDark(!dark)}
-        className="sr-only peer"
-      />
-
-      {/* Toggle Background */}
-      <div className="w-[90px] h-[37px]  rounded-full relative after:absolute after:content-[''] after:w-[32px] after:h-[32px] after:top-[2px] after:left-[4px] after:bg-gradient-to-r after:from-yellow-400 after:to-orange-500 dark:after:from-zinc-800 dark:after:to-black after:rounded-full after:transition-all after:duration-300 peer-checked:after:translate-x-[50px] shadow-md" />
-
-      {/* SUN */}
-      <FiSun
-        size={16}
-        className={`absolute left-[12px] dark:text-orange-600 text-white transition-all peer-checked:opacity-60 ${!isHero && "text-orange-600"}`}
-      />
-
-      {/* MOON */}
-      <FiMoon
-        size={18}
-        className="absolute right-[12px] text-black dark:text-white opacity-60 peer-checked:opacity-100 transition-all"
-      />
-    </label>
+    <button
+      onClick={() => setDark(!dark)}
+      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-pressed={dark}
+      className={`h-9 w-10 grid place-items-center rounded-xl border
+                  backdrop-blur-sm shadow-[0_2px_10px_-4px_rgba(124,58,237,0.25)]
+                  transition-all duration-200
+                  focus-visible:outline focus-visible:outline-2
+                  focus-visible:outline-offset-2 focus-visible:outline-violet-400
+                  ${
+                    isHero
+                      ? "border-white/25 bg-white/10 text-white hover:bg-white/15"
+                      : "border-violet-200 bg-white/70 text-slate-800 hover:border-violet-400 hover:bg-white"
+                  }`}
+    >
+      {dark ? <FiMoon size={15} /> : <FiSun size={15} />}
+    </button>
   );
 };
 

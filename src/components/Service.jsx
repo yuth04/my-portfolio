@@ -37,7 +37,7 @@ const Service = () => {
   return (
     <section
       id="service"
-      className="px-6 md:px-16 py-20 bg-gray-50 dark:bg-gray-900
+      className="px-6 md:px-12 py-20 bg-gray-50 dark:bg-gray-900
                  text-gray-800 dark:text-gray-100 transition-colors duration-300"
     >
       {/* Header */}

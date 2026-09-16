@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Toaster } from "react-hot-toast";
-import CustomCursor from "./components/CustomeCursor";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/NavBar";
+import Hero from "./components/Hero";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -24,14 +26,26 @@ const App = () => {
     AOS.init({ duration: 700, once: true });
   }, []);
   return (
-    <div
-      className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}
-    >
-      {/* <CustomCursor /> */}
-      <Toaster position="top-right" />
-      <NavBar theme={theme} toggleTheme={toggleTheme} />
-      <Home />
-    </div>
+    <BrowserRouter>
+      <div
+        className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}
+      >
+        <Toaster position="top-right" />
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<Home />} />
+          <Route path="/service" element={<Home />} />
+          <Route path="/project" element={<Home />} />
+          <Route path="/contact" element={<Home />} />
+
+         
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+
+      </div>
+    </BrowserRouter>
   );
 };
 

@@ -47,14 +47,8 @@ const Footer = () => {
   };
 
   return (
-    <footer
-      style={{
-        background: "#0a0a0f",
-        color: "#c8c8d8",
-        fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
-        position: "relative",
-        overflow: "hidden",
-      }}
+    <footer className="relative overflow-hidden text-[#c8c8d8] bg-[#150C27]"
+
     >
       {/* Subtle top noise line */}
       <div
@@ -107,7 +101,7 @@ const Footer = () => {
           gridTemplateColumns: "1.6fr 1fr 1fr",
           gap: "64px",
         }}
-        className="footer-grid"
+        className="footer-grid "
       >
         {/* ── Brand ── */}
         <motion.div variants={itemVariants}>
@@ -123,7 +117,7 @@ const Footer = () => {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                fontFamily: "'DM Sans', sans-serif",
+                
               }}
             >
               {t("footer.name")}

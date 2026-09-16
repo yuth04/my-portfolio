@@ -135,3 +135,5 @@
 .service-card:hover::after {
   width: 80%; /* adjust the final width */
 }
+
+/* flash */

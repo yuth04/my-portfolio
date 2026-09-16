@@ -1,51 +1,63 @@
 import { useState } from "react";
 import i18n from "i18next";
 import { FaCheck } from "react-icons/fa";
-import { ArrowDown } from 'lucide-react';
-import egFlag from "../assets/flags/English.png"; 
-import khFlag from "../assets/flags/khmer.png"; 
+import { ChevronDown } from "lucide-react";
 
-const SwitchLang = () => {
+const SwitchLang = ({ isHero }) => {
   const [isOpen, setIsOpen] = useState(false);
   const currentLang = i18n.language || "en";
 
   const languages = [
-    { code: "en", flag: egFlag },
-    { code: "kh",  flag: khFlag },
+    { code: "en", label: "EN" },
+    { code: "kh", label: "KH" },
   ];
 
   return (
     <div className="relative inline-block text-left">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex justify-between items-center w-[90px] gap-2 px-2 py-2 shadow-md bg-white text-slate-800 rounded-md"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        className={`flex items-center gap-2 h-9 px-4 rounded-xl border
+                    text-[15px] font-semibold
+                    backdrop-blur-sm shadow-[0_2px_10px_-4px_rgba(124,58,237,0.25)]
+                    transition-all duration-200
+                    focus-visible:outline focus-visible:outline-2
+                    focus-visible:outline-offset-2 focus-visible:outline-violet-400
+                    ${
+                      isHero
+                        ? "border-white/25 bg-white/10 text-white hover:bg-white/15"
+                        : "border-violet-200 bg-white/70 text-slate-800 hover:border-violet-400 hover:bg-white"
+                    }`}
       >
-        <img
-          src={languages.find((lang) => lang.code === currentLang)?.flag}
-          alt={currentLang}
-          className="w-5 h-5"
+        {languages.find((lang) => lang.code === currentLang)?.label ?? "EN"}
+        <ChevronDown
+          size={15}
+          className={`transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
         />
-        <span className="text-sm flex gap-2 font-medium"><ArrowDown className={`text-purple-600 transition-transform duration-300  ${isOpen ? "rotate-180" : "rotate-0"}`}  size={15}/></span>
       </button>
 
       {isOpen && (
-        <ul className="absolute mt-1 w-[90px] text-slate-800 bg-white border border-gray-300 rounded-md shadow-lg z-10">
+        <ul
+          role="listbox"
+          className="absolute right-0  mt-1 w-[80px] rounded-xl border border-violet-100
+                     bg-white text-slate-800 shadow-lg overflow-hidden z-10"
+        >
           {languages.map((lang) => (
             <li
               key={lang.code}
+              role="option"
+              aria-selected={currentLang === lang.code}
               onClick={() => {
                 i18n.changeLanguage(lang.code);
-
                 setIsOpen(false);
               }}
-              className="flex items-center justify-between px-3 py-2 cursor-pointer hover:text-white hover:bg-slate-200"
+              className="flex items-center justify-between px-4 py-2.5 text-sm font-medium
+                         cursor-pointer hover:bg-violet-50"
             >
-              <div className="flex items-center gap-2">
-                <img src={lang.flag} alt={lang.label} className="w-4 h-4" />
-                {/* <span>{lang.label}</span> */}
-              </div>
+              {lang.label}
               {currentLang === lang.code && (
-                <FaCheck className="text-purple-600 text-xs" />
+                <FaCheck className="text-violet-600 text-xs" />
               )}
             </li>
           ))}
