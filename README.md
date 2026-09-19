@@ -9,4 +9,77 @@ Currently, two official plugins are available:
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.# 👨‍💻 Nheung Phearakyuth — Developer Portfolio
+
+My personal developer portfolio website, built with **React and Vite**.
+
+The portfolio showcases my skills, projects, experience, and background as a Software Developer.
+
+---
+
+## 🌐 About
+
+This website is my personal portfolio where I showcase my development experience and projects.
+
+It includes:
+
+- 👨‍💻 About Me
+- 🛠️ Technical Skills
+- 🚀 Projects
+- 💼 Experience
+- 🎓 Education
+- 📬 Contact Information
+
+---
+
+## 🚀 Features
+
+- ⚡ Fast and responsive React application
+- 📱 Mobile-friendly design
+- 🎨 Modern portfolio interface
+- 🧩 Reusable React components
+- 🚀 Fast development with Vite
+- 📂 Project showcase
+- 🔗 Social and professional links
+- 📧 Contact section
+
+---
+
+## 🛠️ Technologies
+
+### Frontend
+
+- React
+- JavaScript
+- Vite
+- HTML5
+- CSS3
+
+### Development Tools
+
+- Git
+- GitHub
+- VS Code
+
+---
+
+## 📁 Project Structure
+
+```text
+portfolio/
+│
+├── public/
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── ...
+│
+├── .gitignore
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
