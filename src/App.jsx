@@ -1,49 +1,67 @@
-import { useState, useEffect } from "react";
-import Home from "./pages/Home";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Toaster } from "react-hot-toast";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Service from "./pages/Service";
+import Project from "./pages/Project";
+import Contact from "./pages/Contact";
+
 import Navbar from "./components/NavBar";
-import Hero from "./components/Hero";
 import NotFound from "./components/NotFound";
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    setTheme((currentTheme) => {
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+
+      localStorage.setItem("theme", newTheme);
+
+      return newTheme;
+    });
   };
 
   useEffect(() => {
-    AOS.init({ duration: 700, once: true });
+    document.documentElement.classList.toggle(
+      "dark",
+      theme === "dark"
+    );
+  }, [theme]);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 700,
+      once: true,
+    });
   }, []);
+
   return (
     <BrowserRouter>
-      <div
-        className={`min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300`}
-      >
+      <div className="min-h-screen bg-white text-black transition-colors duration-300 dark:bg-gray-900 dark:text-white">
         <Toaster position="top-right" />
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
+
+        <Navbar
+          theme={theme}
+          toggleTheme={toggleTheme}
+        />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<Home />} />
-          <Route path="/service" element={<Home />} />
-          <Route path="/project" element={<Home />} />
-          <Route path="/contact" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/contact" element={<Contact />} />
 
-         
           <Route path="*" element={<NotFound />} />
         </Routes>
-
       </div>
     </BrowserRouter>
   );

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Hero from "../components/Hero";
-import About from "../components/About";
-import Service from "../components/Service";
-import Project from "../components/Project";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import AboutPage from "./About";
+import ServicePage from "./Service";
+import ProjectPage from "./Project";
+import ContactPage from "./Contact";
+import Footer from "./Footer";
 import NotFound from "../components/NotFound"; // Import 404 Component
 
 const VALID_SECTIONS = ["home", "about", "service", "project", "contact"];
@@ -37,16 +37,16 @@ const Home = () => {
         <Hero />
       </section>
       <section id="about">
-        <About />
+        <AboutPage />
       </section>
       <section id="service">
-        <Service />
+        <ServicePage />
       </section>
       <section id="project">
-        <Project />
+        <ProjectPage />
       </section>
       <section id="contact">
-        <Contact />
+        <ContactPage />
       </section>
       <Footer />
     </>

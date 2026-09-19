@@ -51,7 +51,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-4 right-4 md:left-10 md:right-10 z-50 px-6 md:px-8 py-2.5 md:py-3 flex justify-between items-center
+        className={`fixed  top-0 left-4 right-4 md:left-10 md:right-10 z-50 px-6 md:px-8 py-2.5 md:py-3 flex justify-between items-center
           transition-all duration-300 backdrop-blur-md rounded-xl
           ${
             isFloating
