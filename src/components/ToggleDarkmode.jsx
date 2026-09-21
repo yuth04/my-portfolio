@@ -1,28 +1,43 @@
 import React from "react";
-import { FiMoon, FiSun } from "react-icons/fi";
+import { FiMoon, FiSun, FiMonitor } from "react-icons/fi";
 import useDarkMode from "../hooks/useDarkMode";
 
 const ToggleDarkmode = ({ isHero }) => {
-  const { dark, setDark } = useDarkMode();
+  const { theme, setTheme } = useDarkMode();
+
+  const options = [
+    { mode: "light", icon: <FiSun size={14} />, label: "Light mode" },
+    { mode: "dark", icon: <FiMoon size={14} />, label: "Dark mode" },
+    { mode: "system", icon: <FiMonitor size={14} />, label: "System theme" },
+  ];
 
   return (
-    <button
-      onClick={() => setDark(!dark)}
-      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-      aria-pressed={dark}
-      className={`h-9 w-10 grid place-items-center rounded-xl border
-                  backdrop-blur-sm shadow-[0_2px_10px_-4px_rgba(124,58,237,0.25)]
-                  transition-all duration-200
-                  focus-visible:outline focus-visible:outline-2
-                  focus-visible:outline-offset-2 focus-visible:outline-violet-400
-                  ${
-                    isHero
-                      ? "border-white/25 bg-white/10 text-white hover:bg-white/15"
-                      : "border-violet-200 bg-white/70 text-slate-800 hover:border-violet-400 hover:bg-white"
-                  }`}
+    <div
+      className={`flex items-center gap-1 p-1 rounded-xl border backdrop-blur-sm transition-all ${
+        isHero
+          ? "border-white/25 bg-white/10 text-white"
+          : "border-violet-200 bg-white/70 text-slate-800 dark:border-zinc-800 dark:bg-zinc-900/80"
+      }`}
     >
-      {dark ? <FiMoon size={15} /> : <FiSun size={15} />}
-    </button>
+      {options.map(({ mode, icon, label }) => {
+        const isActive = theme === mode;
+        return (
+          <button
+            key={mode}
+            onClick={() => setTheme(mode)}
+            aria-label={label}
+            title={label}
+            className={`p-1.5 rounded-lg transition-all ${
+              isActive
+                ? "bg-violet-600 text-white shadow-sm"
+                : "text-slate-500 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white"
+            }`}
+          >
+            {icon}
+          </button>
+        );
+      })}
+    </div>
   );
 };
 
