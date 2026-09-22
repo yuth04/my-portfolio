@@ -8,11 +8,11 @@
   },
   "hero": {
     "des_name": "Hello, I'm ",
-    "name": ["Phearak YuTh...","a Full Stack Developer..."],
+    "name": ["Phearak YuTh...", "a Full Stack Developer..."],
     "carrer": "A Full Stack Developer",
     "btn_know": "Know More",
     "des": "who builds web apps end to end — from the database schema up to the interface people actually touch. Lately: booking systems, dashboards, and Khmer-first interfaces.",
-    "hire_me":"Hire me"
+    "hire_me": "Hire me"
   },
   "about": {
     "about_me": "ABOUT ME",
@@ -67,10 +67,6 @@
       "database_design": {
         "title": "Database Design",
         "description": "Design and optimize databases using MySQL, PostgreSQL, and MongoDB for reliable data storage."
-      },
-      "responsive_design": {
-        "title": "Responsive Design",
-        "description": "Make sure your website looks great and works perfectly on mobile, tablet, and desktop."
       },
       "deployment": {
         "title": "Deployment & CI/CD",

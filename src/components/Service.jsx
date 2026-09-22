@@ -21,7 +21,7 @@ const items = {
   api_development: <FaPlug size={28} className="text-yellow-500" />,
   authentication: <FaShieldAlt size={28} className="text-pink-500" />,
   database_design: <FaDatabase size={28} className="text-green-500" />,
-  responsive_design: <FaMobileAlt size={28} className="text-indigo-500" />,
+  // responsive_design: <FaMobileAlt size={28} className="text-indigo-500" />,
   deployment: <FaDocker size={28} className="text-blue-500" />,
   maintenance: <FaTools size={28} className="text-gray-500" />,
 };
@@ -113,7 +113,7 @@ const Service = () => {
       </div>
 
       {/* Show More / Less */}
-      {visibleServices.length > 7 && (
+      {visibleServices.length > 8 && (
         <div
           data-aos="fade-up"
           data-aos-anchor-placement="center-bottom"

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 
 export default function useDarkMode() {
-  const [theme, setTheme] = useState("system");
-
-  useEffect(() => {
-    // Load stored theme or default to system
-    const savedTheme = localStorage.getItem("theme") || "system";
-    setTheme(savedTheme);
-  }, []);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") || "system";
+    }
+    return "system";
+  });
 
   useEffect(() => {
     const root = document.documentElement;
@@ -28,7 +27,6 @@ export default function useDarkMode() {
     applyTheme(theme);
     localStorage.setItem("theme", theme);
 
-    // Listener for when OS preferences change in real-time
     const handleSystemChange = () => {
       if (theme === "system") {
         applyTheme("system");

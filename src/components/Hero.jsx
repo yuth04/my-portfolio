@@ -188,10 +188,10 @@ const Hero = () => {
         {/* ============ bottom rail ============ */}
         <motion.dl
           {...m(0.4)}
-          className="mt-20 grid grid-cols-1 sm:grid-cols-3
+          className="mt-5 md:mt-20 grid grid-cols-1 sm:grid-cols-3
                      border-t border-slate-200 dark:border-white/10 m-0 md:text-center"
         >
-          <div className="py-7 pr-6 sm:border-r border-slate-200 dark:border-white/10">
+          <div className="py-4 pr-6 sm:border-r border-slate-200 dark:border-white/10">
             <dt className="text-sm text-slate-500 dark:text-slate-500 mb-2">
               Main stack
             </dt>
@@ -199,7 +199,7 @@ const Hero = () => {
               {STACK_MAIN.join(", ")}
             </dd>
           </div>
-          <div className="py-7 sm:border-r border-slate-200 dark:border-white/10">
+          <div className="py-4 sm:border-r border-slate-200 dark:border-white/10">
             <dt className="text-sm text-slate-500 dark:text-slate-500 mb-2">
               Also comfortable with
             </dt>
@@ -207,7 +207,7 @@ const Hero = () => {
               {STACK_ALSO.join(", ")}
             </dd>
           </div>
-          <div className="py-7">
+          <div className="py-4">
             <dt className="text-sm text-slate-500 dark:text-slate-500 mb-3">
               Find me
             </dt>

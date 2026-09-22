@@ -2,38 +2,28 @@ import React, { useState } from "react";
 import profile from "../assets/hero/yuth.jpg";
 import { useTranslation } from "react-i18next";
 import Education from "./Education";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import SKILL_GROUPS from "../data/technologies";
 
 const TOTAL_SKILLS = SKILL_GROUPS.reduce(
   (sum, group) => sum + group.skills.length,
   0,
 );
-
 const containerVariants = {
-  hidden: {},
+  hidden: { opacity: 0, y: 20 },
   visible: {
+    opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.06,
+      duration: 0.5,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const itemVariants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.9,
-    y: 16,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      duration: 0.45,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
+  hidden: { opacity: 0, y: 15 },
+  visible: { opacity: 1, y: 0 },
 };
 
 const About = () => {
@@ -55,31 +45,26 @@ const About = () => {
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12" data-aos="fade-up">
           <div className="flex items-center justify-center mb-4">
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 64 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-[2px] bg-gradient-to-r from-transparent to-purple-500 mr-3 rounded"
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="w-20 h-[2px] bg-purple-500 mr-3 rounded"
             />
-
-            <h3 className="text-sm font-medium uppercase tracking-widest text-purple-500">
+            <h3 className="text-sm font-medium text-slate-800 dark:text-white uppercase tracking-widest">
               {t("about.about_me")}
             </h3>
-
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 64 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-[2px] bg-gradient-to-l from-transparent to-purple-500 ml-3 rounded"
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="w-20 h-[2px] bg-purple-500 ml-3 rounded"
             />
           </div>
-
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
-            {t("about.Who_am_i")}
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-white">
+            {t("service.what_can_i_do")}
           </h2>
         </div>
 
@@ -151,14 +136,10 @@ const About = () => {
 
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.8,
-              delay: 0.15,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
             className="lg:col-span-2 space-y-10"
           >
             {/* Description */}
@@ -184,68 +165,96 @@ const About = () => {
                   Technologies I work with
                 </h3>
 
-                {/* Filter Buttons */}
+                {/* Filter Buttons - sliding pill indicator, ported from AboutSection */}
                 <div className="flex flex-wrap gap-2">
                   {["All", ...SKILL_GROUPS.map((group) => group.label)].map(
-                    (label) => (
-                      <button
-                        key={label}
-                        onClick={() => setActiveGroup(label)}
-                        className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
-                          activeGroup === label
-                            ? "bg-purple-800 text-white border-transparent shadow-sm"
-                            : "border-gray-300 dark:border-slate-600 text-gray-500 dark:text-gray-400 hover:border-purple-400 hover:text-purple-500"
-                        }`}
-                      >
-                        {label}
-                      </button>
-                    ),
+                    (label) => {
+                      const isActive = activeGroup === label;
+
+                      return (
+                        <button
+                          key={label}
+                          onClick={() => setActiveGroup(label)}
+                          className={`relative px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-500 ease-out ${
+                            isActive
+                              ? "text-white border-transparent"
+                              : "border-gray-300 dark:border-slate-600 text-gray-500 dark:text-gray-400 hover:border-purple-400 hover:text-purple-500"
+                          }`}
+                        >
+                          {isActive && (
+                            <motion.div
+                              layoutId="active-skill-filter"
+                              className="absolute inset-0 bg-purple-800 rounded-full shadow-sm -z-10"
+                              transition={{
+                                type: "spring",
+                                stiffness: 250,
+                                damping: 28,
+                                mass: 0.9,
+                              }}
+                            />
+                          )}
+                          {label}
+                        </button>
+                      );
+                    },
                   )}
                 </div>
               </div>
 
-              {/* Skill Groups */}
-              {visibleGroups.map((group) => (
-                <div key={group.label}>
-                  {/* Category Label */}
-                  {activeGroup === "All" && (
-                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wider text-purple-500/80 dark:text-purple-400/80">
-                      {group.label}
-                    </p>
-                  )}
+              {/* Skill Groups - AnimatePresence swap, ported from AboutSection */}
+              <AnimatePresence mode="popLayout">
+                <motion.div
+                  key={activeGroup}
+                  layout
+                  initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.98 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="space-y-6"
+                >
+                  {visibleGroups.map((group) => (
+                    <div key={group.label}>
+                      {/* Category Label */}
+                      {activeGroup === "All" && (
+                        <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wider text-purple-500/80 dark:text-purple-400/80">
+                          {group.label}
+                        </p>
+                      )}
 
-                  {/* Skills */}
-                  <motion.div
-                    key={activeGroup}
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex flex-wrap gap-2"
-                  >
-                    {group.skills.map((skill) => {
-                      const Icon = skill.icon;
+                      {/* Skills */}
+                      <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="flex flex-wrap gap-2"
+                      >
+                        {group.skills.map((skill) => {
+                          const Icon = skill.icon;
 
-                      return (
-                        <motion.span
-                          key={skill.name}
-                          variants={itemVariants}
-                          className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium border backdrop-blur-sm cursor-default transition-all duration-300 hover:scale-105 hover:shadow-lg ${skill.bg}`}
-                        >
-                          {/* Icon */}
-                          <span className={`text-base ${skill.color}`}>
-                            <Icon />
-                          </span>
+                          return (
+                            <motion.span
+                              key={skill.name}
+                              variants={itemVariants}
+                              transition={{ duration: 0.4, ease: "easeOut" }}
+                              className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium border backdrop-blur-sm cursor-default transition-all duration-500 ease-out hover:scale-105 hover:shadow-lg ${skill.bg}`}
+                            >
+                              {/* Icon */}
+                              <span className={`text-base ${skill.color}`}>
+                                <Icon />
+                              </span>
 
-                          {/* Name */}
-                          <span className="text-gray-700 dark:text-gray-200">
-                            {skill.name}
-                          </span>
-                        </motion.span>
-                      );
-                    })}
-                  </motion.div>
-                </div>
-              ))}
+                              {/* Name */}
+                              <span className="text-gray-700 dark:text-gray-200">
+                                {skill.name}
+                              </span>
+                            </motion.span>
+                          );
+                        })}
+                      </motion.div>
+                    </div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </motion.div>
         </div>

@@ -51,13 +51,13 @@ export default function NotFound() {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3"
         >
-          {/* <button
+          <button
             onClick={() => navigate(-1)}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors duration-200 text-sm"
           >
             <ArrowLeft size={18} />
             Go Back
-          </button> */}
+          </button>
 
           <Link
             to="/"

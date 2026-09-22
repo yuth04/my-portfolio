@@ -44,7 +44,6 @@ const Navbar = () => {
   const handleLogoClick = () => {
     setIsOpen(false);
 
-    // Directly assigning the URL navigates home AND performs a clean full refresh
     window.location.href = "/";
   };
 
@@ -128,10 +127,9 @@ const Navbar = () => {
                 key={item}
                 onClick={() => handleNavClick(item)}
                 className={`group relative cursor-pointer px-2 py-2 font-semibold
-      text-slate-800 dark:text-purple-500
       transition-colors duration-300
       hover:text-purple-500
-      ${activeSection === item ? "text-purple-500" : "text-white-300"}
+      ${activeSection === item ? "text-purple-500" : "text-slate-800 dark:text-white"}
     `}
               >
                 {t(`nav.${item}`)}
@@ -139,10 +137,10 @@ const Navbar = () => {
                 {/* Animated underline */}
                 <span
                   className={`absolute left-1/2 bottom-0 h-[2px] rounded-full
-        bg-purple-500
-        transition-all duration-300 ease-out
-        -translate-x-1/2
-        ${activeSection === item ? "w-full" : "w-0 group-hover:w-full"}
+                  bg-purple-500
+                  transition-all duration-300 ease-out
+                  -translate-x-1/2
+        ${activeSection === item ? "w-full " : " w-0 group-hover:w-full"}
       `}
                 />
               </li>

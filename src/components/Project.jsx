@@ -26,7 +26,7 @@ const Project = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="w-20 h-[2px] bg-purple-500 mr-3 rounded"
           ></motion.div>
-          <h3 className="text-sm font-medium uppercase tracking-widest">
+          <h3 className="text-sm font-medium text-slate-800 dark:text-white uppercase tracking-widest">
             {t("project.my_project")}
           </h3>
           <motion.div

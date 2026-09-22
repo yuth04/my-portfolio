@@ -5,7 +5,6 @@ import AboutPage from "./About";
 import ServicePage from "./Service";
 import ProjectPage from "./Project";
 import ContactPage from "./Contact";
-import Footer from "./Footer";
 import NotFound from "../components/NotFound"; // Import 404 Component
 
 const VALID_SECTIONS = ["home", "about", "service", "project", "contact"];
@@ -48,7 +47,7 @@ const Home = () => {
       <section id="contact">
         <ContactPage />
       </section>
-      <Footer />
+
     </>
   );
 };
