@@ -177,7 +177,7 @@ const About = () => {
                           onClick={() => setActiveGroup(label)}
                           className={`relative px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-500 ease-out ${
                             isActive
-                              ? "text-white border-transparent"
+                              ? "text-white bg-purple-800 border-transparent"
                               : "border-gray-300 dark:border-slate-600 text-gray-500 dark:text-gray-400 hover:border-purple-400 hover:text-purple-500"
                           }`}
                         >

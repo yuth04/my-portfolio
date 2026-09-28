@@ -13,6 +13,7 @@
 body {
   font-family: "Kantumruy Pro", "Poppins", sans-serif;
 }
+
 h1,
 h2,
 h3,
@@ -20,7 +21,13 @@ h4 {
   font-family: "Kantumruy Pro", "Poppins", sans-serif;
   font-weight: 700;
 }
-
+html, body {
+  min-height: 100vh;
+  min-height: 100dvh; 
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
 html {
   scroll-behavior: smooth;
 }
