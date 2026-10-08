@@ -9,7 +9,6 @@ import {
   FaPlug,
   FaShieldAlt,
   FaDatabase,
-  FaMobileAlt,
   FaDocker,
   FaTools,
 } from "react-icons/fa";

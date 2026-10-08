@@ -3,7 +3,6 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { projects } from "../data/data";
 import { useTranslation } from "react-i18next";
 import { ChevronsDown } from "lucide-react";
-// import { containerVariants, itemVariants } from "./motion";
 import { motion } from "framer-motion";
 const Project = () => {
   const { t } = useTranslation();

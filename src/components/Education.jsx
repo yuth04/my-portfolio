@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { containerVariants, itemVariants } from "./motion";
 import { motion } from "framer-motion";
 const Education = () => {
   const { t } = useTranslation();

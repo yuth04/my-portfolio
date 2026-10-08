@@ -14,7 +14,7 @@ import {
   Copy,
   Check,
 } from "lucide-react";
-import { containerVariants, itemVariants } from "./motion";
+import { containerVariants, itemVariants } from "../utils/motion";
 import toast from "react-hot-toast";
 
 const linkIcons = {

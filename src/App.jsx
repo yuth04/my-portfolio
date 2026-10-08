@@ -18,6 +18,7 @@ import NotFound from "./components/NotFound";
 import Footer from "./components/Footer";
 
 import SmoothScrollProvider from "./providers/SmoothScrollProvider";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   // Initialize AOS
@@ -31,6 +32,7 @@ const App = () => {
   return (
     <SmoothScrollProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Toaster position="top-right" />
 
         <Navbar />
