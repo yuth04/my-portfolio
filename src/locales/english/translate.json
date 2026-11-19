@@ -16,16 +16,15 @@
   },
   "about": {
     "about_me": "ABOUT ME",
-    "Who_am_i": "Who Am I",
+    "who_am_i": "Who Am I",
     "greeting": "Hi, I'm",
     "name": "Nheung Phearak YuTh",
-    "des_1": ", a passionate​​ Computer Science's student at Norton University. I specialize in building clean, modern, and responsive websites using the latest web technologies.",
-    "des_2": "I'm always eager to learn new skills and take on new challenges. With a strong foundation in both front-end and back-end development, I strive to create user-friendly digital experiences that not only look good but also perform efficiently.",
+    "des_1": ", a fresh Computer Science graduate from Norton University. I specialize in building clean, modern, and responsive web applications using modern web technologies.",
+    "des_2": "I'm always eager to learn new skills and take on new challenges. With a strong foundation in both front-end and back-end development, I enjoy solving problems and creating user-friendly digital experiences that are not only visually appealing but also perform efficiently.",
     "cv": "Download CV"
   },
   "education": {
     "our_education": "Education Journey",
-
     "primary_school": "Primary School",
     "primary_info": "Learned basic skills, teamwork, and curiosity from an early age.",
 

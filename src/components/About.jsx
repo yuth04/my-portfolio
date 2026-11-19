@@ -64,7 +64,7 @@ const About = () => {
             />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-700 dark:text-white">
-            {t("service.what_can_i_do")}
+            {t("about.who_am_i")}
           </h2>
         </div>
 
