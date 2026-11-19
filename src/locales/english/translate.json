@@ -86,6 +86,11 @@
     "show_more": "Show More",
     "see_less": "See Less",
     "items": {
+      "VENDO E-commerce Web Application": {
+        "name": "Vendo E-commerce",
+        "status": "Completed",
+        "description": "A full-featured e-commerce platform built with React, Laravel API, and Tailwind CSS, including product management, category filtering, shopping cart, and responsive user interface."
+      },
       "Product Filter App": {
         "name": "Phone Store",
         "status": "In Progress",
@@ -96,11 +101,7 @@
         "status": "Completed",
         "description": "A simple React + Tailwind CRUD app without data persistence."
       },
-      "VENDO E-commerce Web Application": {
-        "name": "Vendo E-commerce",
-        "status": "In Progress",
-        "description": "A full-featured e-commerce platform built with React, Laravel API, and Tailwind CSS, including product management, category filtering, shopping cart, and responsive user interface."
-      },
+
       "Weather App": {
         "name": "Weather App",
         "status": "Completed",
@@ -116,10 +117,10 @@
         "status": "In Progress",
         "description": "A front-end online store built with HTML and CSS (Bootstrap)."
       },
-      "Portfolio Website": {
-        "name": "Portfolio Website",
-        "status": "Completed",
-        "description": "A personal portfolio to showcase my projects and skills."
+      "VENDO-POS": {
+        "name": "VENDO-POS",
+        "status": "In Progress",
+        "description": "A Point of Sale (POS) management system designed to manage products, categories, sales transactions, inventory, and business operations."
       }
     }
   },
