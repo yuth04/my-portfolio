@@ -7,7 +7,7 @@ import dashboard from "../assets/projects/dashboard.png";
 import vendo from "../assets/projects/vendo.png";
 
 import { FaReact, FaServer, FaDatabase, FaDocker, } from "react-icons/fa";
-import { SiTailwindcss, SiHtml5, SiCss3, SiBootstrap, SiNextdotjs, SiPostgresql, SiLaravel, SiCloudflare, SiExpress, SiSequelize, SiRedis, SiShadcnui } from "react-icons/si";
+import { SiTailwindcss, SiHtml5, SiCss3, SiBootstrap, SiNextdotjs, SiPostgresql, SiLaravel, SiCloudflare, SiExpress, SiSequelize, SiRedis, SiShadcnui, SiReact, SiJavascript, SiPhp, SiPostman, SiGithub } from "react-icons/si";
 
 export const projects = [
   {
@@ -17,11 +17,15 @@ export const projects = [
     demo: "https://vendo-ecommerce-two.vercel.app/",
     tech: [
       { name: "Next.js", icon: SiNextdotjs },
-      { name: "Laravel API", icon: SiLaravel },
+      { name: "React.js", icon: SiReact },
+      { name: "JavaScript", icon: SiJavascript },
       { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "CSS", icon: SiCss3 },
-      { name: "Cloud Service (SaaS)", icon: SiCloudflare },
-      { name: "PostgreSQL", icon: SiPostgresql }
+      { name: "Laravel 12", icon: SiLaravel },
+      { name: "PHP", icon: SiPhp },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "RESTful API", icon: SiPostman },
+      { name: "Cloudflare", icon: SiCloudflare },
+      { name: "Git & GitHub", icon: SiGithub }
     ]
   },
   {
@@ -50,8 +54,8 @@ export const projects = [
   {
     key: "VENDO-POS",
     image: POS,
-    github: "https://github.com/yuth04",
-    demo: "https://portfolio-phi-ten-qfj8ctdnfn.vercel.app",
+    github: "*",
+    demo: "*",
     tech: [
       { name: "Next.js", icon: SiNextdotjs },
       { name: "shadcn/ui", icon: SiShadcnui },

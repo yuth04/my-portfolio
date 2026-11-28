@@ -1,45 +1,10 @@
 import { useMemo } from "react";
-import {
-  FaFacebookF,
-  FaTelegramPlane,
-  FaInstagram,
-  FaGithub,
-} from "react-icons/fa";
+
 import logo from "../assets/hero/coder.jpg";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { useTypewriter } from "../hooks/useTypewriter";
-
-/* ------------------------------------------------------------------ */
-/*  data                                                              */
-/* ------------------------------------------------------------------ */
-
-const SOCIALS = [
-  { href: "https://github.com/yuth04", label: "GitHub", icon: <FaGithub /> },
-  {
-    href: "https://t.me/yuth_04",
-    label: "Telegram",
-    icon: <FaTelegramPlane />,
-  },
-  {
-    href: "https://www.facebook.com/share/16nUbygATd/?mibextid=wwXIfr",
-    label: "Facebook",
-    icon: <FaFacebookF />,
-  },
-  {
-    href: "https://www.instagram.com/yuth_004?igsh=cHQ0Y3N2NjZhbHZi&utm_source=qr",
-    label: "Instagram",
-    icon: <FaInstagram />,
-  },
-];
-
-const STACK_MAIN = ["React", "Laravel", "Node", "Express", "Postgres"];
-const STACK_ALSO = ["TypeScript", "Tailwind", "Docker"];
-
-/* ------------------------------------------------------------------ */
-/*  component                                                         */
-/* ------------------------------------------------------------------ */
-
+import { SOCIALS, STACK_MAIN, STACK_ALSO } from "../data/hero";
 const Hero = () => {
   const { t } = useTranslation();
   const rawNames = t("hero.name", { returnObjects: true });
@@ -212,7 +177,7 @@ const Hero = () => {
               Find me
             </dt>
             <dd className="m-0 flex md:justify-center gap-3">
-              {SOCIALS.map(({ href, label, icon }) => (
+              {SOCIALS.map(({ href, label, icon: Icon }) => (
                 <a
                   key={label}
                   href={href}
@@ -226,7 +191,7 @@ const Hero = () => {
                              focus-visible:outline focus-visible:outline-2
                              focus-visible:outline-offset-2 focus-visible:outline-violet-400"
                 >
-                  {icon}
+                   <Icon size={18} />
                 </a>
               ))}
             </dd>
