@@ -159,12 +159,6 @@ const tech = [
         color: "text-orange-500",
         bg: "bg-orange-500/10 hover:bg-orange-500/20 border-orange-500/20",
       },
-      // {
-      //   name: "Figma",
-      //   icon: SiFigma,
-      //   color: "text-pink-500",
-      //   bg: "bg-pink-500/10 hover:bg-pink-500/20 border-pink-500/20",
-      // },
       {
         name: "Vite",
         icon: SiVite,

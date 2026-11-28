@@ -8,7 +8,7 @@
   },
   "hero": {
     "des_name": "Hello, I'm ",
-    "name": ["Phearak YuTh...", "a Full Stack Developer..."],
+    "name": ["Phearak YuTh...", "a Junior Full Stack Developer..."],
     "carrer": "A Full Stack Developer",
     "btn_know": "Know More",
     "des": "who builds web apps end to end — from the database schema up to the interface people actually touch. Lately: booking systems, dashboards, and Khmer-first interfaces.",
